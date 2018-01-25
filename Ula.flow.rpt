@@ -1,5 +1,5 @@
 Flow report for Ula
-Thu Jan 25 10:19:28 2018
+Thu Jan 25 12:15:45 2018
 Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
@@ -38,26 +38,22 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Flow Summary                                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Flow Status                        ; Successful - Thu Jan 25 10:19:28 2018         ;
+; Flow Status                        ; Successful - Thu Jan 25 12:15:45 2018         ;
 ; Quartus II Version                 ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Ula                                           ;
 ; Top-level Entity Name              ; ula                                           ;
-; Family                             ; Cyclone IV GX                                 ;
-; Device                             ; EP4CGX150DF31C8                               ;
+; Family                             ; Cyclone II                                    ;
+; Device                             ; EP2C35F672C6                                  ;
 ; Timing Models                      ; Final                                         ;
-; Total logic elements               ; 144 / 149,760 ( < 1 % )                       ;
-;     Total combinational functions  ; 144 / 149,760 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 0 / 149,760 ( 0 % )                           ;
+; Total logic elements               ; 146 / 33,216 ( < 1 % )                        ;
+;     Total combinational functions  ; 146 / 33,216 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                            ;
 ; Total registers                    ; 0                                             ;
-; Total pins                         ; 34 / 508 ( 7 % )                              ;
+; Total pins                         ; 34 / 475 ( 7 % )                              ;
 ; Total virtual pins                 ; 0                                             ;
-; Total memory bits                  ; 0 / 6,635,520 ( 0 % )                         ;
-; Embedded Multiplier 9-bit elements ; 0 / 720 ( 0 % )                               ;
-; Total GXB Receiver Channel PCS     ; 0 / 8 ( 0 % )                                 ;
-; Total GXB Receiver Channel PMA     ; 0 / 8 ( 0 % )                                 ;
-; Total GXB Transmitter Channel PCS  ; 0 / 8 ( 0 % )                                 ;
-; Total GXB Transmitter Channel PMA  ; 0 / 8 ( 0 % )                                 ;
-; Total PLLs                         ; 0 / 8 ( 0 % )                                 ;
+; Total memory bits                  ; 0 / 483,840 ( 0 % )                           ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                 ;
 +------------------------------------+-----------------------------------------------+
 
 
@@ -66,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/25/2018 10:18:37 ;
+; Start date & time ; 01/25/2018 12:15:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Ula                 ;
 +-------------------+---------------------+
@@ -77,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+--------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 93179164544653.151688631712048 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 93179164544653.151689332008036 ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top        ;
@@ -91,11 +87,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 372 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:30     ; 1.0                     ; 631 MB              ; 00:00:24                           ;
-; TimeQuest Timing Analyzer ; 00:00:09     ; 1.0                     ; 420 MB              ; 00:00:05                           ;
-; Assembler                 ; 00:00:14     ; 1.0                     ; 637 MB              ; 00:00:10                           ;
-; Total                     ; 00:00:56     ; --                      ; --                  ; 00:00:42                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 354 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:09     ; 1.0                     ; 453 MB              ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 336 MB              ; 00:00:03                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 376 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

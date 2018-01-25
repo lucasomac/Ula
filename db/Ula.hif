@@ -1,7 +1,7 @@
 Quartus II
 Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
-40
-2596
+14
+1076
 OFF
 OFF
 OFF
@@ -31,7 +31,7 @@ ON
 # case_insensitive
 # source_file
 ula.vhd
-624b1f7e85a33b4aa2e7bf5d9f5c3d
+b37bb23db6efea1369d881b453832559
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT

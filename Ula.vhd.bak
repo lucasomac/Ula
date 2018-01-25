@@ -14,7 +14,7 @@ ENTITY ula IS
 	);
 END ula;
 
-ARCHITECTURE ula OF ula IS
+ARCHITECTURE ula1 OF ula IS
 --Arithimetic
 constant ADIC : STD_LOGIC_VECTOR(3 DOWNTO 0):="0001";
 constant SUB  : STD_LOGIC_VECTOR(3 DOWNTO 0):="0010";
@@ -72,7 +72,7 @@ BEGIN
 		when OUE =>
 			result <= operA xor operB;
 		when CP2 =>
-			result <= not (operA) + 1;
+			result <= (not operA) + 1;
 		when DLE =>
 			C <= operA(7);
 			result(7) <= operA(6);
@@ -127,4 +127,4 @@ BEGIN
 		end if;
 		N <= result(7);
 	end process;
-END ula;
+END ula1;
