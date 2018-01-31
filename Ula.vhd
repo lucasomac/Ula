@@ -1,6 +1,6 @@
 LIBRARY ieee ;
-USE ieee.std_logic_1164.all ;
-USE ieee.std_logic_unsigned.all ;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
 
 ENTITY ula IS
 	PORT
@@ -10,9 +10,10 @@ ENTITY ula IS
 		operB	: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 		Result	: buffer STD_LOGIC_VECTOR(7 DOWNTO 0);
 		Cin		: IN STD_LOGIC;
-		N,Z,C,B,V : buffer STD_LOGIC		
+		N,Z,C,B,V : buffer STD_LOGIC
 	);
 END ula;
+
 
 ARCHITECTURE ula OF ula IS
 --Arithimetic
@@ -59,10 +60,20 @@ BEGIN
 				end if;
 			else V <= '0';
 			end if;
-		when INC =>
+		when INC => 
 			result <= operA + 1;
+			if(result = "00000000") then 
+				V <= '1';
+			else 
+				V <= '0';
+			end if;
 		when DEC =>
 			result <= operA - 1;
+			if(result > operA) then 
+				V <= '1';
+			else 
+				V <= '0';
+			end if;
 		when OU =>
 			result <= operA or operB;
 		when E =>
@@ -73,6 +84,11 @@ BEGIN
 			result <= operA xor operB;
 		when CP2 =>
 			result <= not (operA) + 1;
+			if(result = "00000000") then 
+				V <= '1';
+			else 
+				V <= '0';
+			end if;
 		when DLE =>
 			C <= operA(7);
 			result(7) <= operA(6);
