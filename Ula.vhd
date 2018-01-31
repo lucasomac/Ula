@@ -32,6 +32,8 @@ constant DLE  : STD_LOGIC_VECTOR(3 DOWNTO 0):="0110";
 constant DLD  : STD_LOGIC_VECTOR(3 DOWNTO 0):="0111";
 constant DAE  : STD_LOGIC_VECTOR(3 DOWNTO 0):="1000";
 constant DAD  : STD_LOGIC_VECTOR(3 DOWNTO 0):="1001";
+constant RTE  : STD_LOGIC_VECTOR(3 DOWNTO 0):="1000";
+constant RLD  : STD_LOGIC_VECTOR(3 DOWNTO 0):="1001";
 
 BEGIN
 	process (operA, operB, operacao,result,Cin)
@@ -128,7 +130,27 @@ BEGIN
 			result(4) <= operA(5);
 			result(5) <= operA(6);
 			result(6) <= operA(7);
-			result(7) <= '0';		
+			result(7) <= '0';	
+		when RLE =>
+			C <= operA(7);
+			result(7) <= operA(6);
+			result(6) <= operA(5);
+			result(5) <= operA(4);
+			result(4) <= operA(3);
+			result(3) <= operA(2);
+			result(2) <= operA(1);
+			result(1) <= operA(0);
+			result(0) <= C;
+		when RLD =>
+			C <= operA(0);
+			result(0) <= operA(1);
+			result(1) <= operA(2);
+			result(2) <= operA(3);
+			result(3) <= operA(4);
+			result(4) <= operA(5);
+			result(5) <= operA(6);
+			result(6) <= operA(7);
+			result(7) <= C;	
 		when others =>
 			result <= "00000000";
 			Z <= '0';
