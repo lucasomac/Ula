@@ -30,10 +30,15 @@ constant CP2  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00001001";
 --Deslocamento
 constant DLE  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00001010";
 constant DLD  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00001011";
-constant DAE  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00001100";
-constant DAD  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00001101";
+constant BNUM  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00001100";
+constant SNUM  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00001101";
 constant RLD  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00001110";
 constant RLE  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00001111";
+--Iguaaldades
+constant EQUAL  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00010000";
+constant NEQUAL  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00010001";
+constant BIGGER  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00010010";
+constant SMALLER  : STD_LOGIC_VECTOR(7 DOWNTO 0):="00010011";
 
 BEGIN
 	process (operA, operB, operacao,result,Cin)
@@ -101,16 +106,10 @@ BEGIN
 			result(2) <= operA(1);
 			result(1) <= operA(0);
 			result(0) <= Cin;
-		when DAE =>
-			C <= operA(7);
-			result(7) <= operA(6);
-			result(6) <= operA(5);
-			result(5) <= operA(4);
-			result(4) <= operA(3);
-			result(3) <= operA(2);
-			result(2) <= operA(1);
-			result(1) <= operA(0);
-			result(0) <= '0';
+		when BNUM =>
+			if(operA > operB) then 
+				result <= operA;
+				else result <= operB;
 		when DLD =>
 			C <= operA(0);
 			result(0) <= operA(1);
@@ -121,16 +120,10 @@ BEGIN
 			result(5) <= operA(6);
 			result(6) <= operA(7);
 			result(7) <= Cin;
-		when DAD =>
-			C <= operA(0);
-			result(0) <= operA(1);
-			result(1) <= operA(2);
-			result(2) <= operA(3);
-			result(3) <= operA(4);
-			result(4) <= operA(5);
-			result(5) <= operA(6);
-			result(6) <= operA(7);
-			result(7) <= '0';	
+		when SNUM =>
+			if(operA < operB) then 
+				result <= operA;
+				else result <= operB;
 		when RLE =>
 			C <= operA(7);
 			result(7) <= operA(6);
@@ -150,7 +143,23 @@ BEGIN
 			result(4) <= operA(5);
 			result(5) <= operA(6);
 			result(6) <= operA(7);
-			result(7) <= C;	
+			result(7) <= C;
+		when EQUAL =>
+			if(operA = operB) then 
+				Z <= '1';
+				else Z <= '0';
+		when NEQUAL =>
+			if(operA /= operB) then 
+				B <= '1';
+				else B <= '0';
+		when BIGGER =>
+			if(operA > operB) then 
+				B <= '1';
+				else B <= '0';
+		when SMALLER =>
+			if(operA < operB) then 
+				Z <= '1';
+				else Z <= '0';
 		when others =>
 			result <= "00000000";
 			Z <= '0';
