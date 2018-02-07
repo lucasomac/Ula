@@ -1,4 +1,32 @@
 |Ula
+operacao[0] => ula_struct:startUla.operB[0]
+operacao[1] => ula_struct:startUla.operB[1]
+operacao[2] => ula_struct:startUla.operB[2]
+operacao[3] => ula_struct:startUla.operB[3]
+operacao[4] => ula_struct:startUla.operB[4]
+operacao[5] => ula_struct:startUla.operB[5]
+operacao[6] => ula_struct:startUla.operB[6]
+operacao[7] => ula_struct:startUla.operB[7]
+operA[0] => ula_struct:startUla.operacao[0]
+operA[1] => ula_struct:startUla.operacao[1]
+operA[2] => ula_struct:startUla.operacao[2]
+operA[3] => ula_struct:startUla.operacao[3]
+operA[4] => ula_struct:startUla.operacao[4]
+operA[5] => ula_struct:startUla.operacao[5]
+operA[6] => ula_struct:startUla.operacao[6]
+operA[7] => ula_struct:startUla.operacao[7]
+operB[0] => ula_struct:startUla.operA[0]
+operB[1] => ula_struct:startUla.operA[1]
+operB[2] => ula_struct:startUla.operA[2]
+operB[3] => ula_struct:startUla.operA[3]
+operB[4] => ula_struct:startUla.operA[4]
+operB[5] => ula_struct:startUla.operA[5]
+operB[6] => ula_struct:startUla.operA[6]
+operB[7] => ula_struct:startUla.operA[7]
+Cin => ula_struct:startUla.Cin
+
+
+|Ula|ula_struct:startUla
 operacao[0] => Mux3.IN258
 operacao[0] => Mux4.IN257
 operacao[0] => Mux5.IN257

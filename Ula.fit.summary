@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Feb 06 22:11:42 2018
+Fitter Status : Successful - Wed Feb 07 18:16:54 2018
 Quartus II Version : 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition
 Revision Name : Ula
 Top-level Entity Name : ula
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 159 / 33,216 ( < 1 % )
-    Total combinational functions : 159 / 33,216 ( < 1 % )
+Total logic elements : 125 / 33,216 ( < 1 % )
+    Total combinational functions : 125 / 33,216 ( < 1 % )
     Dedicated logic registers : 0 / 33,216 ( 0 % )
 Total registers : 0
 Total pins : 38 / 475 ( 8 % )

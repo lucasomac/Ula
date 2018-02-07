@@ -1,5 +1,5 @@
 Assembler report for Ula
-Tue Feb 06 22:11:50 2018
+Wed Feb 07 18:17:06 2018
 Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Feb 06 22:11:50 2018 ;
+; Assembler Status      ; Successful - Wed Feb 07 18:17:06 2018 ;
 ; Revision Name         ; Ula                                   ;
 ; Top-level Entity Name ; ula                                   ;
 ; Family                ; Cyclone II                            ;
@@ -95,7 +95,7 @@ applicable agreement for further details.
 +----------------+----------------------------------+
 ; Device         ; EP2C35F672C6                     ;
 ; JTAG usercode  ; 0xFFFFFFFF                       ;
-; Checksum       ; 0x00315BF9                       ;
+; Checksum       ; 0x0030D417                       ;
 +----------------+----------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+------------------------------+
 ; Device             ; EPCS16                       ;
 ; JTAG usercode      ; 0x00000000                   ;
-; Checksum           ; 0x1C75BA84                   ;
+; Checksum           ; 0x1C74405C                   ;
 ; Compression Ratio  ; 3                            ;
 +--------------------+------------------------------+
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Feb 06 22:11:47 2018
+    Info: Processing started: Wed Feb 07 18:16:57 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Ula -c Ula
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 374 megabytes
-    Info: Processing ended: Tue Feb 06 22:11:51 2018
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 373 megabytes
+    Info: Processing ended: Wed Feb 07 18:17:06 2018
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:07
 
 

@@ -20,6 +20,54 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
+ula_struct
+# storage
+db|Ula.(1).cnf
+db|Ula.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+ula_struct.vhd
+70ed6270b6209fe1661587d6e3eff4a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(operacao)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(opera)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(operb)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(result)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+ula_struct:startUla
+}
+# macro_sequence
+
+# end
+# entity
 Ula
 # storage
 db|Ula.(0).cnf
@@ -31,7 +79,7 @@ ON
 # case_insensitive
 # source_file
 ula.vhd
-619ee6d8e6b01c52c68a1ae1931a
+b88ba15075b9ee42b95fe1581466ec
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -42,6 +90,10 @@ AUTO_RAM_RECOGNITION
 ON
 AUTO_ROM_RECOGNITION
 ON
+}
+# include_file {
+ula_package.vhd
+6b1dd4ea628aff23b42f89705459fa15
 }
 # hierarchies {
 |
