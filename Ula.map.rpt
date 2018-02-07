@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Ula
-Wed Jan 31 17:55:10 2018
+Tue Feb 06 22:23:07 2018
 Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
@@ -10,14 +10,7 @@ Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -43,20 +36,20 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jan 31 17:55:10 2018         ;
+; Analysis & Synthesis Status        ; Failed - Tue Feb 06 22:23:07 2018             ;
 ; Quartus II Version                 ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Ula                                           ;
-; Top-level Entity Name              ; ula                                           ;
+; Top-level Entity Name              ; Ula                                           ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 155                                           ;
-;     Total combinational functions  ; 155                                           ;
-;     Dedicated logic registers      ; 0                                             ;
-; Total registers                    ; 0                                             ;
-; Total pins                         ; 34                                            ;
-; Total virtual pins                 ; 0                                             ;
-; Total memory bits                  ; 0                                             ;
-; Embedded Multiplier 9-bit elements ; 0                                             ;
-; Total PLLs                         ; 0                                             ;
+; Total logic elements               ; N/A until Partition Merge                     ;
+;     Total combinational functions  ; N/A until Partition Merge                     ;
+;     Dedicated logic registers      ; N/A until Partition Merge                     ;
+; Total registers                    ; N/A until Partition Merge                     ;
+; Total pins                         ; N/A until Partition Merge                     ;
+; Total virtual pins                 ; N/A until Partition Merge                     ;
+; Total memory bits                  ; N/A until Partition Merge                     ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                     ;
+; Total PLLs                         ; N/A until Partition Merge                     ;
 +------------------------------------+-----------------------------------------------+
 
 
@@ -153,134 +146,30 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                              ;
-+----------------------------------+-----------------+-----------------+------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path ;
-+----------------------------------+-----------------+-----------------+------------------------------+
-; Ula.vhd                          ; yes             ; User VHDL File  ; E:/Ula/Ula.vhd               ;
-+----------------------------------+-----------------+-----------------+------------------------------+
-
-
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 155         ;
-;                                             ;             ;
-; Total combinational functions               ; 155         ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 66          ;
-;     -- 3 input functions                    ; 41          ;
-;     -- <=2 input functions                  ; 48          ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 111         ;
-;     -- arithmetic mode                      ; 44          ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-;     -- Dedicated logic registers            ; 0           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 34          ;
-; Maximum fan-out node                        ; operacao[2] ;
-; Maximum fan-out                             ; 33          ;
-; Total fan-out                               ; 489         ;
-; Average fan-out                             ; 2.59        ;
-+---------------------------------------------+-------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |ula                       ; 155 (155)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |ula                ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; C$latch                                            ; Mux1                ; yes                    ;
-; B$latch                                            ; Mux12               ; yes                    ;
-; V$latch                                            ; Mux2                ; yes                    ;
-; Number of user-specified and inferred latches = 3  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 13:1               ; 6 bits    ; 48 LEs        ; 42 LEs               ; 6 LEs                  ; |ula|Mux5  ;                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:05     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Jan 31 17:55:01 2018
+    Info: Processing started: Tue Feb 06 22:23:06 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Ula -c Ula
 Warning: Parallel compilation is not licensed and has been disabled
+Info: Found 2 design units, including 1 entities, in source file mult4bits.vhd
+    Info: Found design unit 1: mult4bits-arch_mult4bits
+    Info: Found entity 1: mult4bits
 Info: Found 2 design units, including 1 entities, in source file ula.vhd
     Info: Found design unit 1: ula-ula
     Info: Found entity 1: ula
-Info: Elaborating entity "Ula" for the top level hierarchy
-Warning (10631): VHDL Process Statement warning at Ula.vhd(37): inferring latch(es) for signal or variable "C", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at Ula.vhd(37): inferring latch(es) for signal or variable "V", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at Ula.vhd(37): inferring latch(es) for signal or variable "B", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "B" at Ula.vhd(37)
-Info (10041): Inferred latch for "V" at Ula.vhd(37)
-Info (10041): Inferred latch for "C" at Ula.vhd(37)
-Warning: Latch C$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal operacao[2]
-Warning: Latch B$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal operacao[1]
-Warning: Latch V$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal operacao[2]
-Info: Generating hard_block partition "hard_block:auto_generated_inst"
-Info: Implemented 189 device resources after synthesis - the final resource count might be different
-    Info: Implemented 21 input pins
-    Info: Implemented 13 output pins
-    Info: Implemented 155 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 351 megabytes
-    Info: Processing ended: Wed Jan 31 17:55:10 2018
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:07
+Info: Found 2 design units, including 0 entities, in source file arit.vhd
+    Info: Found design unit 1: adic
+    Info: Found design unit 2: adic-adic_arch
+Error (10481): VHDL Use Clause error at Ula.vhd(4): design library "work" does not contain primary unit "arit" File: E:/Projetos/Ula/Ula.vhd Line: 4
+Error (10800): VHDL error at Ula.vhd(4): selected name in use clause is not an expanded name File: E:/Projetos/Ula/Ula.vhd Line: 4
+Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+    Error: Peak virtual memory: 346 megabytes
+    Error: Processing ended: Tue Feb 06 22:23:07 2018
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
 
 
