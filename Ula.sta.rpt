@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Ula
-Wed Feb 07 18:17:06 2018
+Sat Feb 17 22:44:15 2018
 Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
@@ -16,36 +16,36 @@ Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
   8. Slow Model Recovery Summary
   9. Slow Model Removal Summary
  10. Slow Model Minimum Pulse Width Summary
- 11. Slow Model Setup: 'operA[1]'
- 12. Slow Model Hold: 'operA[1]'
- 13. Slow Model Minimum Pulse Width: 'operA[1]'
- 14. Setup Times
- 15. Hold Times
- 16. Clock to Output Times
- 17. Minimum Clock to Output Times
- 18. Propagation Delay
- 19. Minimum Propagation Delay
- 20. Fast Model Setup Summary
- 21. Fast Model Hold Summary
- 22. Fast Model Recovery Summary
- 23. Fast Model Removal Summary
- 24. Fast Model Minimum Pulse Width Summary
- 25. Fast Model Setup: 'operA[1]'
- 26. Fast Model Hold: 'operA[1]'
- 27. Fast Model Minimum Pulse Width: 'operA[1]'
- 28. Setup Times
- 29. Hold Times
- 30. Clock to Output Times
- 31. Minimum Clock to Output Times
- 32. Propagation Delay
- 33. Minimum Propagation Delay
- 34. Multicorner Timing Analysis Summary
- 35. Setup Times
- 36. Hold Times
- 37. Clock to Output Times
- 38. Minimum Clock to Output Times
- 39. Progagation Delay
- 40. Minimum Progagation Delay
+ 11. Slow Model Setup: 'operA[2]'
+ 12. Slow Model Setup: 'operA[1]'
+ 13. Slow Model Hold: 'operA[2]'
+ 14. Slow Model Hold: 'operA[1]'
+ 15. Slow Model Minimum Pulse Width: 'operA[1]'
+ 16. Slow Model Minimum Pulse Width: 'operA[2]'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'operA[2]'
+ 27. Fast Model Setup: 'operA[1]'
+ 28. Fast Model Hold: 'operA[2]'
+ 29. Fast Model Hold: 'operA[1]'
+ 30. Fast Model Minimum Pulse Width: 'operA[1]'
+ 31. Fast Model Minimum Pulse Width: 'operA[2]'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Multicorner Timing Analysis Summary
+ 37. Setup Times
+ 38. Hold Times
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
  41. Setup Transfers
  42. Hold Transfers
  43. Report TCCS
@@ -104,16 +104,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
 +------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
 ; operA[1]   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { operA[1] } ;
+; operA[2]   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { operA[2] } ;
 +------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
 
 
-+--------------------------------------------------+
-; Slow Model Fmax Summary                          ;
-+------------+-----------------+------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
-+------------+-----------------+------------+------+
-; 391.54 MHz ; 391.54 MHz      ; operA[1]   ;      ;
-+------------+-----------------+------------+------+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 306.18 MHz ; 306.18 MHz      ; operA[2]   ;                                                               ;
+; 698.32 MHz ; 450.05 MHz      ; operA[1]   ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -122,17 +124,19 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+---------------+
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
-; operA[1] ; -0.777 ; -0.777        ;
+; operA[2] ; -1.344 ; -8.613        ;
+; operA[1] ; -0.402 ; -0.402        ;
 +----------+--------+---------------+
 
 
-+----------------------------------+
-; Slow Model Hold Summary          ;
-+----------+-------+---------------+
-; Clock    ; Slack ; End Point TNS ;
-+----------+-------+---------------+
-; operA[1] ; 0.111 ; 0.000         ;
-+----------+-------+---------------+
++-----------------------------------+
+; Slow Model Hold Summary           ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; operA[2] ; -0.400 ; -1.238        ;
+; operA[1] ; -0.332 ; -0.332        ;
++----------+--------+---------------+
 
 
 -------------------------------
@@ -153,7 +157,56 @@ No paths to report.
 ; Clock    ; Slack  ; End Point TNS      ;
 +----------+--------+--------------------+
 ; operA[1] ; -1.222 ; -1.222             ;
+; operA[2] ; -1.222 ; -1.222             ;
 +----------+--------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'operA[2]'                                                                                                         ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.344 ; operA[1]              ; ula_struct:startUla|Result[6] ; operA[1]     ; operA[2]    ; 0.500        ; 5.165      ; 6.056      ;
+; -1.242 ; operA[1]              ; ula_struct:startUla|Result[5] ; operA[1]     ; operA[2]    ; 0.500        ; 5.029      ; 5.913      ;
+; -1.134 ; ula_struct:startUla|C ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; 0.500        ; 1.465      ; 2.272      ;
+; -1.133 ; operA[2]              ; ula_struct:startUla|Result[6] ; operA[2]     ; operA[2]    ; 0.500        ; 5.165      ; 5.845      ;
+; -1.110 ; ula_struct:startUla|C ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; 0.500        ; 1.489      ; 2.272      ;
+; -1.011 ; operA[2]              ; ula_struct:startUla|Result[5] ; operA[2]     ; operA[2]    ; 0.500        ; 5.029      ; 5.682      ;
+; -0.986 ; ula_struct:startUla|C ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; 0.500        ; 1.598      ; 2.132      ;
+; -0.969 ; operA[1]              ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; 0.500        ; 5.033      ; 5.675      ;
+; -0.962 ; ula_struct:startUla|C ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; 0.500        ; 1.622      ; 2.132      ;
+; -0.927 ; operA[1]              ; ula_struct:startUla|Result[1] ; operA[1]     ; operA[2]    ; 0.500        ; 5.165      ; 5.616      ;
+; -0.907 ; operA[1]              ; ula_struct:startUla|Result[4] ; operA[1]     ; operA[2]    ; 0.500        ; 5.169      ; 5.623      ;
+; -0.875 ; operA[1]              ; ula_struct:startUla|Result[3] ; operA[1]     ; operA[2]    ; 0.500        ; 5.035      ; 5.583      ;
+; -0.844 ; operA[1]              ; ula_struct:startUla|Result[6] ; operA[1]     ; operA[2]    ; 1.000        ; 5.165      ; 6.056      ;
+; -0.811 ; operA[2]              ; ula_struct:startUla|Result[4] ; operA[2]     ; operA[2]    ; 0.500        ; 5.169      ; 5.527      ;
+; -0.772 ; operA[1]              ; ula_struct:startUla|Result[2] ; operA[1]     ; operA[2]    ; 0.500        ; 5.172      ; 5.464      ;
+; -0.759 ; operA[2]              ; ula_struct:startUla|Result[1] ; operA[2]     ; operA[2]    ; 0.500        ; 5.165      ; 5.448      ;
+; -0.742 ; operA[1]              ; ula_struct:startUla|Result[5] ; operA[1]     ; operA[2]    ; 1.000        ; 5.029      ; 5.913      ;
+; -0.713 ; operA[2]              ; ula_struct:startUla|Result[3] ; operA[2]     ; operA[2]    ; 0.500        ; 5.035      ; 5.421      ;
+; -0.693 ; operA[2]              ; ula_struct:startUla|Result[2] ; operA[2]     ; operA[2]    ; 0.500        ; 5.172      ; 5.385      ;
+; -0.638 ; operA[1]              ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; 0.500        ; 5.166      ; 5.352      ;
+; -0.633 ; operA[2]              ; ula_struct:startUla|Result[6] ; operA[2]     ; operA[2]    ; 1.000        ; 5.165      ; 5.845      ;
+; -0.511 ; operA[2]              ; ula_struct:startUla|Result[5] ; operA[2]     ; operA[2]    ; 1.000        ; 5.029      ; 5.682      ;
+; -0.496 ; operA[2]              ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; 0.500        ; 5.033      ; 5.202      ;
+; -0.469 ; operA[1]              ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; 1.000        ; 5.033      ; 5.675      ;
+; -0.427 ; operA[1]              ; ula_struct:startUla|Result[1] ; operA[1]     ; operA[2]    ; 1.000        ; 5.165      ; 5.616      ;
+; -0.426 ; operA[2]              ; ula_struct:startUla|C         ; operA[2]     ; operA[2]    ; 0.500        ; 3.544      ; 3.486      ;
+; -0.425 ; operA[2]              ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; 0.500        ; 5.166      ; 5.139      ;
+; -0.407 ; operA[1]              ; ula_struct:startUla|Result[4] ; operA[1]     ; operA[2]    ; 1.000        ; 5.169      ; 5.623      ;
+; -0.375 ; operA[1]              ; ula_struct:startUla|Result[3] ; operA[1]     ; operA[2]    ; 1.000        ; 5.035      ; 5.583      ;
+; -0.311 ; operA[2]              ; ula_struct:startUla|Result[4] ; operA[2]     ; operA[2]    ; 1.000        ; 5.169      ; 5.527      ;
+; -0.272 ; operA[1]              ; ula_struct:startUla|Result[2] ; operA[1]     ; operA[2]    ; 1.000        ; 5.172      ; 5.464      ;
+; -0.259 ; operA[2]              ; ula_struct:startUla|Result[1] ; operA[2]     ; operA[2]    ; 1.000        ; 5.165      ; 5.448      ;
+; -0.240 ; operA[1]              ; ula_struct:startUla|C         ; operA[1]     ; operA[2]    ; 0.500        ; 3.544      ; 3.300      ;
+; -0.213 ; operA[2]              ; ula_struct:startUla|Result[3] ; operA[2]     ; operA[2]    ; 1.000        ; 5.035      ; 5.421      ;
+; -0.193 ; operA[2]              ; ula_struct:startUla|Result[2] ; operA[2]     ; operA[2]    ; 1.000        ; 5.172      ; 5.385      ;
+; -0.138 ; operA[1]              ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; 1.000        ; 5.166      ; 5.352      ;
+; 0.004  ; operA[2]              ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; 1.000        ; 5.033      ; 5.202      ;
+; 0.074  ; operA[2]              ; ula_struct:startUla|C         ; operA[2]     ; operA[2]    ; 1.000        ; 3.544      ; 3.486      ;
+; 0.075  ; operA[2]              ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; 1.000        ; 5.166      ; 5.139      ;
+; 0.260  ; operA[1]              ; ula_struct:startUla|C         ; operA[1]     ; operA[2]    ; 1.000        ; 3.544      ; 3.300      ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -161,19 +214,71 @@ No paths to report.
 +--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
-; -0.777 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 0.500        ; 2.878      ; 3.167      ;
-; -0.277 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 1.000        ; 2.878      ; 3.167      ;
+; -0.402 ; operA[2]  ; ula_struct:startUla|C ; operA[2]     ; operA[1]    ; 0.500        ; 3.568      ; 3.486      ;
+; -0.216 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 0.500        ; 3.568      ; 3.300      ;
+; 0.098  ; operA[2]  ; ula_struct:startUla|C ; operA[2]     ; operA[1]    ; 1.000        ; 3.568      ; 3.486      ;
+; 0.284  ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 1.000        ; 3.568      ; 3.300      ;
 +--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'operA[1]'                                                                                     ;
-+-------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
-; 0.111 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 0.000        ; 2.878      ; 2.989      ;
-; 0.611 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; -0.500       ; 2.878      ; 2.989      ;
-+-------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'operA[2]'                                                                                                          ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.400 ; operA[2]              ; ula_struct:startUla|Result[3] ; operA[2]     ; operA[2]    ; 0.000        ; 5.035      ; 4.635      ;
+; -0.308 ; operA[1]              ; ula_struct:startUla|C         ; operA[1]     ; operA[2]    ; 0.000        ; 3.544      ; 3.236      ;
+; -0.235 ; operA[2]              ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; 0.000        ; 5.166      ; 4.931      ;
+; -0.152 ; operA[2]              ; ula_struct:startUla|C         ; operA[2]     ; operA[2]    ; 0.000        ; 3.544      ; 3.392      ;
+; -0.150 ; operA[2]              ; ula_struct:startUla|Result[4] ; operA[2]     ; operA[2]    ; 0.000        ; 5.169      ; 5.019      ;
+; -0.106 ; operA[2]              ; ula_struct:startUla|Result[2] ; operA[2]     ; operA[2]    ; 0.000        ; 5.172      ; 5.066      ;
+; -0.021 ; operA[2]              ; ula_struct:startUla|Result[5] ; operA[2]     ; operA[2]    ; 0.000        ; 5.029      ; 5.008      ;
+; -0.013 ; operA[2]              ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; 0.000        ; 5.033      ; 5.020      ;
+; -0.005 ; operA[2]              ; ula_struct:startUla|Result[1] ; operA[2]     ; operA[2]    ; 0.000        ; 5.165      ; 5.160      ;
+; 0.002  ; operA[1]              ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; 0.000        ; 5.166      ; 5.168      ;
+; 0.052  ; operA[1]              ; ula_struct:startUla|Result[4] ; operA[1]     ; operA[2]    ; 0.000        ; 5.169      ; 5.221      ;
+; 0.058  ; operA[1]              ; ula_struct:startUla|Result[2] ; operA[1]     ; operA[2]    ; 0.000        ; 5.172      ; 5.230      ;
+; 0.082  ; operA[1]              ; ula_struct:startUla|Result[1] ; operA[1]     ; operA[2]    ; 0.000        ; 5.165      ; 5.247      ;
+; 0.100  ; operA[2]              ; ula_struct:startUla|Result[3] ; operA[2]     ; operA[2]    ; -0.500       ; 5.035      ; 4.635      ;
+; 0.136  ; operA[2]              ; ula_struct:startUla|Result[6] ; operA[2]     ; operA[2]    ; 0.000        ; 5.165      ; 5.301      ;
+; 0.189  ; operA[1]              ; ula_struct:startUla|Result[6] ; operA[1]     ; operA[2]    ; 0.000        ; 5.165      ; 5.354      ;
+; 0.192  ; operA[1]              ; ula_struct:startUla|C         ; operA[1]     ; operA[2]    ; -0.500       ; 3.544      ; 3.236      ;
+; 0.203  ; operA[1]              ; ula_struct:startUla|Result[3] ; operA[1]     ; operA[2]    ; 0.000        ; 5.035      ; 5.238      ;
+; 0.265  ; operA[2]              ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; -0.500       ; 5.166      ; 4.931      ;
+; 0.299  ; operA[1]              ; ula_struct:startUla|Result[5] ; operA[1]     ; operA[2]    ; 0.000        ; 5.029      ; 5.328      ;
+; 0.348  ; operA[2]              ; ula_struct:startUla|C         ; operA[2]     ; operA[2]    ; -0.500       ; 3.544      ; 3.392      ;
+; 0.350  ; operA[2]              ; ula_struct:startUla|Result[4] ; operA[2]     ; operA[2]    ; -0.500       ; 5.169      ; 5.019      ;
+; 0.353  ; operA[1]              ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; 0.000        ; 5.033      ; 5.386      ;
+; 0.394  ; operA[2]              ; ula_struct:startUla|Result[2] ; operA[2]     ; operA[2]    ; -0.500       ; 5.172      ; 5.066      ;
+; 0.479  ; operA[2]              ; ula_struct:startUla|Result[5] ; operA[2]     ; operA[2]    ; -0.500       ; 5.029      ; 5.008      ;
+; 0.487  ; operA[2]              ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; -0.500       ; 5.033      ; 5.020      ;
+; 0.495  ; operA[2]              ; ula_struct:startUla|Result[1] ; operA[2]     ; operA[2]    ; -0.500       ; 5.165      ; 5.160      ;
+; 0.502  ; operA[1]              ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; -0.500       ; 5.166      ; 5.168      ;
+; 0.552  ; operA[1]              ; ula_struct:startUla|Result[4] ; operA[1]     ; operA[2]    ; -0.500       ; 5.169      ; 5.221      ;
+; 0.558  ; operA[1]              ; ula_struct:startUla|Result[2] ; operA[1]     ; operA[2]    ; -0.500       ; 5.172      ; 5.230      ;
+; 0.582  ; operA[1]              ; ula_struct:startUla|Result[1] ; operA[1]     ; operA[2]    ; -0.500       ; 5.165      ; 5.247      ;
+; 0.636  ; operA[2]              ; ula_struct:startUla|Result[6] ; operA[2]     ; operA[2]    ; -0.500       ; 5.165      ; 5.301      ;
+; 0.689  ; operA[1]              ; ula_struct:startUla|Result[6] ; operA[1]     ; operA[2]    ; -0.500       ; 5.165      ; 5.354      ;
+; 0.703  ; operA[1]              ; ula_struct:startUla|Result[3] ; operA[1]     ; operA[2]    ; -0.500       ; 5.035      ; 5.238      ;
+; 0.799  ; operA[1]              ; ula_struct:startUla|Result[5] ; operA[1]     ; operA[2]    ; -0.500       ; 5.029      ; 5.328      ;
+; 0.853  ; operA[1]              ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; -0.500       ; 5.033      ; 5.386      ;
+; 1.010  ; ula_struct:startUla|C ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; -0.500       ; 1.622      ; 2.132      ;
+; 1.034  ; ula_struct:startUla|C ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; -0.500       ; 1.598      ; 2.132      ;
+; 1.283  ; ula_struct:startUla|C ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; -0.500       ; 1.489      ; 2.272      ;
+; 1.307  ; ula_struct:startUla|C ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; -0.500       ; 1.465      ; 2.272      ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'operA[1]'                                                                                      ;
++--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
+; -0.332 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 0.000        ; 3.568      ; 3.236      ;
+; -0.176 ; operA[2]  ; ula_struct:startUla|C ; operA[2]     ; operA[1]    ; 0.000        ; 3.568      ; 3.392      ;
+; 0.168  ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; -0.500       ; 3.568      ; 3.236      ;
+; 0.324  ; operA[2]  ; ula_struct:startUla|C ; operA[2]     ; operA[1]    ; -0.500       ; 3.568      ; 3.392      ;
++--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------+
@@ -186,52 +291,174 @@ No paths to report.
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; operA[1]|combout        ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Fall       ; startUla|C|datac        ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Fall       ; startUla|C|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux0~0|combout ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux0~0|combout ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux0~0|datad   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux0~0|datad   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Fall       ; startUla|Mux0~1|combout ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Fall       ; startUla|Mux0~1|combout ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux0~1|datad   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux0~1|datad   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux4~0|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux4~0|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux4~0|datac   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux4~0|datac   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Fall       ; startUla|Mux4~1|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Fall       ; startUla|Mux4~1|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux4~1|datad   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux4~1|datad   ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; ula_struct:startUla|C   ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; ula_struct:startUla|C   ;
 +--------+--------------+----------------+------------------+----------+------------+-------------------------+
 
 
-+--------------------------------------------------------------------------+
-; Setup Times                                                              ;
-+--------------+------------+-------+-------+------------+-----------------+
-; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+--------------+------------+-------+-------+------------+-----------------+
-; operA[*]     ; operA[1]   ; 7.148 ; 7.148 ; Rise       ; operA[1]        ;
-;  operA[0]    ; operA[1]   ; 7.148 ; 7.148 ; Rise       ; operA[1]        ;
-;  operA[1]    ; operA[1]   ; 1.277 ; 1.277 ; Rise       ; operA[1]        ;
-;  operA[2]    ; operA[1]   ; 5.964 ; 5.964 ; Rise       ; operA[1]        ;
-;  operA[3]    ; operA[1]   ; 5.250 ; 5.250 ; Rise       ; operA[1]        ;
-;  operA[4]    ; operA[1]   ; 2.002 ; 2.002 ; Rise       ; operA[1]        ;
-;  operA[5]    ; operA[1]   ; 1.877 ; 1.877 ; Rise       ; operA[1]        ;
-;  operA[6]    ; operA[1]   ; 6.201 ; 6.201 ; Rise       ; operA[1]        ;
-;  operA[7]    ; operA[1]   ; 6.800 ; 6.800 ; Rise       ; operA[1]        ;
-; operB[*]     ; operA[1]   ; 8.061 ; 8.061 ; Rise       ; operA[1]        ;
-;  operB[0]    ; operA[1]   ; 7.588 ; 7.588 ; Rise       ; operA[1]        ;
-;  operB[1]    ; operA[1]   ; 7.748 ; 7.748 ; Rise       ; operA[1]        ;
-;  operB[2]    ; operA[1]   ; 8.061 ; 8.061 ; Rise       ; operA[1]        ;
-;  operB[3]    ; operA[1]   ; 7.226 ; 7.226 ; Rise       ; operA[1]        ;
-;  operB[4]    ; operA[1]   ; 7.295 ; 7.295 ; Rise       ; operA[1]        ;
-;  operB[5]    ; operA[1]   ; 7.593 ; 7.593 ; Rise       ; operA[1]        ;
-;  operB[6]    ; operA[1]   ; 7.134 ; 7.134 ; Rise       ; operA[1]        ;
-;  operB[7]    ; operA[1]   ; 7.406 ; 7.406 ; Rise       ; operA[1]        ;
-; operacao[*]  ; operA[1]   ; 8.089 ; 8.089 ; Rise       ; operA[1]        ;
-;  operacao[0] ; operA[1]   ; 8.089 ; 8.089 ; Rise       ; operA[1]        ;
-;  operacao[1] ; operA[1]   ; 7.655 ; 7.655 ; Rise       ; operA[1]        ;
-;  operacao[2] ; operA[1]   ; 7.673 ; 7.673 ; Rise       ; operA[1]        ;
-;  operacao[3] ; operA[1]   ; 6.807 ; 6.807 ; Rise       ; operA[1]        ;
-;  operacao[4] ; operA[1]   ; 6.982 ; 6.982 ; Rise       ; operA[1]        ;
-;  operacao[5] ; operA[1]   ; 7.188 ; 7.188 ; Rise       ; operA[1]        ;
-;  operacao[6] ; operA[1]   ; 7.637 ; 7.637 ; Rise       ; operA[1]        ;
-;  operacao[7] ; operA[1]   ; 6.530 ; 6.530 ; Rise       ; operA[1]        ;
-+--------------+------------+-------+-------+------------+-----------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'operA[2]'                                                                           ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                           ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; operA[2] ; Rise       ; operA[2]                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; operA[2]|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; operA[2]|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|C|datac                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|C|datac                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux14~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux14~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; startUla|Mux14~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; startUla|Mux14~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux14~1clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux14~1clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux14~1clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux14~1clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux14~1|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux14~1|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux14~1|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux14~1|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; startUla|Mux4~0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; startUla|Mux4~0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; startUla|Mux4~0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; startUla|Mux4~0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux4~1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux4~1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; startUla|Mux4~1|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; startUla|Mux4~1|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|N|datad                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|N|datad                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[0]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[0]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[1]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[1]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[2]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[2]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[3]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[3]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[4]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[4]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[5]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[5]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[6]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[6]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; ula_struct:startUla|C            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; ula_struct:startUla|C            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|N            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|N            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[1]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[1]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[2]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[2]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[3]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[3]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[4]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[4]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[5]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[5]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[6]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[6]    ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operA[*]     ; operA[1]   ; 5.937  ; 5.937  ; Rise       ; operA[1]        ;
+;  operA[0]    ; operA[1]   ; 5.405  ; 5.405  ; Rise       ; operA[1]        ;
+;  operA[1]    ; operA[1]   ; 0.716  ; 0.716  ; Rise       ; operA[1]        ;
+;  operA[2]    ; operA[1]   ; 0.902  ; 0.902  ; Rise       ; operA[1]        ;
+;  operA[3]    ; operA[1]   ; 5.431  ; 5.431  ; Rise       ; operA[1]        ;
+;  operA[4]    ; operA[1]   ; 1.153  ; 1.153  ; Rise       ; operA[1]        ;
+;  operA[5]    ; operA[1]   ; 1.452  ; 1.452  ; Rise       ; operA[1]        ;
+;  operA[6]    ; operA[1]   ; 5.937  ; 5.937  ; Rise       ; operA[1]        ;
+;  operA[7]    ; operA[1]   ; 5.493  ; 5.493  ; Rise       ; operA[1]        ;
+; operB[*]     ; operA[1]   ; 7.245  ; 7.245  ; Rise       ; operA[1]        ;
+;  operB[0]    ; operA[1]   ; 6.519  ; 6.519  ; Rise       ; operA[1]        ;
+;  operB[1]    ; operA[1]   ; 7.245  ; 7.245  ; Rise       ; operA[1]        ;
+;  operB[2]    ; operA[1]   ; 7.145  ; 7.145  ; Rise       ; operA[1]        ;
+;  operB[3]    ; operA[1]   ; 6.588  ; 6.588  ; Rise       ; operA[1]        ;
+;  operB[4]    ; operA[1]   ; 6.317  ; 6.317  ; Rise       ; operA[1]        ;
+;  operB[5]    ; operA[1]   ; 6.754  ; 6.754  ; Rise       ; operA[1]        ;
+;  operB[6]    ; operA[1]   ; 6.377  ; 6.377  ; Rise       ; operA[1]        ;
+;  operB[7]    ; operA[1]   ; 5.973  ; 5.973  ; Rise       ; operA[1]        ;
+; operacao[*]  ; operA[1]   ; 7.398  ; 7.398  ; Rise       ; operA[1]        ;
+;  operacao[0] ; operA[1]   ; 6.811  ; 6.811  ; Rise       ; operA[1]        ;
+;  operacao[1] ; operA[1]   ; 7.398  ; 7.398  ; Rise       ; operA[1]        ;
+;  operacao[2] ; operA[1]   ; 7.171  ; 7.171  ; Rise       ; operA[1]        ;
+;  operacao[3] ; operA[1]   ; 7.061  ; 7.061  ; Rise       ; operA[1]        ;
+;  operacao[4] ; operA[1]   ; 6.713  ; 6.713  ; Rise       ; operA[1]        ;
+;  operacao[5] ; operA[1]   ; 6.369  ; 6.369  ; Rise       ; operA[1]        ;
+;  operacao[6] ; operA[1]   ; 6.592  ; 6.592  ; Rise       ; operA[1]        ;
+;  operacao[7] ; operA[1]   ; 6.490  ; 6.490  ; Rise       ; operA[1]        ;
+; operA[*]     ; operA[2]   ; 5.961  ; 5.961  ; Rise       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; 5.429  ; 5.429  ; Rise       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 0.740  ; 0.740  ; Rise       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 0.926  ; 0.926  ; Rise       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; 5.455  ; 5.455  ; Rise       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; 1.177  ; 1.177  ; Rise       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; 1.476  ; 1.476  ; Rise       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; 5.961  ; 5.961  ; Rise       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; 5.517  ; 5.517  ; Rise       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; 7.269  ; 7.269  ; Rise       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; 6.543  ; 6.543  ; Rise       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; 7.269  ; 7.269  ; Rise       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; 7.169  ; 7.169  ; Rise       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; 6.612  ; 6.612  ; Rise       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; 6.341  ; 6.341  ; Rise       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; 6.778  ; 6.778  ; Rise       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; 6.401  ; 6.401  ; Rise       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; 5.997  ; 5.997  ; Rise       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; 7.422  ; 7.422  ; Rise       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; 6.835  ; 6.835  ; Rise       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; 7.422  ; 7.422  ; Rise       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; 7.195  ; 7.195  ; Rise       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; 7.085  ; 7.085  ; Rise       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; 6.737  ; 6.737  ; Rise       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; 6.393  ; 6.393  ; Rise       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; 6.616  ; 6.616  ; Rise       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; 6.514  ; 6.514  ; Rise       ; operA[2]        ;
+; Cin          ; operA[2]   ; 4.178  ; 4.178  ; Fall       ; operA[2]        ;
+; operA[*]     ; operA[2]   ; 6.084  ; 6.084  ; Fall       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; 6.084  ; 6.084  ; Fall       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 1.844  ; 1.844  ; Fall       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 1.633  ; 1.633  ; Fall       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; 6.006  ; 6.006  ; Fall       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; -0.154 ; -0.154 ; Fall       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; 0.145  ; 0.145  ; Fall       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; 4.630  ; 4.630  ; Fall       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; 4.186  ; 4.186  ; Fall       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; 8.223  ; 8.223  ; Fall       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; 7.502  ; 7.502  ; Fall       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; 7.501  ; 7.501  ; Fall       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; 8.223  ; 8.223  ; Fall       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; 8.084  ; 8.084  ; Fall       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; 7.549  ; 7.549  ; Fall       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; 7.683  ; 7.683  ; Fall       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; 7.098  ; 7.098  ; Fall       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; 6.668  ; 6.668  ; Fall       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; 8.683  ; 8.683  ; Fall       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; 7.551  ; 7.551  ; Fall       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; 8.683  ; 8.683  ; Fall       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; 7.833  ; 7.833  ; Fall       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; 7.944  ; 7.944  ; Fall       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; 7.715  ; 7.715  ; Fall       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; 7.177  ; 7.177  ; Fall       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; 7.099  ; 7.099  ; Fall       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; 6.711  ; 6.711  ; Fall       ; operA[2]        ;
++--------------+------------+--------+--------+------------+-----------------+
 
 
 +----------------------------------------------------------------------------+
@@ -239,376 +466,123 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; operA[*]     ; operA[1]   ; -0.111 ; -0.111 ; Rise       ; operA[1]        ;
-;  operA[0]    ; operA[1]   ; -4.996 ; -4.996 ; Rise       ; operA[1]        ;
-;  operA[1]    ; operA[1]   ; -0.111 ; -0.111 ; Rise       ; operA[1]        ;
-;  operA[2]    ; operA[1]   ; -4.875 ; -4.875 ; Rise       ; operA[1]        ;
-;  operA[3]    ; operA[1]   ; -3.896 ; -3.896 ; Rise       ; operA[1]        ;
-;  operA[4]    ; operA[1]   ; -1.014 ; -1.014 ; Rise       ; operA[1]        ;
-;  operA[5]    ; operA[1]   ; -0.889 ; -0.889 ; Rise       ; operA[1]        ;
-;  operA[6]    ; operA[1]   ; -5.213 ; -5.213 ; Rise       ; operA[1]        ;
-;  operA[7]    ; operA[1]   ; -5.812 ; -5.812 ; Rise       ; operA[1]        ;
-; operB[*]     ; operA[1]   ; -5.318 ; -5.318 ; Rise       ; operA[1]        ;
-;  operB[0]    ; operA[1]   ; -5.478 ; -5.478 ; Rise       ; operA[1]        ;
-;  operB[1]    ; operA[1]   ; -6.760 ; -6.760 ; Rise       ; operA[1]        ;
-;  operB[2]    ; operA[1]   ; -7.073 ; -7.073 ; Rise       ; operA[1]        ;
-;  operB[3]    ; operA[1]   ; -6.238 ; -6.238 ; Rise       ; operA[1]        ;
-;  operB[4]    ; operA[1]   ; -6.307 ; -6.307 ; Rise       ; operA[1]        ;
-;  operB[5]    ; operA[1]   ; -6.605 ; -6.605 ; Rise       ; operA[1]        ;
-;  operB[6]    ; operA[1]   ; -6.146 ; -6.146 ; Rise       ; operA[1]        ;
-;  operB[7]    ; operA[1]   ; -5.318 ; -5.318 ; Rise       ; operA[1]        ;
-; operacao[*]  ; operA[1]   ; -5.542 ; -5.542 ; Rise       ; operA[1]        ;
-;  operacao[0] ; operA[1]   ; -7.101 ; -7.101 ; Rise       ; operA[1]        ;
-;  operacao[1] ; operA[1]   ; -6.667 ; -6.667 ; Rise       ; operA[1]        ;
-;  operacao[2] ; operA[1]   ; -6.685 ; -6.685 ; Rise       ; operA[1]        ;
-;  operacao[3] ; operA[1]   ; -5.819 ; -5.819 ; Rise       ; operA[1]        ;
-;  operacao[4] ; operA[1]   ; -5.994 ; -5.994 ; Rise       ; operA[1]        ;
-;  operacao[5] ; operA[1]   ; -6.200 ; -6.200 ; Rise       ; operA[1]        ;
-;  operacao[6] ; operA[1]   ; -6.649 ; -6.649 ; Rise       ; operA[1]        ;
-;  operacao[7] ; operA[1]   ; -5.542 ; -5.542 ; Rise       ; operA[1]        ;
+; operA[*]     ; operA[1]   ; 0.332  ; 0.332  ; Rise       ; operA[1]        ;
+;  operA[0]    ; operA[1]   ; -3.973 ; -3.973 ; Rise       ; operA[1]        ;
+;  operA[1]    ; operA[1]   ; 0.332  ; 0.332  ; Rise       ; operA[1]        ;
+;  operA[2]    ; operA[1]   ; 0.176  ; 0.176  ; Rise       ; operA[1]        ;
+;  operA[3]    ; operA[1]   ; -3.707 ; -3.707 ; Rise       ; operA[1]        ;
+;  operA[4]    ; operA[1]   ; -0.169 ; -0.169 ; Rise       ; operA[1]        ;
+;  operA[5]    ; operA[1]   ; -0.468 ; -0.468 ; Rise       ; operA[1]        ;
+;  operA[6]    ; operA[1]   ; -4.953 ; -4.953 ; Rise       ; operA[1]        ;
+;  operA[7]    ; operA[1]   ; -4.509 ; -4.509 ; Rise       ; operA[1]        ;
+; operB[*]     ; operA[1]   ; -3.987 ; -3.987 ; Rise       ; operA[1]        ;
+;  operB[0]    ; operA[1]   ; -3.987 ; -3.987 ; Rise       ; operA[1]        ;
+;  operB[1]    ; operA[1]   ; -6.261 ; -6.261 ; Rise       ; operA[1]        ;
+;  operB[2]    ; operA[1]   ; -6.161 ; -6.161 ; Rise       ; operA[1]        ;
+;  operB[3]    ; operA[1]   ; -5.604 ; -5.604 ; Rise       ; operA[1]        ;
+;  operB[4]    ; operA[1]   ; -5.333 ; -5.333 ; Rise       ; operA[1]        ;
+;  operB[5]    ; operA[1]   ; -5.770 ; -5.770 ; Rise       ; operA[1]        ;
+;  operB[6]    ; operA[1]   ; -5.393 ; -5.393 ; Rise       ; operA[1]        ;
+;  operB[7]    ; operA[1]   ; -4.157 ; -4.157 ; Rise       ; operA[1]        ;
+; operacao[*]  ; operA[1]   ; -5.385 ; -5.385 ; Rise       ; operA[1]        ;
+;  operacao[0] ; operA[1]   ; -5.827 ; -5.827 ; Rise       ; operA[1]        ;
+;  operacao[1] ; operA[1]   ; -6.414 ; -6.414 ; Rise       ; operA[1]        ;
+;  operacao[2] ; operA[1]   ; -6.187 ; -6.187 ; Rise       ; operA[1]        ;
+;  operacao[3] ; operA[1]   ; -6.077 ; -6.077 ; Rise       ; operA[1]        ;
+;  operacao[4] ; operA[1]   ; -5.729 ; -5.729 ; Rise       ; operA[1]        ;
+;  operacao[5] ; operA[1]   ; -5.385 ; -5.385 ; Rise       ; operA[1]        ;
+;  operacao[6] ; operA[1]   ; -5.608 ; -5.608 ; Rise       ; operA[1]        ;
+;  operacao[7] ; operA[1]   ; -5.506 ; -5.506 ; Rise       ; operA[1]        ;
+; operA[*]     ; operA[2]   ; 0.308  ; 0.308  ; Rise       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; -3.997 ; -3.997 ; Rise       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 0.308  ; 0.308  ; Rise       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 0.152  ; 0.152  ; Rise       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; -3.731 ; -3.731 ; Rise       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; -0.193 ; -0.193 ; Rise       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; -0.492 ; -0.492 ; Rise       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; -4.977 ; -4.977 ; Rise       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; -4.533 ; -4.533 ; Rise       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; -4.011 ; -4.011 ; Rise       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; -4.011 ; -4.011 ; Rise       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; -6.285 ; -6.285 ; Rise       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; -6.185 ; -6.185 ; Rise       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; -5.628 ; -5.628 ; Rise       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; -5.357 ; -5.357 ; Rise       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; -5.794 ; -5.794 ; Rise       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; -5.417 ; -5.417 ; Rise       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; -4.181 ; -4.181 ; Rise       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; -5.409 ; -5.409 ; Rise       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; -5.851 ; -5.851 ; Rise       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; -6.438 ; -6.438 ; Rise       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; -6.211 ; -6.211 ; Rise       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; -6.101 ; -6.101 ; Rise       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; -5.753 ; -5.753 ; Rise       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; -5.409 ; -5.409 ; Rise       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; -5.632 ; -5.632 ; Rise       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; -5.530 ; -5.530 ; Rise       ; operA[2]        ;
+; Cin          ; operA[2]   ; -3.226 ; -3.226 ; Fall       ; operA[2]        ;
+; operA[*]     ; operA[2]   ; 2.068  ; 2.068  ; Fall       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; -3.031 ; -3.031 ; Fall       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; -0.002 ; -0.002 ; Fall       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 0.400  ; 0.400  ; Fall       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; -1.846 ; -1.846 ; Fall       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; 2.068  ; 2.068  ; Fall       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; 1.769  ; 1.769  ; Fall       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; -2.716 ; -2.716 ; Fall       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; -2.272 ; -2.272 ; Fall       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; -1.985 ; -1.985 ; Fall       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; -2.473 ; -2.473 ; Fall       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; -2.153 ; -2.153 ; Fall       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; -2.811 ; -2.811 ; Fall       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; -2.130 ; -2.130 ; Fall       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; -2.100 ; -2.100 ; Fall       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; -1.985 ; -1.985 ; Fall       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; -2.154 ; -2.154 ; Fall       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; -2.055 ; -2.055 ; Fall       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; -3.295 ; -3.295 ; Fall       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; -3.302 ; -3.302 ; Fall       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; -4.514 ; -4.514 ; Fall       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; -3.585 ; -3.585 ; Fall       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; -3.742 ; -3.742 ; Fall       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; -3.563 ; -3.563 ; Fall       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; -3.464 ; -3.464 ; Fall       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; -4.044 ; -4.044 ; Fall       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; -3.295 ; -3.295 ; Fall       ; operA[2]        ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
-+--------------------------------------------------------------------------+
-; Clock to Output Times                                                    ;
-+------------+------------+--------+--------+------------+-----------------+
-; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+------------+------------+--------+--------+------------+-----------------+
-; Result[*]  ; operA[1]   ; 14.892 ; 14.892 ; Rise       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 12.925 ; 12.925 ; Rise       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 13.706 ; 13.706 ; Rise       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 14.892 ; 14.892 ; Rise       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 12.504 ; 12.504 ; Rise       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 13.582 ; 13.582 ; Rise       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 14.093 ; 14.093 ; Rise       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 14.122 ; 14.122 ; Rise       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 13.955 ; 13.955 ; Rise       ; operA[1]        ;
-; Result[*]  ; operA[1]   ; 14.892 ; 14.892 ; Fall       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 12.925 ; 12.925 ; Fall       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 13.706 ; 13.706 ; Fall       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 14.892 ; 14.892 ; Fall       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 12.504 ; 12.504 ; Fall       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 13.582 ; 13.582 ; Fall       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 14.093 ; 14.093 ; Fall       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 14.122 ; 14.122 ; Fall       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 13.955 ; 13.955 ; Fall       ; operA[1]        ;
-+------------+------------+--------+--------+------------+-----------------+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; Result[*]  ; operA[2]   ; 9.149 ; 9.149 ; Fall       ; operA[2]        ;
+;  Result[0] ; operA[2]   ; 8.988 ; 8.988 ; Fall       ; operA[2]        ;
+;  Result[1] ; operA[2]   ; 9.109 ; 9.109 ; Fall       ; operA[2]        ;
+;  Result[2] ; operA[2]   ; 8.839 ; 8.839 ; Fall       ; operA[2]        ;
+;  Result[3] ; operA[2]   ; 8.647 ; 8.647 ; Fall       ; operA[2]        ;
+;  Result[4] ; operA[2]   ; 9.033 ; 9.033 ; Fall       ; operA[2]        ;
+;  Result[5] ; operA[2]   ; 8.867 ; 8.867 ; Fall       ; operA[2]        ;
+;  Result[6] ; operA[2]   ; 9.149 ; 9.149 ; Fall       ; operA[2]        ;
+;  Result[7] ; operA[2]   ; 8.897 ; 8.897 ; Fall       ; operA[2]        ;
++------------+------------+-------+-------+------------+-----------------+
 
 
-+--------------------------------------------------------------------------+
-; Minimum Clock to Output Times                                            ;
-+------------+------------+--------+--------+------------+-----------------+
-; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+------------+------------+--------+--------+------------+-----------------+
-; Result[*]  ; operA[1]   ; 8.175  ; 8.175  ; Rise       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 10.223 ; 10.223 ; Rise       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 9.675  ; 9.675  ; Rise       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 9.046  ; 9.046  ; Rise       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 8.175  ; 8.175  ; Rise       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 8.413  ; 8.413  ; Rise       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 10.071 ; 10.071 ; Rise       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 8.176  ; 8.176  ; Rise       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 10.510 ; 10.510 ; Rise       ; operA[1]        ;
-; Result[*]  ; operA[1]   ; 8.175  ; 8.175  ; Fall       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 11.538 ; 11.538 ; Fall       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 9.675  ; 9.675  ; Fall       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 9.046  ; 9.046  ; Fall       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 8.175  ; 8.175  ; Fall       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 8.413  ; 8.413  ; Fall       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 10.071 ; 10.071 ; Fall       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 8.176  ; 8.176  ; Fall       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 12.734 ; 12.734 ; Fall       ; operA[1]        ;
-+------------+------------+--------+--------+------------+-----------------+
-
-
-+---------------------------------------------------------------+
-; Propagation Delay                                             ;
-+-------------+-------------+--------+--------+--------+--------+
-; Input Port  ; Output Port ; RR     ; RF     ; FR     ; FF     ;
-+-------------+-------------+--------+--------+--------+--------+
-; Cin         ; Result[0]   ; 12.621 ;        ;        ; 12.621 ;
-; Cin         ; Result[7]   ; 13.255 ;        ;        ; 13.255 ;
-; operA[0]    ; Result[0]   ; 13.221 ; 13.221 ; 13.221 ; 13.221 ;
-; operA[0]    ; Result[1]   ; 14.642 ; 14.642 ; 14.642 ; 14.642 ;
-; operA[0]    ; Result[2]   ; 15.828 ; 15.828 ; 15.828 ; 15.828 ;
-; operA[0]    ; Result[3]   ; 13.440 ; 13.440 ; 13.440 ; 13.440 ;
-; operA[0]    ; Result[4]   ; 14.451 ; 14.451 ; 14.451 ; 14.451 ;
-; operA[0]    ; Result[5]   ; 15.029 ; 15.029 ; 15.029 ; 15.029 ;
-; operA[0]    ; Result[6]   ; 14.911 ; 14.911 ; 14.911 ; 14.911 ;
-; operA[0]    ; Result[7]   ; 14.392 ; 14.392 ; 14.392 ; 14.392 ;
-; operA[2]    ; Result[0]   ; 13.315 ; 13.315 ; 13.315 ; 13.315 ;
-; operA[2]    ; Result[1]   ; 14.362 ; 14.362 ; 14.362 ; 14.362 ;
-; operA[2]    ; Result[2]   ; 15.440 ; 15.440 ; 15.440 ; 15.440 ;
-; operA[2]    ; Result[3]   ; 13.052 ; 13.052 ; 13.052 ; 13.052 ;
-; operA[2]    ; Result[4]   ; 14.126 ; 14.126 ; 14.126 ; 14.126 ;
-; operA[2]    ; Result[5]   ; 14.758 ; 14.758 ; 14.758 ; 14.758 ;
-; operA[2]    ; Result[6]   ; 13.706 ; 13.706 ; 13.706 ; 13.706 ;
-; operA[2]    ; Result[7]   ; 13.464 ; 13.603 ; 13.603 ; 13.464 ;
-; operA[3]    ; Result[0]   ; 10.274 ; 10.274 ; 10.274 ; 10.274 ;
-; operA[3]    ; Result[1]   ; 10.377 ; 10.377 ; 10.377 ; 10.377 ;
-; operA[3]    ; Result[2]   ; 12.311 ; 12.311 ; 12.311 ; 12.311 ;
-; operA[3]    ; Result[3]   ; 10.386 ; 10.386 ; 10.386 ; 10.386 ;
-; operA[3]    ; Result[4]   ; 10.899 ; 10.899 ; 10.899 ; 10.899 ;
-; operA[3]    ; Result[5]   ; 11.393 ; 11.393 ; 11.393 ; 11.393 ;
-; operA[3]    ; Result[6]   ; 11.240 ; 11.240 ; 11.240 ; 11.240 ;
-; operA[3]    ; Result[7]   ; 11.466 ; 11.466 ; 11.466 ; 11.466 ;
-; operA[4]    ; Result[0]   ;        ; 8.218  ; 8.218  ;        ;
-; operA[4]    ; Result[1]   ;        ; 7.767  ; 7.767  ;        ;
-; operA[4]    ; Result[2]   ;        ; 9.667  ; 9.667  ;        ;
-; operA[4]    ; Result[3]   ;        ; 8.042  ; 8.042  ;        ;
-; operA[4]    ; Result[4]   ;        ; 8.277  ; 8.277  ;        ;
-; operA[4]    ; Result[5]   ;        ; 8.783  ; 8.783  ;        ;
-; operA[4]    ; Result[6]   ;        ; 8.617  ; 8.617  ;        ;
-; operA[4]    ; Result[7]   ;        ; 9.103  ; 9.103  ;        ;
-; operA[5]    ; Result[0]   ;        ; 8.093  ; 8.093  ;        ;
-; operA[5]    ; Result[1]   ;        ; 7.642  ; 7.642  ;        ;
-; operA[5]    ; Result[2]   ;        ; 9.542  ; 9.542  ;        ;
-; operA[5]    ; Result[3]   ;        ; 7.917  ; 7.917  ;        ;
-; operA[5]    ; Result[4]   ;        ; 8.152  ; 8.152  ;        ;
-; operA[5]    ; Result[5]   ;        ; 8.658  ; 8.658  ;        ;
-; operA[5]    ; Result[6]   ;        ; 8.492  ; 8.492  ;        ;
-; operA[5]    ; Result[7]   ;        ; 8.978  ; 8.978  ;        ;
-; operA[6]    ; Result[0]   ;        ; 12.417 ; 12.417 ;        ;
-; operA[6]    ; Result[1]   ;        ; 11.966 ; 11.966 ;        ;
-; operA[6]    ; Result[2]   ;        ; 13.866 ; 13.866 ;        ;
-; operA[6]    ; Result[3]   ;        ; 12.241 ; 12.241 ;        ;
-; operA[6]    ; Result[4]   ;        ; 12.476 ; 12.476 ;        ;
-; operA[6]    ; Result[5]   ;        ; 12.982 ; 12.982 ;        ;
-; operA[6]    ; Result[6]   ;        ; 12.816 ; 12.816 ;        ;
-; operA[6]    ; Result[7]   ;        ; 13.302 ; 13.302 ;        ;
-; operA[7]    ; Result[0]   ;        ; 13.016 ; 13.016 ;        ;
-; operA[7]    ; Result[1]   ;        ; 12.565 ; 12.565 ;        ;
-; operA[7]    ; Result[2]   ;        ; 14.465 ; 14.465 ;        ;
-; operA[7]    ; Result[3]   ;        ; 12.840 ; 12.840 ;        ;
-; operA[7]    ; Result[4]   ;        ; 13.075 ; 13.075 ;        ;
-; operA[7]    ; Result[5]   ;        ; 13.581 ; 13.581 ;        ;
-; operA[7]    ; Result[6]   ;        ; 13.415 ; 13.415 ;        ;
-; operA[7]    ; Result[7]   ;        ; 13.901 ; 13.901 ;        ;
-; operB[0]    ; Result[0]   ; 14.631 ; 14.631 ; 14.631 ; 14.631 ;
-; operB[0]    ; Result[1]   ; 13.973 ; 13.973 ; 13.973 ; 13.973 ;
-; operB[0]    ; Result[2]   ; 15.868 ; 15.868 ; 15.868 ; 15.868 ;
-; operB[0]    ; Result[3]   ; 13.497 ; 13.497 ; 13.497 ; 13.497 ;
-; operB[0]    ; Result[4]   ; 14.850 ; 14.850 ; 14.850 ; 14.850 ;
-; operB[0]    ; Result[5]   ; 15.486 ; 15.486 ; 15.486 ; 15.486 ;
-; operB[0]    ; Result[6]   ; 15.824 ; 15.824 ; 15.824 ; 15.824 ;
-; operB[0]    ; Result[7]   ; 16.841 ; 16.841 ; 16.841 ; 16.841 ;
-; operB[1]    ; Result[0]   ; 12.702 ; 12.702 ; 12.702 ; 12.702 ;
-; operB[1]    ; Result[1]   ; 13.748 ; 13.748 ; 13.748 ; 13.748 ;
-; operB[1]    ; Result[2]   ; 15.982 ; 15.982 ; 15.982 ; 15.982 ;
-; operB[1]    ; Result[3]   ; 13.611 ; 13.611 ; 13.611 ; 13.611 ;
-; operB[1]    ; Result[4]   ; 14.964 ; 14.964 ; 14.964 ; 14.964 ;
-; operB[1]    ; Result[5]   ; 15.600 ; 15.600 ; 15.600 ; 15.600 ;
-; operB[1]    ; Result[6]   ; 15.938 ; 15.938 ; 15.938 ; 15.938 ;
-; operB[1]    ; Result[7]   ; 16.529 ; 16.529 ; 16.529 ; 16.529 ;
-; operB[2]    ; Result[1]   ; 13.413 ; 13.413 ; 13.413 ; 13.413 ;
-; operB[2]    ; Result[2]   ; 16.645 ; 16.645 ; 16.645 ; 16.645 ;
-; operB[2]    ; Result[3]   ; 14.589 ; 14.589 ; 14.589 ; 14.589 ;
-; operB[2]    ; Result[4]   ; 15.942 ; 15.942 ; 15.942 ; 15.942 ;
-; operB[2]    ; Result[5]   ; 16.578 ; 16.578 ; 16.578 ; 16.578 ;
-; operB[2]    ; Result[6]   ; 16.916 ; 16.916 ; 16.916 ; 16.916 ;
-; operB[2]    ; Result[7]   ; 16.851 ; 16.851 ; 16.851 ; 16.851 ;
-; operB[3]    ; Result[2]   ; 12.682 ;        ;        ; 12.682 ;
-; operB[3]    ; Result[3]   ; 13.386 ; 13.386 ; 13.386 ; 13.386 ;
-; operB[3]    ; Result[4]   ; 15.079 ; 15.079 ; 15.079 ; 15.079 ;
-; operB[3]    ; Result[5]   ; 15.715 ; 15.715 ; 15.715 ; 15.715 ;
-; operB[3]    ; Result[6]   ; 16.053 ; 16.053 ; 16.053 ; 16.053 ;
-; operB[3]    ; Result[7]   ; 16.232 ; 16.232 ; 16.232 ; 16.232 ;
-; operB[4]    ; Result[3]   ; 11.595 ; 11.595 ; 11.595 ; 11.595 ;
-; operB[4]    ; Result[4]   ; 14.240 ; 14.240 ; 14.240 ; 14.240 ;
-; operB[4]    ; Result[5]   ; 15.151 ; 15.151 ; 15.151 ; 15.151 ;
-; operB[4]    ; Result[6]   ; 15.489 ; 15.489 ; 15.489 ; 15.489 ;
-; operB[4]    ; Result[7]   ; 16.265 ; 16.265 ; 16.265 ; 16.265 ;
-; operB[5]    ; Result[4]   ; 11.717 ;        ;        ; 11.717 ;
-; operB[5]    ; Result[5]   ; 14.794 ; 14.794 ; 14.794 ; 14.794 ;
-; operB[5]    ; Result[6]   ; 15.475 ; 15.475 ; 15.475 ; 15.475 ;
-; operB[5]    ; Result[7]   ; 16.057 ; 16.057 ; 16.057 ; 16.057 ;
-; operB[6]    ; Result[5]   ; 12.861 ; 12.861 ; 12.861 ; 12.861 ;
-; operB[6]    ; Result[6]   ; 14.957 ; 14.957 ; 14.957 ; 14.957 ;
-; operB[6]    ; Result[7]   ; 15.917 ; 15.917 ; 15.917 ; 15.917 ;
-; operB[7]    ; Result[6]   ; 11.697 ;        ;        ; 11.697 ;
-; operB[7]    ; Result[7]   ; 15.950 ; 15.950 ; 15.950 ; 15.950 ;
-; operacao[0] ; Result[0]   ; 14.555 ; 14.555 ; 14.555 ; 14.555 ;
-; operacao[0] ; Result[1]   ; 13.173 ; 13.173 ; 13.173 ; 13.173 ;
-; operacao[0] ; Result[2]   ; 15.092 ; 15.092 ; 15.092 ; 15.092 ;
-; operacao[0] ; Result[3]   ; 13.120 ; 13.120 ; 13.120 ; 13.120 ;
-; operacao[0] ; Result[4]   ; 14.709 ; 14.709 ; 14.709 ; 14.709 ;
-; operacao[0] ; Result[5]   ; 14.466 ; 14.466 ; 14.466 ; 14.466 ;
-; operacao[0] ; Result[6]   ; 15.318 ; 15.318 ; 15.318 ; 15.318 ;
-; operacao[0] ; Result[7]   ; 16.589 ; 16.589 ; 16.589 ; 16.589 ;
-; operacao[1] ; Result[1]   ; 13.435 ; 13.435 ; 13.435 ; 13.435 ;
-; operacao[1] ; Result[2]   ; 14.658 ; 14.658 ; 14.658 ; 14.658 ;
-; operacao[1] ; Result[3]   ; 12.686 ; 12.686 ; 12.686 ; 12.686 ;
-; operacao[1] ; Result[4]   ; 14.275 ; 14.275 ; 14.275 ; 14.275 ;
-; operacao[1] ; Result[5]   ; 14.032 ; 14.032 ; 14.032 ; 14.032 ;
-; operacao[1] ; Result[6]   ; 14.884 ; 14.884 ; 14.884 ; 14.884 ;
-; operacao[1] ; Result[7]   ; 16.150 ; 16.150 ; 16.150 ; 16.150 ;
-; operacao[2] ; Result[2]   ; 15.148 ; 15.148 ; 15.148 ; 15.148 ;
-; operacao[2] ; Result[3]   ; 12.704 ; 12.704 ; 12.704 ; 12.704 ;
-; operacao[2] ; Result[4]   ; 14.293 ; 14.293 ; 14.293 ; 14.293 ;
-; operacao[2] ; Result[5]   ; 14.050 ; 14.050 ; 14.050 ; 14.050 ;
-; operacao[2] ; Result[6]   ; 14.902 ; 14.902 ; 14.902 ; 14.902 ;
-; operacao[2] ; Result[7]   ; 16.115 ; 16.115 ; 16.115 ; 16.115 ;
-; operacao[3] ; Result[3]   ; 12.988 ; 12.988 ; 12.988 ; 12.988 ;
-; operacao[3] ; Result[4]   ; 13.427 ; 13.427 ; 13.427 ; 13.427 ;
-; operacao[3] ; Result[5]   ; 13.184 ; 13.184 ; 13.184 ; 13.184 ;
-; operacao[3] ; Result[6]   ; 14.036 ; 14.036 ; 14.036 ; 14.036 ;
-; operacao[3] ; Result[7]   ; 15.542 ; 15.542 ; 15.542 ; 15.542 ;
-; operacao[4] ; Result[4]   ; 13.933 ; 13.933 ; 13.933 ; 13.933 ;
-; operacao[4] ; Result[5]   ; 13.359 ; 13.359 ; 13.359 ; 13.359 ;
-; operacao[4] ; Result[6]   ; 14.211 ; 14.211 ; 14.211 ; 14.211 ;
-; operacao[4] ; Result[7]   ; 15.727 ; 15.727 ; 15.727 ; 15.727 ;
-; operacao[5] ; Result[5]   ; 13.981 ; 13.981 ; 13.981 ; 13.981 ;
-; operacao[5] ; Result[6]   ; 14.417 ; 14.417 ; 14.417 ; 14.417 ;
-; operacao[5] ; Result[7]   ; 15.423 ; 15.423 ; 15.423 ; 15.423 ;
-; operacao[6] ; Result[6]   ; 15.255 ; 15.255 ; 15.255 ; 15.255 ;
-; operacao[6] ; Result[7]   ; 16.007 ; 16.007 ; 16.007 ; 16.007 ;
-; operacao[7] ; Result[7]   ; 14.872 ; 14.872 ; 14.872 ; 14.872 ;
-+-------------+-------------+--------+--------+--------+--------+
-
-
-+---------------------------------------------------------------+
-; Minimum Propagation Delay                                     ;
-+-------------+-------------+--------+--------+--------+--------+
-; Input Port  ; Output Port ; RR     ; RF     ; FR     ; FF     ;
-+-------------+-------------+--------+--------+--------+--------+
-; Cin         ; Result[0]   ; 12.621 ;        ;        ; 12.621 ;
-; Cin         ; Result[7]   ; 13.255 ;        ;        ; 13.255 ;
-; operA[0]    ; Result[0]   ; 11.986 ; 11.986 ; 11.986 ; 11.986 ;
-; operA[0]    ; Result[1]   ; 12.543 ; 12.543 ; 12.543 ; 12.543 ;
-; operA[0]    ; Result[2]   ; 14.365 ; 14.365 ; 14.365 ; 14.365 ;
-; operA[0]    ; Result[3]   ; 11.943 ; 11.943 ; 11.943 ; 11.943 ;
-; operA[0]    ; Result[4]   ; 13.365 ; 13.365 ; 13.365 ; 13.365 ;
-; operA[0]    ; Result[5]   ; 13.730 ; 13.730 ; 13.730 ; 13.730 ;
-; operA[0]    ; Result[6]   ; 13.181 ; 13.181 ; 13.181 ; 13.181 ;
-; operA[0]    ; Result[7]   ; 13.116 ; 13.116 ; 13.116 ; 13.116 ;
-; operA[2]    ; Result[0]   ; 11.325 ; 11.325 ; 11.325 ; 11.325 ;
-; operA[2]    ; Result[1]   ; 12.267 ; 12.267 ; 12.267 ; 12.267 ;
-; operA[2]    ; Result[2]   ; 13.694 ; 13.694 ; 13.694 ; 13.694 ;
-; operA[2]    ; Result[3]   ; 12.160 ; 12.160 ; 12.160 ; 12.160 ;
-; operA[2]    ; Result[4]   ; 12.989 ; 12.989 ; 12.989 ; 12.989 ;
-; operA[2]    ; Result[5]   ; 13.006 ; 13.006 ; 13.006 ; 13.006 ;
-; operA[2]    ; Result[6]   ; 12.787 ; 12.787 ; 12.787 ; 12.787 ;
-; operA[2]    ; Result[7]   ; 12.332 ; 12.332 ; 12.332 ; 12.332 ;
-; operA[3]    ; Result[0]   ; 10.274 ; 10.274 ; 10.274 ; 10.274 ;
-; operA[3]    ; Result[1]   ; 10.377 ; 10.377 ; 10.377 ; 10.377 ;
-; operA[3]    ; Result[2]   ; 12.311 ; 12.311 ; 12.311 ; 12.311 ;
-; operA[3]    ; Result[3]   ; 10.386 ; 10.386 ; 10.386 ; 10.386 ;
-; operA[3]    ; Result[4]   ; 10.899 ; 10.899 ; 10.899 ; 10.899 ;
-; operA[3]    ; Result[5]   ; 11.393 ; 11.393 ; 11.393 ; 11.393 ;
-; operA[3]    ; Result[6]   ; 11.240 ; 11.240 ; 11.240 ; 11.240 ;
-; operA[3]    ; Result[7]   ; 11.466 ; 11.466 ; 11.466 ; 11.466 ;
-; operA[4]    ; Result[0]   ;        ; 8.218  ; 8.218  ;        ;
-; operA[4]    ; Result[1]   ;        ; 7.767  ; 7.767  ;        ;
-; operA[4]    ; Result[2]   ;        ; 9.667  ; 9.667  ;        ;
-; operA[4]    ; Result[3]   ;        ; 8.042  ; 8.042  ;        ;
-; operA[4]    ; Result[4]   ;        ; 8.277  ; 8.277  ;        ;
-; operA[4]    ; Result[5]   ;        ; 8.783  ; 8.783  ;        ;
-; operA[4]    ; Result[6]   ;        ; 8.617  ; 8.617  ;        ;
-; operA[4]    ; Result[7]   ;        ; 9.103  ; 9.103  ;        ;
-; operA[5]    ; Result[0]   ;        ; 8.093  ; 8.093  ;        ;
-; operA[5]    ; Result[1]   ;        ; 7.642  ; 7.642  ;        ;
-; operA[5]    ; Result[2]   ;        ; 9.542  ; 9.542  ;        ;
-; operA[5]    ; Result[3]   ;        ; 7.917  ; 7.917  ;        ;
-; operA[5]    ; Result[4]   ;        ; 8.152  ; 8.152  ;        ;
-; operA[5]    ; Result[5]   ;        ; 8.658  ; 8.658  ;        ;
-; operA[5]    ; Result[6]   ;        ; 8.492  ; 8.492  ;        ;
-; operA[5]    ; Result[7]   ;        ; 8.978  ; 8.978  ;        ;
-; operA[6]    ; Result[0]   ;        ; 12.417 ; 12.417 ;        ;
-; operA[6]    ; Result[1]   ;        ; 11.966 ; 11.966 ;        ;
-; operA[6]    ; Result[2]   ;        ; 13.866 ; 13.866 ;        ;
-; operA[6]    ; Result[3]   ;        ; 12.241 ; 12.241 ;        ;
-; operA[6]    ; Result[4]   ;        ; 12.476 ; 12.476 ;        ;
-; operA[6]    ; Result[5]   ;        ; 12.982 ; 12.982 ;        ;
-; operA[6]    ; Result[6]   ;        ; 12.816 ; 12.816 ;        ;
-; operA[6]    ; Result[7]   ;        ; 13.302 ; 13.302 ;        ;
-; operA[7]    ; Result[0]   ;        ; 13.016 ; 13.016 ;        ;
-; operA[7]    ; Result[1]   ;        ; 12.565 ; 12.565 ;        ;
-; operA[7]    ; Result[2]   ;        ; 14.465 ; 14.465 ;        ;
-; operA[7]    ; Result[3]   ;        ; 12.840 ; 12.840 ;        ;
-; operA[7]    ; Result[4]   ;        ; 13.075 ; 13.075 ;        ;
-; operA[7]    ; Result[5]   ;        ; 13.581 ; 13.581 ;        ;
-; operA[7]    ; Result[6]   ;        ; 13.415 ; 13.415 ;        ;
-; operA[7]    ; Result[7]   ;        ; 13.901 ; 13.901 ;        ;
-; operB[0]    ; Result[0]   ; 11.644 ; 12.124 ; 12.124 ; 11.644 ;
-; operB[0]    ; Result[1]   ; 10.470 ; 11.651 ; 11.651 ; 10.470 ;
-; operB[0]    ; Result[2]   ; 14.087 ; 14.087 ; 14.087 ; 14.087 ;
-; operB[0]    ; Result[3]   ; 11.642 ; 11.642 ; 11.642 ; 11.642 ;
-; operB[0]    ; Result[4]   ; 12.975 ; 12.975 ; 12.975 ; 12.975 ;
-; operB[0]    ; Result[5]   ; 13.144 ; 13.144 ; 13.144 ; 13.144 ;
-; operB[0]    ; Result[6]   ; 13.261 ; 13.261 ; 13.261 ; 13.261 ;
-; operB[0]    ; Result[7]   ; 14.144 ; 14.144 ; 14.144 ; 14.144 ;
-; operB[1]    ; Result[0]   ; 12.702 ; 12.702 ; 12.702 ; 12.702 ;
-; operB[1]    ; Result[1]   ; 11.534 ; 11.534 ; 11.534 ; 11.534 ;
-; operB[1]    ; Result[2]   ; 12.679 ; 13.775 ; 13.775 ; 12.679 ;
-; operB[1]    ; Result[3]   ; 11.841 ; 11.841 ; 11.841 ; 11.841 ;
-; operB[1]    ; Result[4]   ; 12.663 ; 12.663 ; 12.663 ; 12.663 ;
-; operB[1]    ; Result[5]   ; 13.390 ; 13.390 ; 13.390 ; 13.390 ;
-; operB[1]    ; Result[6]   ; 13.142 ; 13.142 ; 13.142 ; 13.142 ;
-; operB[1]    ; Result[7]   ; 14.258 ; 14.258 ; 14.258 ; 14.258 ;
-; operB[2]    ; Result[1]   ; 13.413 ; 13.413 ; 13.413 ; 13.413 ;
-; operB[2]    ; Result[2]   ; 13.782 ; 13.782 ; 13.782 ; 13.782 ;
-; operB[2]    ; Result[3]   ; 11.962 ; 12.718 ; 12.718 ; 11.962 ;
-; operB[2]    ; Result[4]   ; 12.985 ; 12.985 ; 12.985 ; 12.985 ;
-; operB[2]    ; Result[5]   ; 13.981 ; 13.981 ; 13.981 ; 13.981 ;
-; operB[2]    ; Result[6]   ; 13.464 ; 13.464 ; 13.464 ; 13.464 ;
-; operB[2]    ; Result[7]   ; 15.236 ; 15.236 ; 15.236 ; 15.236 ;
-; operB[3]    ; Result[2]   ; 12.682 ;        ;        ; 12.682 ;
-; operB[3]    ; Result[3]   ; 11.554 ; 11.554 ; 11.554 ; 11.554 ;
-; operB[3]    ; Result[4]   ; 11.468 ; 12.344 ; 12.344 ; 11.468 ;
-; operB[3]    ; Result[5]   ; 13.418 ; 13.418 ; 13.418 ; 13.418 ;
-; operB[3]    ; Result[6]   ; 12.823 ; 12.823 ; 12.823 ; 12.823 ;
-; operB[3]    ; Result[7]   ; 14.373 ; 14.373 ; 14.373 ; 14.373 ;
-; operB[4]    ; Result[3]   ; 11.595 ; 11.595 ; 11.595 ; 11.595 ;
-; operB[4]    ; Result[4]   ; 12.084 ; 12.084 ; 12.084 ; 12.084 ;
-; operB[4]    ; Result[5]   ; 12.054 ; 13.068 ; 13.068 ; 12.054 ;
-; operB[4]    ; Result[6]   ; 12.878 ; 12.878 ; 12.878 ; 12.878 ;
-; operB[4]    ; Result[7]   ; 13.809 ; 13.809 ; 13.809 ; 13.809 ;
-; operB[5]    ; Result[4]   ; 11.717 ;        ;        ; 11.717 ;
-; operB[5]    ; Result[5]   ; 12.501 ; 12.501 ; 12.501 ; 12.501 ;
-; operB[5]    ; Result[6]   ; 11.482 ; 12.659 ; 12.659 ; 11.482 ;
-; operB[5]    ; Result[7]   ; 13.795 ; 13.795 ; 13.795 ; 13.795 ;
-; operB[6]    ; Result[5]   ; 12.861 ; 12.861 ; 12.861 ; 12.861 ;
-; operB[6]    ; Result[6]   ; 12.215 ; 12.215 ; 12.215 ; 12.215 ;
-; operB[6]    ; Result[7]   ; 12.713 ; 13.589 ; 13.589 ; 12.713 ;
-; operB[7]    ; Result[6]   ; 11.697 ;        ;        ; 11.697 ;
-; operB[7]    ; Result[7]   ; 12.952 ; 12.952 ; 12.952 ; 12.952 ;
-; operacao[0] ; Result[0]   ; 12.569 ; 13.129 ; 13.129 ; 12.569 ;
-; operacao[0] ; Result[1]   ; 12.763 ; 12.763 ; 12.763 ; 12.763 ;
-; operacao[0] ; Result[2]   ; 15.059 ; 15.059 ; 15.059 ; 15.059 ;
-; operacao[0] ; Result[3]   ; 12.897 ; 12.897 ; 12.897 ; 12.897 ;
-; operacao[0] ; Result[4]   ; 14.050 ; 14.050 ; 14.050 ; 14.050 ;
-; operacao[0] ; Result[5]   ; 13.981 ; 13.981 ; 13.981 ; 13.981 ;
-; operacao[0] ; Result[6]   ; 14.098 ; 14.098 ; 14.098 ; 14.098 ;
-; operacao[0] ; Result[7]   ; 15.923 ; 15.923 ; 15.923 ; 15.923 ;
-; operacao[1] ; Result[1]   ; 12.012 ; 12.012 ; 12.012 ; 12.012 ;
-; operacao[1] ; Result[2]   ; 14.620 ; 14.620 ; 14.620 ; 14.620 ;
-; operacao[1] ; Result[3]   ; 12.458 ; 12.458 ; 12.458 ; 12.458 ;
-; operacao[1] ; Result[4]   ; 13.611 ; 13.611 ; 13.611 ; 13.611 ;
-; operacao[1] ; Result[5]   ; 13.542 ; 13.542 ; 13.542 ; 13.542 ;
-; operacao[1] ; Result[6]   ; 13.659 ; 13.659 ; 13.659 ; 13.659 ;
-; operacao[1] ; Result[7]   ; 15.489 ; 15.489 ; 15.489 ; 15.489 ;
-; operacao[2] ; Result[2]   ; 14.268 ; 14.268 ; 14.268 ; 14.268 ;
-; operacao[2] ; Result[3]   ; 12.423 ; 12.423 ; 12.423 ; 12.423 ;
-; operacao[2] ; Result[4]   ; 13.576 ; 13.576 ; 13.576 ; 13.576 ;
-; operacao[2] ; Result[5]   ; 13.507 ; 13.507 ; 13.507 ; 13.507 ;
-; operacao[2] ; Result[6]   ; 13.624 ; 13.624 ; 13.624 ; 13.624 ;
-; operacao[2] ; Result[7]   ; 15.507 ; 15.507 ; 15.507 ; 15.507 ;
-; operacao[3] ; Result[3]   ; 11.522 ; 11.522 ; 11.522 ; 11.522 ;
-; operacao[3] ; Result[4]   ; 13.003 ; 13.003 ; 13.003 ; 13.003 ;
-; operacao[3] ; Result[5]   ; 12.934 ; 12.934 ; 12.934 ; 12.934 ;
-; operacao[3] ; Result[6]   ; 13.051 ; 13.051 ; 13.051 ; 13.051 ;
-; operacao[3] ; Result[7]   ; 14.641 ; 14.641 ; 14.641 ; 14.641 ;
-; operacao[4] ; Result[4]   ; 12.788 ; 12.788 ; 12.788 ; 12.788 ;
-; operacao[4] ; Result[5]   ; 13.119 ; 13.119 ; 13.119 ; 13.119 ;
-; operacao[4] ; Result[6]   ; 13.236 ; 13.236 ; 13.236 ; 13.236 ;
-; operacao[4] ; Result[7]   ; 14.816 ; 14.816 ; 14.816 ; 14.816 ;
-; operacao[5] ; Result[5]   ; 12.499 ; 12.499 ; 12.499 ; 12.499 ;
-; operacao[5] ; Result[6]   ; 12.932 ; 12.932 ; 12.932 ; 12.932 ;
-; operacao[5] ; Result[7]   ; 15.022 ; 15.022 ; 15.022 ; 15.022 ;
-; operacao[6] ; Result[6]   ; 12.922 ; 12.922 ; 12.922 ; 12.922 ;
-; operacao[6] ; Result[7]   ; 15.471 ; 15.471 ; 15.471 ; 15.471 ;
-; operacao[7] ; Result[7]   ; 12.346 ; 13.058 ; 13.058 ; 12.346 ;
-+-------------+-------------+--------+--------+--------+--------+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; Result[*]  ; operA[2]   ; 8.647 ; 8.647 ; Fall       ; operA[2]        ;
+;  Result[0] ; operA[2]   ; 8.988 ; 8.988 ; Fall       ; operA[2]        ;
+;  Result[1] ; operA[2]   ; 9.109 ; 9.109 ; Fall       ; operA[2]        ;
+;  Result[2] ; operA[2]   ; 8.839 ; 8.839 ; Fall       ; operA[2]        ;
+;  Result[3] ; operA[2]   ; 8.647 ; 8.647 ; Fall       ; operA[2]        ;
+;  Result[4] ; operA[2]   ; 9.033 ; 9.033 ; Fall       ; operA[2]        ;
+;  Result[5] ; operA[2]   ; 8.867 ; 8.867 ; Fall       ; operA[2]        ;
+;  Result[6] ; operA[2]   ; 9.149 ; 9.149 ; Fall       ; operA[2]        ;
+;  Result[7] ; operA[2]   ; 8.897 ; 8.897 ; Fall       ; operA[2]        ;
++------------+------------+-------+-------+------------+-----------------+
 
 
 +-----------------------------------+
@@ -616,17 +590,19 @@ No paths to report.
 +----------+--------+---------------+
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
-; operA[1] ; -0.016 ; -0.016        ;
+; operA[2] ; -0.053 ; -0.053        ;
+; operA[1] ; 0.162  ; 0.000         ;
 +----------+--------+---------------+
 
 
-+----------------------------------+
-; Fast Model Hold Summary          ;
-+----------+-------+---------------+
-; Clock    ; Slack ; End Point TNS ;
-+----------+-------+---------------+
-; operA[1] ; 0.030 ; 0.000         ;
-+----------+-------+---------------+
++-----------------------------------+
+; Fast Model Hold Summary           ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; operA[2] ; -0.515 ; -3.087        ;
+; operA[1] ; -0.154 ; -0.154        ;
++----------+--------+---------------+
 
 
 -------------------------------
@@ -647,27 +623,128 @@ No paths to report.
 ; Clock    ; Slack  ; End Point TNS      ;
 +----------+--------+--------------------+
 ; operA[1] ; -1.222 ; -1.222             ;
+; operA[2] ; -1.222 ; -1.222             ;
 +----------+--------+--------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'operA[1]'                                                                                     ;
-+--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
-; -0.016 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 0.500        ; 1.400      ; 1.508      ;
-; 0.484  ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 1.000        ; 1.400      ; 1.508      ;
-+--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'operA[2]'                                                                                                         ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.053 ; operA[1]              ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; 0.500        ; 2.675      ; 2.879      ;
+; 0.026  ; operA[1]              ; ula_struct:startUla|Result[6] ; operA[1]     ; operA[2]    ; 0.500        ; 2.725      ; 2.807      ;
+; 0.097  ; operA[1]              ; ula_struct:startUla|Result[5] ; operA[1]     ; operA[2]    ; 0.500        ; 2.672      ; 2.716      ;
+; 0.105  ; operA[1]              ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; 0.500        ; 2.726      ; 2.730      ;
+; 0.129  ; operA[2]              ; ula_struct:startUla|Result[6] ; operA[2]     ; operA[2]    ; 0.500        ; 2.725      ; 2.704      ;
+; 0.152  ; ula_struct:startUla|C ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; 0.500        ; 0.945      ; 0.944      ;
+; 0.156  ; operA[2]              ; ula_struct:startUla|C         ; operA[2]     ; operA[2]    ; 0.500        ; 1.724      ; 1.662      ;
+; 0.158  ; ula_struct:startUla|C ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; 0.500        ; 0.951      ; 0.944      ;
+; 0.207  ; operA[2]              ; ula_struct:startUla|Result[5] ; operA[2]     ; operA[2]    ; 0.500        ; 2.672      ; 2.606      ;
+; 0.210  ; operA[1]              ; ula_struct:startUla|Result[1] ; operA[1]     ; operA[2]    ; 0.500        ; 2.725      ; 2.617      ;
+; 0.211  ; operA[1]              ; ula_struct:startUla|C         ; operA[1]     ; operA[2]    ; 0.500        ; 1.724      ; 1.607      ;
+; 0.216  ; ula_struct:startUla|C ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; 0.500        ; 0.996      ; 0.889      ;
+; 0.222  ; ula_struct:startUla|C ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; 0.500        ; 1.002      ; 0.889      ;
+; 0.252  ; operA[1]              ; ula_struct:startUla|Result[4] ; operA[1]     ; operA[2]    ; 0.500        ; 2.726      ; 2.582      ;
+; 0.255  ; operA[1]              ; ula_struct:startUla|Result[3] ; operA[1]     ; operA[2]    ; 0.500        ; 2.675      ; 2.571      ;
+; 0.275  ; operA[1]              ; ula_struct:startUla|Result[2] ; operA[1]     ; operA[2]    ; 0.500        ; 2.729      ; 2.554      ;
+; 0.292  ; operA[2]              ; ula_struct:startUla|Result[4] ; operA[2]     ; operA[2]    ; 0.500        ; 2.726      ; 2.542      ;
+; 0.302  ; operA[2]              ; ula_struct:startUla|Result[1] ; operA[2]     ; operA[2]    ; 0.500        ; 2.725      ; 2.525      ;
+; 0.325  ; operA[2]              ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; 0.500        ; 2.726      ; 2.510      ;
+; 0.337  ; operA[2]              ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; 0.500        ; 2.675      ; 2.489      ;
+; 0.343  ; operA[2]              ; ula_struct:startUla|Result[3] ; operA[2]     ; operA[2]    ; 0.500        ; 2.675      ; 2.483      ;
+; 0.349  ; operA[2]              ; ula_struct:startUla|Result[2] ; operA[2]     ; operA[2]    ; 0.500        ; 2.729      ; 2.480      ;
+; 0.447  ; operA[1]              ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; 1.000        ; 2.675      ; 2.879      ;
+; 0.526  ; operA[1]              ; ula_struct:startUla|Result[6] ; operA[1]     ; operA[2]    ; 1.000        ; 2.725      ; 2.807      ;
+; 0.597  ; operA[1]              ; ula_struct:startUla|Result[5] ; operA[1]     ; operA[2]    ; 1.000        ; 2.672      ; 2.716      ;
+; 0.605  ; operA[1]              ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; 1.000        ; 2.726      ; 2.730      ;
+; 0.629  ; operA[2]              ; ula_struct:startUla|Result[6] ; operA[2]     ; operA[2]    ; 1.000        ; 2.725      ; 2.704      ;
+; 0.656  ; operA[2]              ; ula_struct:startUla|C         ; operA[2]     ; operA[2]    ; 1.000        ; 1.724      ; 1.662      ;
+; 0.707  ; operA[2]              ; ula_struct:startUla|Result[5] ; operA[2]     ; operA[2]    ; 1.000        ; 2.672      ; 2.606      ;
+; 0.710  ; operA[1]              ; ula_struct:startUla|Result[1] ; operA[1]     ; operA[2]    ; 1.000        ; 2.725      ; 2.617      ;
+; 0.711  ; operA[1]              ; ula_struct:startUla|C         ; operA[1]     ; operA[2]    ; 1.000        ; 1.724      ; 1.607      ;
+; 0.752  ; operA[1]              ; ula_struct:startUla|Result[4] ; operA[1]     ; operA[2]    ; 1.000        ; 2.726      ; 2.582      ;
+; 0.755  ; operA[1]              ; ula_struct:startUla|Result[3] ; operA[1]     ; operA[2]    ; 1.000        ; 2.675      ; 2.571      ;
+; 0.775  ; operA[1]              ; ula_struct:startUla|Result[2] ; operA[1]     ; operA[2]    ; 1.000        ; 2.729      ; 2.554      ;
+; 0.792  ; operA[2]              ; ula_struct:startUla|Result[4] ; operA[2]     ; operA[2]    ; 1.000        ; 2.726      ; 2.542      ;
+; 0.802  ; operA[2]              ; ula_struct:startUla|Result[1] ; operA[2]     ; operA[2]    ; 1.000        ; 2.725      ; 2.525      ;
+; 0.825  ; operA[2]              ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; 1.000        ; 2.726      ; 2.510      ;
+; 0.837  ; operA[2]              ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; 1.000        ; 2.675      ; 2.489      ;
+; 0.843  ; operA[2]              ; ula_struct:startUla|Result[3] ; operA[2]     ; operA[2]    ; 1.000        ; 2.675      ; 2.483      ;
+; 0.849  ; operA[2]              ; ula_struct:startUla|Result[2] ; operA[2]     ; operA[2]    ; 1.000        ; 2.729      ; 2.480      ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'operA[1]'                                                                                     ;
+; Fast Model Setup: 'operA[1]'                                                                                    ;
 +-------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
-; 0.030 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 0.000        ; 1.400      ; 1.430      ;
-; 0.530 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; -0.500       ; 1.400      ; 1.430      ;
+; 0.162 ; operA[2]  ; ula_struct:startUla|C ; operA[2]     ; operA[1]    ; 0.500        ; 1.730      ; 1.662      ;
+; 0.217 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 0.500        ; 1.730      ; 1.607      ;
+; 0.662 ; operA[2]  ; ula_struct:startUla|C ; operA[2]     ; operA[1]    ; 1.000        ; 1.730      ; 1.662      ;
+; 0.717 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 1.000        ; 1.730      ; 1.607      ;
 +-------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'operA[2]'                                                                                                          ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.515 ; operA[2]              ; ula_struct:startUla|Result[3] ; operA[2]     ; operA[2]    ; 0.000        ; 2.675      ; 2.160      ;
+; -0.436 ; operA[2]              ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; 0.000        ; 2.726      ; 2.290      ;
+; -0.403 ; operA[2]              ; ula_struct:startUla|Result[4] ; operA[2]     ; operA[2]    ; 0.000        ; 2.726      ; 2.323      ;
+; -0.393 ; operA[2]              ; ula_struct:startUla|Result[2] ; operA[2]     ; operA[2]    ; 0.000        ; 2.729      ; 2.336      ;
+; -0.352 ; operA[2]              ; ula_struct:startUla|Result[1] ; operA[2]     ; operA[2]    ; 0.000        ; 2.725      ; 2.373      ;
+; -0.310 ; operA[1]              ; ula_struct:startUla|Result[2] ; operA[1]     ; operA[2]    ; 0.000        ; 2.729      ; 2.419      ;
+; -0.310 ; operA[2]              ; ula_struct:startUla|Result[5] ; operA[2]     ; operA[2]    ; 0.000        ; 2.672      ; 2.362      ;
+; -0.308 ; operA[1]              ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; 0.000        ; 2.726      ; 2.418      ;
+; -0.300 ; operA[1]              ; ula_struct:startUla|Result[4] ; operA[1]     ; operA[2]    ; 0.000        ; 2.726      ; 2.426      ;
+; -0.287 ; operA[2]              ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; 0.000        ; 2.675      ; 2.388      ;
+; -0.269 ; operA[1]              ; ula_struct:startUla|Result[1] ; operA[1]     ; operA[2]    ; 0.000        ; 2.725      ; 2.456      ;
+; -0.243 ; operA[2]              ; ula_struct:startUla|Result[6] ; operA[2]     ; operA[2]    ; 0.000        ; 2.725      ; 2.482      ;
+; -0.229 ; operA[1]              ; ula_struct:startUla|Result[3] ; operA[1]     ; operA[2]    ; 0.000        ; 2.675      ; 2.446      ;
+; -0.204 ; operA[1]              ; ula_struct:startUla|Result[6] ; operA[1]     ; operA[2]    ; 0.000        ; 2.725      ; 2.521      ;
+; -0.187 ; operA[1]              ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; 0.000        ; 2.675      ; 2.488      ;
+; -0.161 ; operA[1]              ; ula_struct:startUla|Result[5] ; operA[1]     ; operA[2]    ; 0.000        ; 2.672      ; 2.511      ;
+; -0.148 ; operA[1]              ; ula_struct:startUla|C         ; operA[1]     ; operA[2]    ; 0.000        ; 1.724      ; 1.576      ;
+; -0.102 ; operA[2]              ; ula_struct:startUla|C         ; operA[2]     ; operA[2]    ; 0.000        ; 1.724      ; 1.622      ;
+; -0.015 ; operA[2]              ; ula_struct:startUla|Result[3] ; operA[2]     ; operA[2]    ; -0.500       ; 2.675      ; 2.160      ;
+; 0.064  ; operA[2]              ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; -0.500       ; 2.726      ; 2.290      ;
+; 0.097  ; operA[2]              ; ula_struct:startUla|Result[4] ; operA[2]     ; operA[2]    ; -0.500       ; 2.726      ; 2.323      ;
+; 0.107  ; operA[2]              ; ula_struct:startUla|Result[2] ; operA[2]     ; operA[2]    ; -0.500       ; 2.729      ; 2.336      ;
+; 0.148  ; operA[2]              ; ula_struct:startUla|Result[1] ; operA[2]     ; operA[2]    ; -0.500       ; 2.725      ; 2.373      ;
+; 0.190  ; operA[1]              ; ula_struct:startUla|Result[2] ; operA[1]     ; operA[2]    ; -0.500       ; 2.729      ; 2.419      ;
+; 0.190  ; operA[2]              ; ula_struct:startUla|Result[5] ; operA[2]     ; operA[2]    ; -0.500       ; 2.672      ; 2.362      ;
+; 0.192  ; operA[1]              ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; -0.500       ; 2.726      ; 2.418      ;
+; 0.200  ; operA[1]              ; ula_struct:startUla|Result[4] ; operA[1]     ; operA[2]    ; -0.500       ; 2.726      ; 2.426      ;
+; 0.213  ; operA[2]              ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; -0.500       ; 2.675      ; 2.388      ;
+; 0.231  ; operA[1]              ; ula_struct:startUla|Result[1] ; operA[1]     ; operA[2]    ; -0.500       ; 2.725      ; 2.456      ;
+; 0.257  ; operA[2]              ; ula_struct:startUla|Result[6] ; operA[2]     ; operA[2]    ; -0.500       ; 2.725      ; 2.482      ;
+; 0.271  ; operA[1]              ; ula_struct:startUla|Result[3] ; operA[1]     ; operA[2]    ; -0.500       ; 2.675      ; 2.446      ;
+; 0.296  ; operA[1]              ; ula_struct:startUla|Result[6] ; operA[1]     ; operA[2]    ; -0.500       ; 2.725      ; 2.521      ;
+; 0.313  ; operA[1]              ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; -0.500       ; 2.675      ; 2.488      ;
+; 0.339  ; operA[1]              ; ula_struct:startUla|Result[5] ; operA[1]     ; operA[2]    ; -0.500       ; 2.672      ; 2.511      ;
+; 0.352  ; operA[1]              ; ula_struct:startUla|C         ; operA[1]     ; operA[2]    ; -0.500       ; 1.724      ; 1.576      ;
+; 0.387  ; ula_struct:startUla|C ; ula_struct:startUla|Result[0] ; operA[2]     ; operA[2]    ; -0.500       ; 1.002      ; 0.889      ;
+; 0.393  ; ula_struct:startUla|C ; ula_struct:startUla|Result[0] ; operA[1]     ; operA[2]    ; -0.500       ; 0.996      ; 0.889      ;
+; 0.398  ; operA[2]              ; ula_struct:startUla|C         ; operA[2]     ; operA[2]    ; -0.500       ; 1.724      ; 1.622      ;
+; 0.493  ; ula_struct:startUla|C ; ula_struct:startUla|N         ; operA[2]     ; operA[2]    ; -0.500       ; 0.951      ; 0.944      ;
+; 0.499  ; ula_struct:startUla|C ; ula_struct:startUla|N         ; operA[1]     ; operA[2]    ; -0.500       ; 0.945      ; 0.944      ;
++--------+-----------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'operA[1]'                                                                                      ;
++--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
+; -0.154 ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; 0.000        ; 1.730      ; 1.576      ;
+; -0.108 ; operA[2]  ; ula_struct:startUla|C ; operA[2]     ; operA[1]    ; 0.000        ; 1.730      ; 1.622      ;
+; 0.346  ; operA[1]  ; ula_struct:startUla|C ; operA[1]     ; operA[1]    ; -0.500       ; 1.730      ; 1.576      ;
+; 0.392  ; operA[2]  ; ula_struct:startUla|C ; operA[2]     ; operA[1]    ; -0.500       ; 1.730      ; 1.622      ;
++--------+-----------+-----------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------+
@@ -680,52 +757,174 @@ No paths to report.
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; operA[1]|combout        ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Fall       ; startUla|C|datac        ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Fall       ; startUla|C|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux0~0|combout ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux0~0|combout ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux0~0|datad   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux0~0|datad   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Fall       ; startUla|Mux0~1|combout ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Fall       ; startUla|Mux0~1|combout ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux0~1|datad   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux0~1|datad   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux4~0|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux4~0|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux4~0|datac   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux4~0|datac   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Fall       ; startUla|Mux4~1|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Fall       ; startUla|Mux4~1|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; startUla|Mux4~1|datad   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; startUla|Mux4~1|datad   ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[1] ; Rise       ; ula_struct:startUla|C   ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[1] ; Rise       ; ula_struct:startUla|C   ;
 +--------+--------------+----------------+------------------+----------+------------+-------------------------+
 
 
-+--------------------------------------------------------------------------+
-; Setup Times                                                              ;
-+--------------+------------+-------+-------+------------+-----------------+
-; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+--------------+------------+-------+-------+------------+-----------------+
-; operA[*]     ; operA[1]   ; 3.833 ; 3.833 ; Rise       ; operA[1]        ;
-;  operA[0]    ; operA[1]   ; 3.833 ; 3.833 ; Rise       ; operA[1]        ;
-;  operA[1]    ; operA[1]   ; 0.516 ; 0.516 ; Rise       ; operA[1]        ;
-;  operA[2]    ; operA[1]   ; 3.263 ; 3.263 ; Rise       ; operA[1]        ;
-;  operA[3]    ; operA[1]   ; 2.969 ; 2.969 ; Rise       ; operA[1]        ;
-;  operA[4]    ; operA[1]   ; 0.878 ; 0.878 ; Rise       ; operA[1]        ;
-;  operA[5]    ; operA[1]   ; 0.807 ; 0.807 ; Rise       ; operA[1]        ;
-;  operA[6]    ; operA[1]   ; 3.494 ; 3.494 ; Rise       ; operA[1]        ;
-;  operA[7]    ; operA[1]   ; 3.811 ; 3.811 ; Rise       ; operA[1]        ;
-; operB[*]     ; operA[1]   ; 4.331 ; 4.331 ; Rise       ; operA[1]        ;
-;  operB[0]    ; operA[1]   ; 4.016 ; 4.016 ; Rise       ; operA[1]        ;
-;  operB[1]    ; operA[1]   ; 4.088 ; 4.088 ; Rise       ; operA[1]        ;
-;  operB[2]    ; operA[1]   ; 4.331 ; 4.331 ; Rise       ; operA[1]        ;
-;  operB[3]    ; operA[1]   ; 3.927 ; 3.927 ; Rise       ; operA[1]        ;
-;  operB[4]    ; operA[1]   ; 3.869 ; 3.869 ; Rise       ; operA[1]        ;
-;  operB[5]    ; operA[1]   ; 4.010 ; 4.010 ; Rise       ; operA[1]        ;
-;  operB[6]    ; operA[1]   ; 3.803 ; 3.803 ; Rise       ; operA[1]        ;
-;  operB[7]    ; operA[1]   ; 3.923 ; 3.923 ; Rise       ; operA[1]        ;
-; operacao[*]  ; operA[1]   ; 4.344 ; 4.344 ; Rise       ; operA[1]        ;
-;  operacao[0] ; operA[1]   ; 4.344 ; 4.344 ; Rise       ; operA[1]        ;
-;  operacao[1] ; operA[1]   ; 4.043 ; 4.043 ; Rise       ; operA[1]        ;
-;  operacao[2] ; operA[1]   ; 4.048 ; 4.048 ; Rise       ; operA[1]        ;
-;  operacao[3] ; operA[1]   ; 3.659 ; 3.659 ; Rise       ; operA[1]        ;
-;  operacao[4] ; operA[1]   ; 3.737 ; 3.737 ; Rise       ; operA[1]        ;
-;  operacao[5] ; operA[1]   ; 3.828 ; 3.828 ; Rise       ; operA[1]        ;
-;  operacao[6] ; operA[1]   ; 4.085 ; 4.085 ; Rise       ; operA[1]        ;
-;  operacao[7] ; operA[1]   ; 3.520 ; 3.520 ; Rise       ; operA[1]        ;
-+--------------+------------+-------+-------+------------+-----------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'operA[2]'                                                                           ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                           ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; operA[2] ; Rise       ; operA[2]                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; operA[2]|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; operA[2]|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|C|datac                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|C|datac                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux14~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux14~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; startUla|Mux14~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; startUla|Mux14~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux14~1clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux14~1clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux14~1clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux14~1clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux14~1|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux14~1|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux14~1|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux14~1|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; startUla|Mux4~0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; startUla|Mux4~0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; startUla|Mux4~0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; startUla|Mux4~0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Mux4~1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Mux4~1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; startUla|Mux4~1|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; startUla|Mux4~1|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|N|datad                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|N|datad                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[0]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[0]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[1]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[1]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[2]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[2]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[3]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[3]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[4]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[4]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[5]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[5]|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; startUla|Result[6]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; startUla|Result[6]|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Rise       ; ula_struct:startUla|C            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Rise       ; ula_struct:startUla|C            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|N            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|N            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[1]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[1]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[2]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[2]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[3]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[3]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[4]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[4]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[5]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[5]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; operA[2] ; Fall       ; ula_struct:startUla|Result[6]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; operA[2] ; Fall       ; ula_struct:startUla|Result[6]    ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operA[*]     ; operA[1]   ; 3.363  ; 3.363  ; Rise       ; operA[1]        ;
+;  operA[0]    ; operA[1]   ; 2.984  ; 2.984  ; Rise       ; operA[1]        ;
+;  operA[1]    ; operA[1]   ; 0.283  ; 0.283  ; Rise       ; operA[1]        ;
+;  operA[2]    ; operA[1]   ; 0.338  ; 0.338  ; Rise       ; operA[1]        ;
+;  operA[3]    ; operA[1]   ; 3.058  ; 3.058  ; Rise       ; operA[1]        ;
+;  operA[4]    ; operA[1]   ; 0.478  ; 0.478  ; Rise       ; operA[1]        ;
+;  operA[5]    ; operA[1]   ; 0.638  ; 0.638  ; Rise       ; operA[1]        ;
+;  operA[6]    ; operA[1]   ; 3.363  ; 3.363  ; Rise       ; operA[1]        ;
+;  operA[7]    ; operA[1]   ; 3.051  ; 3.051  ; Rise       ; operA[1]        ;
+; operB[*]     ; operA[1]   ; 3.814  ; 3.814  ; Rise       ; operA[1]        ;
+;  operB[0]    ; operA[1]   ; 3.488  ; 3.488  ; Rise       ; operA[1]        ;
+;  operB[1]    ; operA[1]   ; 3.814  ; 3.814  ; Rise       ; operA[1]        ;
+;  operB[2]    ; operA[1]   ; 3.764  ; 3.764  ; Rise       ; operA[1]        ;
+;  operB[3]    ; operA[1]   ; 3.532  ; 3.532  ; Rise       ; operA[1]        ;
+;  operB[4]    ; operA[1]   ; 3.414  ; 3.414  ; Rise       ; operA[1]        ;
+;  operB[5]    ; operA[1]   ; 3.577  ; 3.577  ; Rise       ; operA[1]        ;
+;  operB[6]    ; operA[1]   ; 3.408  ; 3.408  ; Rise       ; operA[1]        ;
+;  operB[7]    ; operA[1]   ; 3.200  ; 3.200  ; Rise       ; operA[1]        ;
+; operacao[*]  ; operA[1]   ; 3.861  ; 3.861  ; Rise       ; operA[1]        ;
+;  operacao[0] ; operA[1]   ; 3.629  ; 3.629  ; Rise       ; operA[1]        ;
+;  operacao[1] ; operA[1]   ; 3.861  ; 3.861  ; Rise       ; operA[1]        ;
+;  operacao[2] ; operA[1]   ; 3.770  ; 3.770  ; Rise       ; operA[1]        ;
+;  operacao[3] ; operA[1]   ; 3.698  ; 3.698  ; Rise       ; operA[1]        ;
+;  operacao[4] ; operA[1]   ; 3.575  ; 3.575  ; Rise       ; operA[1]        ;
+;  operacao[5] ; operA[1]   ; 3.397  ; 3.397  ; Rise       ; operA[1]        ;
+;  operacao[6] ; operA[1]   ; 3.483  ; 3.483  ; Rise       ; operA[1]        ;
+;  operacao[7] ; operA[1]   ; 3.443  ; 3.443  ; Rise       ; operA[1]        ;
+; operA[*]     ; operA[2]   ; 3.369  ; 3.369  ; Rise       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; 2.990  ; 2.990  ; Rise       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 0.289  ; 0.289  ; Rise       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 0.344  ; 0.344  ; Rise       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; 3.064  ; 3.064  ; Rise       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; 0.484  ; 0.484  ; Rise       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; 0.644  ; 0.644  ; Rise       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; 3.369  ; 3.369  ; Rise       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; 3.057  ; 3.057  ; Rise       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; 3.820  ; 3.820  ; Rise       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; 3.494  ; 3.494  ; Rise       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; 3.820  ; 3.820  ; Rise       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; 3.770  ; 3.770  ; Rise       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; 3.538  ; 3.538  ; Rise       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; 3.420  ; 3.420  ; Rise       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; 3.583  ; 3.583  ; Rise       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; 3.414  ; 3.414  ; Rise       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; 3.206  ; 3.206  ; Rise       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; 3.867  ; 3.867  ; Rise       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; 3.635  ; 3.635  ; Rise       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; 3.867  ; 3.867  ; Rise       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; 3.776  ; 3.776  ; Rise       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; 3.704  ; 3.704  ; Rise       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; 3.581  ; 3.581  ; Rise       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; 3.403  ; 3.403  ; Rise       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; 3.489  ; 3.489  ; Rise       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; 3.449  ; 3.449  ; Rise       ; operA[2]        ;
+; Cin          ; operA[2]   ; 2.138  ; 2.138  ; Fall       ; operA[2]        ;
+; operA[*]     ; operA[2]   ; 3.021  ; 3.021  ; Fall       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; 2.973  ; 2.973  ; Fall       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 0.553  ; 0.553  ; Fall       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 0.371  ; 0.371  ; Fall       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; 3.021  ; 3.021  ; Fall       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; -0.385 ; -0.385 ; Fall       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; -0.225 ; -0.225 ; Fall       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; 2.500  ; 2.500  ; Fall       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; 2.188  ; 2.188  ; Fall       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; 3.900  ; 3.900  ; Fall       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; 3.565  ; 3.565  ; Fall       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; 3.575  ; 3.575  ; Fall       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; 3.900  ; 3.900  ; Fall       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; 3.818  ; 3.818  ; Fall       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; 3.600  ; 3.600  ; Fall       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; 3.651  ; 3.651  ; Fall       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; 3.381  ; 3.381  ; Fall       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; 3.219  ; 3.219  ; Fall       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; 4.092  ; 4.092  ; Fall       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; 3.594  ; 3.594  ; Fall       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; 4.092  ; 4.092  ; Fall       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; 3.717  ; 3.717  ; Fall       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; 3.740  ; 3.740  ; Fall       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; 3.654  ; 3.654  ; Fall       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; 3.398  ; 3.398  ; Fall       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; 3.363  ; 3.363  ; Fall       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; 3.245  ; 3.245  ; Fall       ; operA[2]        ;
++--------------+------------+--------+--------+------------+-----------------+
 
 
 +----------------------------------------------------------------------------+
@@ -733,33 +932,88 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; operA[*]     ; operA[1]   ; -0.030 ; -0.030 ; Rise       ; operA[1]        ;
-;  operA[0]    ; operA[1]   ; -2.951 ; -2.951 ; Rise       ; operA[1]        ;
-;  operA[1]    ; operA[1]   ; -0.030 ; -0.030 ; Rise       ; operA[1]        ;
-;  operA[2]    ; operA[1]   ; -2.809 ; -2.809 ; Rise       ; operA[1]        ;
-;  operA[3]    ; operA[1]   ; -2.383 ; -2.383 ; Rise       ; operA[1]        ;
-;  operA[4]    ; operA[1]   ; -0.470 ; -0.470 ; Rise       ; operA[1]        ;
-;  operA[5]    ; operA[1]   ; -0.399 ; -0.399 ; Rise       ; operA[1]        ;
-;  operA[6]    ; operA[1]   ; -3.086 ; -3.086 ; Rise       ; operA[1]        ;
-;  operA[7]    ; operA[1]   ; -3.403 ; -3.403 ; Rise       ; operA[1]        ;
-; operB[*]     ; operA[1]   ; -2.979 ; -2.979 ; Rise       ; operA[1]        ;
-;  operB[0]    ; operA[1]   ; -3.042 ; -3.042 ; Rise       ; operA[1]        ;
-;  operB[1]    ; operA[1]   ; -3.680 ; -3.680 ; Rise       ; operA[1]        ;
-;  operB[2]    ; operA[1]   ; -3.923 ; -3.923 ; Rise       ; operA[1]        ;
-;  operB[3]    ; operA[1]   ; -3.519 ; -3.519 ; Rise       ; operA[1]        ;
-;  operB[4]    ; operA[1]   ; -3.461 ; -3.461 ; Rise       ; operA[1]        ;
-;  operB[5]    ; operA[1]   ; -3.602 ; -3.602 ; Rise       ; operA[1]        ;
-;  operB[6]    ; operA[1]   ; -3.395 ; -3.395 ; Rise       ; operA[1]        ;
-;  operB[7]    ; operA[1]   ; -2.979 ; -2.979 ; Rise       ; operA[1]        ;
-; operacao[*]  ; operA[1]   ; -3.112 ; -3.112 ; Rise       ; operA[1]        ;
-;  operacao[0] ; operA[1]   ; -3.936 ; -3.936 ; Rise       ; operA[1]        ;
-;  operacao[1] ; operA[1]   ; -3.635 ; -3.635 ; Rise       ; operA[1]        ;
-;  operacao[2] ; operA[1]   ; -3.640 ; -3.640 ; Rise       ; operA[1]        ;
-;  operacao[3] ; operA[1]   ; -3.251 ; -3.251 ; Rise       ; operA[1]        ;
-;  operacao[4] ; operA[1]   ; -3.329 ; -3.329 ; Rise       ; operA[1]        ;
-;  operacao[5] ; operA[1]   ; -3.420 ; -3.420 ; Rise       ; operA[1]        ;
-;  operacao[6] ; operA[1]   ; -3.677 ; -3.677 ; Rise       ; operA[1]        ;
-;  operacao[7] ; operA[1]   ; -3.112 ; -3.112 ; Rise       ; operA[1]        ;
+; operA[*]     ; operA[1]   ; 0.154  ; 0.154  ; Rise       ; operA[1]        ;
+;  operA[0]    ; operA[1]   ; -2.388 ; -2.388 ; Rise       ; operA[1]        ;
+;  operA[1]    ; operA[1]   ; 0.154  ; 0.154  ; Rise       ; operA[1]        ;
+;  operA[2]    ; operA[1]   ; 0.108  ; 0.108  ; Rise       ; operA[1]        ;
+;  operA[3]    ; operA[1]   ; -2.275 ; -2.275 ; Rise       ; operA[1]        ;
+;  operA[4]    ; operA[1]   ; -0.072 ; -0.072 ; Rise       ; operA[1]        ;
+;  operA[5]    ; operA[1]   ; -0.232 ; -0.232 ; Rise       ; operA[1]        ;
+;  operA[6]    ; operA[1]   ; -2.957 ; -2.957 ; Rise       ; operA[1]        ;
+;  operA[7]    ; operA[1]   ; -2.645 ; -2.645 ; Rise       ; operA[1]        ;
+; operB[*]     ; operA[1]   ; -2.368 ; -2.368 ; Rise       ; operA[1]        ;
+;  operB[0]    ; operA[1]   ; -2.368 ; -2.368 ; Rise       ; operA[1]        ;
+;  operB[1]    ; operA[1]   ; -3.408 ; -3.408 ; Rise       ; operA[1]        ;
+;  operB[2]    ; operA[1]   ; -3.358 ; -3.358 ; Rise       ; operA[1]        ;
+;  operB[3]    ; operA[1]   ; -3.126 ; -3.126 ; Rise       ; operA[1]        ;
+;  operB[4]    ; operA[1]   ; -3.008 ; -3.008 ; Rise       ; operA[1]        ;
+;  operB[5]    ; operA[1]   ; -3.171 ; -3.171 ; Rise       ; operA[1]        ;
+;  operB[6]    ; operA[1]   ; -3.002 ; -3.002 ; Rise       ; operA[1]        ;
+;  operB[7]    ; operA[1]   ; -2.444 ; -2.444 ; Rise       ; operA[1]        ;
+; operacao[*]  ; operA[1]   ; -2.991 ; -2.991 ; Rise       ; operA[1]        ;
+;  operacao[0] ; operA[1]   ; -3.223 ; -3.223 ; Rise       ; operA[1]        ;
+;  operacao[1] ; operA[1]   ; -3.455 ; -3.455 ; Rise       ; operA[1]        ;
+;  operacao[2] ; operA[1]   ; -3.364 ; -3.364 ; Rise       ; operA[1]        ;
+;  operacao[3] ; operA[1]   ; -3.292 ; -3.292 ; Rise       ; operA[1]        ;
+;  operacao[4] ; operA[1]   ; -3.169 ; -3.169 ; Rise       ; operA[1]        ;
+;  operacao[5] ; operA[1]   ; -2.991 ; -2.991 ; Rise       ; operA[1]        ;
+;  operacao[6] ; operA[1]   ; -3.077 ; -3.077 ; Rise       ; operA[1]        ;
+;  operacao[7] ; operA[1]   ; -3.037 ; -3.037 ; Rise       ; operA[1]        ;
+; operA[*]     ; operA[2]   ; 0.148  ; 0.148  ; Rise       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; -2.394 ; -2.394 ; Rise       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 0.148  ; 0.148  ; Rise       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 0.102  ; 0.102  ; Rise       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; -2.281 ; -2.281 ; Rise       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; -0.078 ; -0.078 ; Rise       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; -0.238 ; -0.238 ; Rise       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; -2.963 ; -2.963 ; Rise       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; -2.651 ; -2.651 ; Rise       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; -2.374 ; -2.374 ; Rise       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; -2.374 ; -2.374 ; Rise       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; -3.414 ; -3.414 ; Rise       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; -3.364 ; -3.364 ; Rise       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; -3.132 ; -3.132 ; Rise       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; -3.014 ; -3.014 ; Rise       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; -3.177 ; -3.177 ; Rise       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; -3.008 ; -3.008 ; Rise       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; -2.450 ; -2.450 ; Rise       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; -2.997 ; -2.997 ; Rise       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; -3.229 ; -3.229 ; Rise       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; -3.461 ; -3.461 ; Rise       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; -3.370 ; -3.370 ; Rise       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; -3.298 ; -3.298 ; Rise       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; -3.175 ; -3.175 ; Rise       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; -2.997 ; -2.997 ; Rise       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; -3.083 ; -3.083 ; Rise       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; -3.043 ; -3.043 ; Rise       ; operA[2]        ;
+; Cin          ; operA[2]   ; -1.747 ; -1.747 ; Fall       ; operA[2]        ;
+; operA[*]     ; operA[2]   ; 1.195  ; 1.195  ; Fall       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; -1.653 ; -1.653 ; Fall       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 0.310  ; 0.310  ; Fall       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 0.515  ; 0.515  ; Fall       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; -1.165 ; -1.165 ; Fall       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; 1.195  ; 1.195  ; Fall       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; 1.035  ; 1.035  ; Fall       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; -1.690 ; -1.690 ; Fall       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; -1.378 ; -1.378 ; Fall       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; -1.217 ; -1.217 ; Fall       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; -1.425 ; -1.425 ; Fall       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; -1.301 ; -1.301 ; Fall       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; -1.579 ; -1.579 ; Fall       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; -1.302 ; -1.302 ; Fall       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; -1.273 ; -1.273 ; Fall       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; -1.217 ; -1.217 ; Fall       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; -1.307 ; -1.307 ; Fall       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; -1.269 ; -1.269 ; Fall       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; -1.774 ; -1.774 ; Fall       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; -1.777 ; -1.777 ; Fall       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; -2.255 ; -2.255 ; Fall       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; -1.898 ; -1.898 ; Fall       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; -1.922 ; -1.922 ; Fall       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; -1.911 ; -1.911 ; Fall       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; -1.833 ; -1.833 ; Fall       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; -2.104 ; -2.104 ; Fall       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; -1.774 ; -1.774 ; Fall       ; operA[2]        ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -768,24 +1022,15 @@ No paths to report.
 +------------+------------+-------+-------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
-; Result[*]  ; operA[1]   ; 7.609 ; 7.609 ; Rise       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 6.822 ; 6.822 ; Rise       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 7.160 ; 7.160 ; Rise       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 7.609 ; 7.609 ; Rise       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 6.625 ; 6.625 ; Rise       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 7.091 ; 7.091 ; Rise       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 7.255 ; 7.255 ; Rise       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 7.318 ; 7.318 ; Rise       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 7.246 ; 7.246 ; Rise       ; operA[1]        ;
-; Result[*]  ; operA[1]   ; 7.609 ; 7.609 ; Fall       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 6.822 ; 6.822 ; Fall       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 7.160 ; 7.160 ; Fall       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 7.609 ; 7.609 ; Fall       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 6.625 ; 6.625 ; Fall       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 7.091 ; 7.091 ; Fall       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 7.255 ; 7.255 ; Fall       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 7.318 ; 7.318 ; Fall       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 7.246 ; 7.246 ; Fall       ; operA[1]        ;
+; Result[*]  ; operA[2]   ; 4.817 ; 4.817 ; Fall       ; operA[2]        ;
+;  Result[0] ; operA[2]   ; 4.722 ; 4.722 ; Fall       ; operA[2]        ;
+;  Result[1] ; operA[2]   ; 4.813 ; 4.813 ; Fall       ; operA[2]        ;
+;  Result[2] ; operA[2]   ; 4.665 ; 4.665 ; Fall       ; operA[2]        ;
+;  Result[3] ; operA[2]   ; 4.579 ; 4.579 ; Fall       ; operA[2]        ;
+;  Result[4] ; operA[2]   ; 4.748 ; 4.748 ; Fall       ; operA[2]        ;
+;  Result[5] ; operA[2]   ; 4.675 ; 4.675 ; Fall       ; operA[2]        ;
+;  Result[6] ; operA[2]   ; 4.817 ; 4.817 ; Fall       ; operA[2]        ;
+;  Result[7] ; operA[2]   ; 4.709 ; 4.709 ; Fall       ; operA[2]        ;
 +------------+------------+-------+-------+------------+-----------------+
 
 
@@ -794,362 +1039,120 @@ No paths to report.
 +------------+------------+-------+-------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
-; Result[*]  ; operA[1]   ; 4.053 ; 4.053 ; Rise       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 4.912 ; 4.912 ; Rise       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 4.731 ; 4.731 ; Rise       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 4.403 ; 4.403 ; Rise       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 4.053 ; 4.053 ; Rise       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 4.171 ; 4.171 ; Rise       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 4.830 ; 4.830 ; Rise       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 4.053 ; 4.053 ; Rise       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 5.021 ; 5.021 ; Rise       ; operA[1]        ;
-; Result[*]  ; operA[1]   ; 4.053 ; 4.053 ; Fall       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 6.214 ; 6.214 ; Fall       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 4.731 ; 4.731 ; Fall       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 4.403 ; 4.403 ; Fall       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 4.053 ; 4.053 ; Fall       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 4.171 ; 4.171 ; Fall       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 4.830 ; 4.830 ; Fall       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 4.053 ; 4.053 ; Fall       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 6.693 ; 6.693 ; Fall       ; operA[1]        ;
+; Result[*]  ; operA[2]   ; 4.579 ; 4.579 ; Fall       ; operA[2]        ;
+;  Result[0] ; operA[2]   ; 4.722 ; 4.722 ; Fall       ; operA[2]        ;
+;  Result[1] ; operA[2]   ; 4.813 ; 4.813 ; Fall       ; operA[2]        ;
+;  Result[2] ; operA[2]   ; 4.665 ; 4.665 ; Fall       ; operA[2]        ;
+;  Result[3] ; operA[2]   ; 4.579 ; 4.579 ; Fall       ; operA[2]        ;
+;  Result[4] ; operA[2]   ; 4.748 ; 4.748 ; Fall       ; operA[2]        ;
+;  Result[5] ; operA[2]   ; 4.675 ; 4.675 ; Fall       ; operA[2]        ;
+;  Result[6] ; operA[2]   ; 4.817 ; 4.817 ; Fall       ; operA[2]        ;
+;  Result[7] ; operA[2]   ; 4.709 ; 4.709 ; Fall       ; operA[2]        ;
 +------------+------------+-------+-------+------------+-----------------+
 
 
-+-----------------------------------------------------------+
-; Propagation Delay                                         ;
-+-------------+-------------+-------+-------+-------+-------+
-; Input Port  ; Output Port ; RR    ; RF    ; FR    ; FF    ;
-+-------------+-------------+-------+-------+-------+-------+
-; Cin         ; Result[0]   ; 6.637 ;       ;       ; 6.637 ;
-; Cin         ; Result[7]   ; 6.889 ;       ;       ; 6.889 ;
-; operA[0]    ; Result[0]   ; 6.996 ; 6.996 ; 6.996 ; 6.996 ;
-; operA[0]    ; Result[1]   ; 7.666 ; 7.666 ; 7.666 ; 7.666 ;
-; operA[0]    ; Result[2]   ; 8.115 ; 8.115 ; 8.115 ; 8.115 ;
-; operA[0]    ; Result[3]   ; 7.131 ; 7.131 ; 7.131 ; 7.131 ;
-; operA[0]    ; Result[4]   ; 7.570 ; 7.570 ; 7.570 ; 7.570 ;
-; operA[0]    ; Result[5]   ; 7.761 ; 7.761 ; 7.761 ; 7.761 ;
-; operA[0]    ; Result[6]   ; 7.726 ; 7.726 ; 7.726 ; 7.726 ;
-; operA[0]    ; Result[7]   ; 7.489 ; 7.489 ; 7.489 ; 7.489 ;
-; operA[2]    ; Result[0]   ; 6.966 ; 6.966 ; 6.966 ; 6.966 ;
-; operA[2]    ; Result[1]   ; 7.478 ; 7.478 ; 7.478 ; 7.478 ;
-; operA[2]    ; Result[2]   ; 7.861 ; 7.861 ; 7.861 ; 7.861 ;
-; operA[2]    ; Result[3]   ; 6.877 ; 6.877 ; 6.877 ; 6.877 ;
-; operA[2]    ; Result[4]   ; 7.338 ; 7.338 ; 7.338 ; 7.338 ;
-; operA[2]    ; Result[5]   ; 7.577 ; 7.577 ; 7.577 ; 7.577 ;
-; operA[2]    ; Result[6]   ; 7.153 ; 7.153 ; 7.153 ; 7.153 ;
-; operA[2]    ; Result[7]   ; 7.022 ; 7.080 ; 7.080 ; 7.022 ;
-; operA[3]    ; Result[0]   ; 5.684 ; 5.684 ; 5.684 ; 5.684 ;
-; operA[3]    ; Result[1]   ; 5.742 ; 5.742 ; 5.742 ; 5.742 ;
-; operA[3]    ; Result[2]   ; 6.535 ; 6.535 ; 6.535 ; 6.535 ;
-; operA[3]    ; Result[3]   ; 5.748 ; 5.748 ; 5.748 ; 5.748 ;
-; operA[3]    ; Result[4]   ; 5.960 ; 5.960 ; 5.960 ; 5.960 ;
-; operA[3]    ; Result[5]   ; 6.130 ; 6.130 ; 6.130 ; 6.130 ;
-; operA[3]    ; Result[6]   ; 6.106 ; 6.106 ; 6.106 ; 6.106 ;
-; operA[3]    ; Result[7]   ; 6.168 ; 6.168 ; 6.168 ; 6.168 ;
-; operA[4]    ; Result[0]   ;       ; 4.129 ; 4.129 ;       ;
-; operA[4]    ; Result[1]   ;       ; 3.936 ; 3.936 ;       ;
-; operA[4]    ; Result[2]   ;       ; 4.729 ; 4.729 ;       ;
-; operA[4]    ; Result[3]   ;       ; 4.061 ; 4.061 ;       ;
-; operA[4]    ; Result[4]   ;       ; 4.143 ; 4.143 ;       ;
-; operA[4]    ; Result[5]   ;       ; 4.325 ; 4.325 ;       ;
-; operA[4]    ; Result[6]   ;       ; 4.299 ; 4.299 ;       ;
-; operA[4]    ; Result[7]   ;       ; 4.485 ; 4.485 ;       ;
-; operA[5]    ; Result[0]   ;       ; 4.058 ; 4.058 ;       ;
-; operA[5]    ; Result[1]   ;       ; 3.865 ; 3.865 ;       ;
-; operA[5]    ; Result[2]   ;       ; 4.658 ; 4.658 ;       ;
-; operA[5]    ; Result[3]   ;       ; 3.990 ; 3.990 ;       ;
-; operA[5]    ; Result[4]   ;       ; 4.072 ; 4.072 ;       ;
-; operA[5]    ; Result[5]   ;       ; 4.254 ; 4.254 ;       ;
-; operA[5]    ; Result[6]   ;       ; 4.228 ; 4.228 ;       ;
-; operA[5]    ; Result[7]   ;       ; 4.414 ; 4.414 ;       ;
-; operA[6]    ; Result[0]   ;       ; 6.745 ; 6.745 ;       ;
-; operA[6]    ; Result[1]   ;       ; 6.552 ; 6.552 ;       ;
-; operA[6]    ; Result[2]   ;       ; 7.345 ; 7.345 ;       ;
-; operA[6]    ; Result[3]   ;       ; 6.677 ; 6.677 ;       ;
-; operA[6]    ; Result[4]   ;       ; 6.759 ; 6.759 ;       ;
-; operA[6]    ; Result[5]   ;       ; 6.941 ; 6.941 ;       ;
-; operA[6]    ; Result[6]   ;       ; 6.915 ; 6.915 ;       ;
-; operA[6]    ; Result[7]   ;       ; 7.101 ; 7.101 ;       ;
-; operA[7]    ; Result[0]   ;       ; 7.062 ; 7.062 ;       ;
-; operA[7]    ; Result[1]   ;       ; 6.869 ; 6.869 ;       ;
-; operA[7]    ; Result[2]   ;       ; 7.662 ; 7.662 ;       ;
-; operA[7]    ; Result[3]   ;       ; 6.994 ; 6.994 ;       ;
-; operA[7]    ; Result[4]   ;       ; 7.076 ; 7.076 ;       ;
-; operA[7]    ; Result[5]   ;       ; 7.258 ; 7.258 ;       ;
-; operA[7]    ; Result[6]   ;       ; 7.232 ; 7.232 ;       ;
-; operA[7]    ; Result[7]   ;       ; 7.418 ; 7.418 ;       ;
-; operB[0]    ; Result[0]   ; 7.545 ; 7.545 ; 7.545 ; 7.545 ;
-; operB[0]    ; Result[1]   ; 7.220 ; 7.220 ; 7.220 ; 7.220 ;
-; operB[0]    ; Result[2]   ; 8.010 ; 8.010 ; 8.010 ; 8.010 ;
-; operB[0]    ; Result[3]   ; 7.019 ; 7.019 ; 7.019 ; 7.019 ;
-; operB[0]    ; Result[4]   ; 7.615 ; 7.615 ; 7.615 ; 7.615 ;
-; operB[0]    ; Result[5]   ; 7.840 ; 7.840 ; 7.840 ; 7.840 ;
-; operB[0]    ; Result[6]   ; 8.062 ; 8.062 ; 8.062 ; 8.062 ;
-; operB[0]    ; Result[7]   ; 8.498 ; 8.498 ; 8.498 ; 8.498 ;
-; operB[1]    ; Result[0]   ; 6.725 ; 6.725 ; 6.725 ; 6.725 ;
-; operB[1]    ; Result[1]   ; 7.165 ; 7.165 ; 7.165 ; 7.165 ;
-; operB[1]    ; Result[2]   ; 8.058 ; 8.058 ; 8.058 ; 8.058 ;
-; operB[1]    ; Result[3]   ; 7.067 ; 7.067 ; 7.067 ; 7.067 ;
-; operB[1]    ; Result[4]   ; 7.663 ; 7.663 ; 7.663 ; 7.663 ;
-; operB[1]    ; Result[5]   ; 7.888 ; 7.888 ; 7.888 ; 7.888 ;
-; operB[1]    ; Result[6]   ; 8.110 ; 8.110 ; 8.110 ; 8.110 ;
-; operB[1]    ; Result[7]   ; 8.352 ; 8.352 ; 8.352 ; 8.352 ;
-; operB[2]    ; Result[1]   ; 7.177 ; 7.177 ; 7.177 ; 7.177 ;
-; operB[2]    ; Result[2]   ; 8.503 ; 8.503 ; 8.503 ; 8.503 ;
-; operB[2]    ; Result[3]   ; 7.617 ; 7.617 ; 7.617 ; 7.617 ;
-; operB[2]    ; Result[4]   ; 8.213 ; 8.213 ; 8.213 ; 8.213 ;
-; operB[2]    ; Result[5]   ; 8.438 ; 8.438 ; 8.438 ; 8.438 ;
-; operB[2]    ; Result[6]   ; 8.660 ; 8.660 ; 8.660 ; 8.660 ;
-; operB[2]    ; Result[7]   ; 8.590 ; 8.590 ; 8.590 ; 8.590 ;
-; operB[3]    ; Result[2]   ; 6.754 ;       ;       ; 6.754 ;
-; operB[3]    ; Result[3]   ; 7.098 ; 7.098 ; 7.098 ; 7.098 ;
-; operB[3]    ; Result[4]   ; 7.799 ; 7.799 ; 7.799 ; 7.799 ;
-; operB[3]    ; Result[5]   ; 8.024 ; 8.024 ; 8.024 ; 8.024 ;
-; operB[3]    ; Result[6]   ; 8.246 ; 8.246 ; 8.246 ; 8.246 ;
-; operB[3]    ; Result[7]   ; 8.296 ; 8.296 ; 8.296 ; 8.296 ;
-; operB[4]    ; Result[3]   ; 6.245 ; 6.245 ; 6.245 ; 6.245 ;
-; operB[4]    ; Result[4]   ; 7.370 ; 7.370 ; 7.370 ; 7.370 ;
-; operB[4]    ; Result[5]   ; 7.677 ; 7.677 ; 7.677 ; 7.677 ;
-; operB[4]    ; Result[6]   ; 7.899 ; 7.899 ; 7.899 ; 7.899 ;
-; operB[4]    ; Result[7]   ; 8.209 ; 8.209 ; 8.209 ; 8.209 ;
-; operB[5]    ; Result[4]   ; 6.332 ;       ;       ; 6.332 ;
-; operB[5]    ; Result[5]   ; 7.573 ; 7.573 ; 7.573 ; 7.573 ;
-; operB[5]    ; Result[6]   ; 7.894 ; 7.894 ; 7.894 ; 7.894 ;
-; operB[5]    ; Result[7]   ; 8.153 ; 8.153 ; 8.153 ; 8.153 ;
-; operB[6]    ; Result[5]   ; 6.738 ; 6.738 ; 6.738 ; 6.738 ;
-; operB[6]    ; Result[6]   ; 7.681 ; 7.681 ; 7.681 ; 7.681 ;
-; operB[6]    ; Result[7]   ; 8.065 ; 8.065 ; 8.065 ; 8.065 ;
-; operB[7]    ; Result[6]   ; 6.279 ;       ;       ; 6.279 ;
-; operB[7]    ; Result[7]   ; 8.112 ; 8.112 ; 8.112 ; 8.112 ;
-; operacao[0] ; Result[0]   ; 7.608 ; 7.608 ; 7.608 ; 7.608 ;
-; operacao[0] ; Result[1]   ; 7.003 ; 7.003 ; 7.003 ; 7.003 ;
-; operacao[0] ; Result[2]   ; 7.796 ; 7.796 ; 7.796 ; 7.796 ;
-; operacao[0] ; Result[3]   ; 6.972 ; 6.972 ; 6.972 ; 6.972 ;
-; operacao[0] ; Result[4]   ; 7.672 ; 7.672 ; 7.672 ; 7.672 ;
-; operacao[0] ; Result[5]   ; 7.530 ; 7.530 ; 7.530 ; 7.530 ;
-; operacao[0] ; Result[6]   ; 7.936 ; 7.936 ; 7.936 ; 7.936 ;
-; operacao[0] ; Result[7]   ; 8.495 ; 8.495 ; 8.495 ; 8.495 ;
-; operacao[1] ; Result[1]   ; 7.039 ; 7.039 ; 7.039 ; 7.039 ;
-; operacao[1] ; Result[2]   ; 7.495 ; 7.495 ; 7.495 ; 7.495 ;
-; operacao[1] ; Result[3]   ; 6.671 ; 6.671 ; 6.671 ; 6.671 ;
-; operacao[1] ; Result[4]   ; 7.371 ; 7.371 ; 7.371 ; 7.371 ;
-; operacao[1] ; Result[5]   ; 7.229 ; 7.229 ; 7.229 ; 7.229 ;
-; operacao[1] ; Result[6]   ; 7.635 ; 7.635 ; 7.635 ; 7.635 ;
-; operacao[1] ; Result[7]   ; 8.194 ; 8.194 ; 8.194 ; 8.194 ;
-; operacao[2] ; Result[2]   ; 7.729 ; 7.729 ; 7.729 ; 7.729 ;
-; operacao[2] ; Result[3]   ; 6.676 ; 6.676 ; 6.676 ; 6.676 ;
-; operacao[2] ; Result[4]   ; 7.376 ; 7.376 ; 7.376 ; 7.376 ;
-; operacao[2] ; Result[5]   ; 7.234 ; 7.234 ; 7.234 ; 7.234 ;
-; operacao[2] ; Result[6]   ; 7.640 ; 7.640 ; 7.640 ; 7.640 ;
-; operacao[2] ; Result[7]   ; 8.174 ; 8.174 ; 8.174 ; 8.174 ;
-; operacao[3] ; Result[3]   ; 6.849 ; 6.849 ; 6.849 ; 6.849 ;
-; operacao[3] ; Result[4]   ; 6.987 ; 6.987 ; 6.987 ; 6.987 ;
-; operacao[3] ; Result[5]   ; 6.845 ; 6.845 ; 6.845 ; 6.845 ;
-; operacao[3] ; Result[6]   ; 7.251 ; 7.251 ; 7.251 ; 7.251 ;
-; operacao[3] ; Result[7]   ; 7.912 ; 7.912 ; 7.912 ; 7.912 ;
-; operacao[4] ; Result[4]   ; 7.243 ; 7.243 ; 7.243 ; 7.243 ;
-; operacao[4] ; Result[5]   ; 6.923 ; 6.923 ; 6.923 ; 6.923 ;
-; operacao[4] ; Result[6]   ; 7.329 ; 7.329 ; 7.329 ; 7.329 ;
-; operacao[4] ; Result[7]   ; 7.987 ; 7.987 ; 7.987 ; 7.987 ;
-; operacao[5] ; Result[5]   ; 7.214 ; 7.214 ; 7.214 ; 7.214 ;
-; operacao[5] ; Result[6]   ; 7.420 ; 7.420 ; 7.420 ; 7.420 ;
-; operacao[5] ; Result[7]   ; 7.855 ; 7.855 ; 7.855 ; 7.855 ;
-; operacao[6] ; Result[6]   ; 7.890 ; 7.890 ; 7.890 ; 7.890 ;
-; operacao[6] ; Result[7]   ; 8.139 ; 8.139 ; 8.139 ; 8.139 ;
-; operacao[7] ; Result[7]   ; 7.614 ; 7.614 ; 7.614 ; 7.614 ;
-+-------------+-------------+-------+-------+-------+-------+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+--------+--------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+--------+----------+---------+---------------------+
+; Worst-case Slack ; -1.344 ; -0.515 ; N/A      ; N/A     ; -1.222              ;
+;  operA[1]        ; -0.402 ; -0.332 ; N/A      ; N/A     ; -1.222              ;
+;  operA[2]        ; -1.344 ; -0.515 ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS  ; -9.015 ; -3.241 ; 0.0      ; 0.0     ; -2.444              ;
+;  operA[1]        ; -0.402 ; -0.332 ; N/A      ; N/A     ; -1.222              ;
+;  operA[2]        ; -8.613 ; -3.087 ; N/A      ; N/A     ; -1.222              ;
++------------------+--------+--------+----------+---------+---------------------+
 
 
-+-----------------------------------------------------------+
-; Minimum Propagation Delay                                 ;
-+-------------+-------------+-------+-------+-------+-------+
-; Input Port  ; Output Port ; RR    ; RF    ; FR    ; FF    ;
-+-------------+-------------+-------+-------+-------+-------+
-; Cin         ; Result[0]   ; 6.637 ;       ;       ; 6.637 ;
-; Cin         ; Result[7]   ; 6.889 ;       ;       ; 6.889 ;
-; operA[0]    ; Result[0]   ; 6.468 ; 6.468 ; 6.468 ; 6.468 ;
-; operA[0]    ; Result[1]   ; 6.712 ; 6.712 ; 6.712 ; 6.712 ;
-; operA[0]    ; Result[2]   ; 7.468 ; 7.468 ; 7.468 ; 7.468 ;
-; operA[0]    ; Result[3]   ; 6.440 ; 6.440 ; 6.440 ; 6.440 ;
-; operA[0]    ; Result[4]   ; 7.072 ; 7.072 ; 7.072 ; 7.072 ;
-; operA[0]    ; Result[5]   ; 7.190 ; 7.190 ; 7.190 ; 7.190 ;
-; operA[0]    ; Result[6]   ; 6.967 ; 6.967 ; 6.967 ; 6.967 ;
-; operA[0]    ; Result[7]   ; 6.938 ; 6.938 ; 6.938 ; 6.938 ;
-; operA[2]    ; Result[0]   ; 6.115 ; 6.115 ; 6.115 ; 6.115 ;
-; operA[2]    ; Result[1]   ; 6.571 ; 6.571 ; 6.571 ; 6.571 ;
-; operA[2]    ; Result[2]   ; 7.149 ; 7.149 ; 7.149 ; 7.149 ;
-; operA[2]    ; Result[3]   ; 6.500 ; 6.500 ; 6.500 ; 6.500 ;
-; operA[2]    ; Result[4]   ; 6.882 ; 6.882 ; 6.882 ; 6.882 ;
-; operA[2]    ; Result[5]   ; 6.837 ; 6.837 ; 6.837 ; 6.837 ;
-; operA[2]    ; Result[6]   ; 6.772 ; 6.772 ; 6.772 ; 6.772 ;
-; operA[2]    ; Result[7]   ; 6.541 ; 6.541 ; 6.541 ; 6.541 ;
-; operA[3]    ; Result[0]   ; 5.684 ; 5.684 ; 5.684 ; 5.684 ;
-; operA[3]    ; Result[1]   ; 5.742 ; 5.742 ; 5.742 ; 5.742 ;
-; operA[3]    ; Result[2]   ; 6.535 ; 6.535 ; 6.535 ; 6.535 ;
-; operA[3]    ; Result[3]   ; 5.748 ; 5.748 ; 5.748 ; 5.748 ;
-; operA[3]    ; Result[4]   ; 5.960 ; 5.960 ; 5.960 ; 5.960 ;
-; operA[3]    ; Result[5]   ; 6.130 ; 6.130 ; 6.130 ; 6.130 ;
-; operA[3]    ; Result[6]   ; 6.106 ; 6.106 ; 6.106 ; 6.106 ;
-; operA[3]    ; Result[7]   ; 6.168 ; 6.168 ; 6.168 ; 6.168 ;
-; operA[4]    ; Result[0]   ;       ; 4.129 ; 4.129 ;       ;
-; operA[4]    ; Result[1]   ;       ; 3.936 ; 3.936 ;       ;
-; operA[4]    ; Result[2]   ;       ; 4.729 ; 4.729 ;       ;
-; operA[4]    ; Result[3]   ;       ; 4.061 ; 4.061 ;       ;
-; operA[4]    ; Result[4]   ;       ; 4.143 ; 4.143 ;       ;
-; operA[4]    ; Result[5]   ;       ; 4.325 ; 4.325 ;       ;
-; operA[4]    ; Result[6]   ;       ; 4.299 ; 4.299 ;       ;
-; operA[4]    ; Result[7]   ;       ; 4.485 ; 4.485 ;       ;
-; operA[5]    ; Result[0]   ;       ; 4.058 ; 4.058 ;       ;
-; operA[5]    ; Result[1]   ;       ; 3.865 ; 3.865 ;       ;
-; operA[5]    ; Result[2]   ;       ; 4.658 ; 4.658 ;       ;
-; operA[5]    ; Result[3]   ;       ; 3.990 ; 3.990 ;       ;
-; operA[5]    ; Result[4]   ;       ; 4.072 ; 4.072 ;       ;
-; operA[5]    ; Result[5]   ;       ; 4.254 ; 4.254 ;       ;
-; operA[5]    ; Result[6]   ;       ; 4.228 ; 4.228 ;       ;
-; operA[5]    ; Result[7]   ;       ; 4.414 ; 4.414 ;       ;
-; operA[6]    ; Result[0]   ;       ; 6.745 ; 6.745 ;       ;
-; operA[6]    ; Result[1]   ;       ; 6.552 ; 6.552 ;       ;
-; operA[6]    ; Result[2]   ;       ; 7.345 ; 7.345 ;       ;
-; operA[6]    ; Result[3]   ;       ; 6.677 ; 6.677 ;       ;
-; operA[6]    ; Result[4]   ;       ; 6.759 ; 6.759 ;       ;
-; operA[6]    ; Result[5]   ;       ; 6.941 ; 6.941 ;       ;
-; operA[6]    ; Result[6]   ;       ; 6.915 ; 6.915 ;       ;
-; operA[6]    ; Result[7]   ;       ; 7.101 ; 7.101 ;       ;
-; operA[7]    ; Result[0]   ;       ; 7.062 ; 7.062 ;       ;
-; operA[7]    ; Result[1]   ;       ; 6.869 ; 6.869 ;       ;
-; operA[7]    ; Result[2]   ;       ; 7.662 ; 7.662 ;       ;
-; operA[7]    ; Result[3]   ;       ; 6.994 ; 6.994 ;       ;
-; operA[7]    ; Result[4]   ;       ; 7.076 ; 7.076 ;       ;
-; operA[7]    ; Result[5]   ;       ; 7.258 ; 7.258 ;       ;
-; operA[7]    ; Result[6]   ;       ; 7.232 ; 7.232 ;       ;
-; operA[7]    ; Result[7]   ;       ; 7.418 ; 7.418 ;       ;
-; operB[0]    ; Result[0]   ; 6.237 ; 6.447 ; 6.447 ; 6.237 ;
-; operB[0]    ; Result[1]   ; 5.750 ; 6.215 ; 6.215 ; 5.750 ;
-; operB[0]    ; Result[2]   ; 7.276 ; 7.276 ; 7.276 ; 7.276 ;
-; operB[0]    ; Result[3]   ; 6.261 ; 6.261 ; 6.261 ; 6.261 ;
-; operB[0]    ; Result[4]   ; 6.839 ; 6.839 ; 6.839 ; 6.839 ;
-; operB[0]    ; Result[5]   ; 6.848 ; 6.848 ; 6.848 ; 6.848 ;
-; operB[0]    ; Result[6]   ; 6.945 ; 6.945 ; 6.945 ; 6.945 ;
-; operB[0]    ; Result[7]   ; 7.317 ; 7.317 ; 7.317 ; 7.317 ;
-; operB[1]    ; Result[0]   ; 6.725 ; 6.725 ; 6.725 ; 6.725 ;
-; operB[1]    ; Result[1]   ; 6.190 ; 6.190 ; 6.190 ; 6.190 ;
-; operB[1]    ; Result[2]   ; 6.673 ; 7.128 ; 7.128 ; 6.673 ;
-; operB[1]    ; Result[3]   ; 6.335 ; 6.335 ; 6.335 ; 6.335 ;
-; operB[1]    ; Result[4]   ; 6.691 ; 6.691 ; 6.691 ; 6.691 ;
-; operB[1]    ; Result[5]   ; 6.952 ; 6.952 ; 6.952 ; 6.952 ;
-; operB[1]    ; Result[6]   ; 6.881 ; 6.881 ; 6.881 ; 6.881 ;
-; operB[1]    ; Result[7]   ; 7.365 ; 7.365 ; 7.365 ; 7.365 ;
-; operB[2]    ; Result[1]   ; 7.177 ; 7.177 ; 7.177 ; 7.177 ;
-; operB[2]    ; Result[2]   ; 7.263 ; 7.263 ; 7.263 ; 7.263 ;
-; operB[2]    ; Result[3]   ; 6.538 ; 6.798 ; 6.798 ; 6.538 ;
-; operB[2]    ; Result[4]   ; 6.931 ; 6.931 ; 6.931 ; 6.931 ;
-; operB[2]    ; Result[5]   ; 7.330 ; 7.330 ; 7.330 ; 7.330 ;
-; operB[2]    ; Result[6]   ; 7.121 ; 7.121 ; 7.121 ; 7.121 ;
-; operB[2]    ; Result[7]   ; 7.915 ; 7.915 ; 7.915 ; 7.915 ;
-; operB[3]    ; Result[2]   ; 6.754 ;       ;       ; 6.754 ;
-; operB[3]    ; Result[3]   ; 6.320 ; 6.320 ; 6.320 ; 6.320 ;
-; operB[3]    ; Result[4]   ; 6.270 ; 6.618 ; 6.618 ; 6.270 ;
-; operB[3]    ; Result[5]   ; 7.042 ; 7.042 ; 7.042 ; 7.042 ;
-; operB[3]    ; Result[6]   ; 6.808 ; 6.808 ; 6.808 ; 6.808 ;
-; operB[3]    ; Result[7]   ; 7.501 ; 7.501 ; 7.501 ; 7.501 ;
-; operB[4]    ; Result[3]   ; 6.245 ; 6.245 ; 6.245 ; 6.245 ;
-; operB[4]    ; Result[4]   ; 6.445 ; 6.445 ; 6.445 ; 6.445 ;
-; operB[4]    ; Result[5]   ; 6.393 ; 6.795 ; 6.795 ; 6.393 ;
-; operB[4]    ; Result[6]   ; 6.740 ; 6.740 ; 6.740 ; 6.740 ;
-; operB[4]    ; Result[7]   ; 7.154 ; 7.154 ; 7.154 ; 7.154 ;
-; operB[5]    ; Result[4]   ; 6.332 ;       ;       ; 6.332 ;
-; operB[5]    ; Result[5]   ; 6.566 ; 6.566 ; 6.566 ; 6.566 ;
-; operB[5]    ; Result[6]   ; 6.219 ; 6.684 ; 6.684 ; 6.219 ;
-; operB[5]    ; Result[7]   ; 7.149 ; 7.149 ; 7.149 ; 7.149 ;
-; operB[6]    ; Result[5]   ; 6.738 ; 6.738 ; 6.738 ; 6.738 ;
-; operB[6]    ; Result[6]   ; 6.491 ; 6.491 ; 6.491 ; 6.491 ;
-; operB[6]    ; Result[7]   ; 6.692 ; 7.039 ; 7.039 ; 6.692 ;
-; operB[7]    ; Result[6]   ; 6.279 ;       ;       ; 6.279 ;
-; operB[7]    ; Result[7]   ; 6.797 ; 6.797 ; 6.797 ; 6.797 ;
-; operacao[0] ; Result[0]   ; 6.757 ; 7.012 ; 7.012 ; 6.757 ;
-; operacao[0] ; Result[1]   ; 6.840 ; 6.840 ; 6.840 ; 6.840 ;
-; operacao[0] ; Result[2]   ; 7.787 ; 7.787 ; 7.787 ; 7.787 ;
-; operacao[0] ; Result[3]   ; 6.888 ; 6.888 ; 6.888 ; 6.888 ;
-; operacao[0] ; Result[4]   ; 7.420 ; 7.420 ; 7.420 ; 7.420 ;
-; operacao[0] ; Result[5]   ; 7.328 ; 7.328 ; 7.328 ; 7.328 ;
-; operacao[0] ; Result[6]   ; 7.425 ; 7.425 ; 7.425 ; 7.425 ;
-; operacao[0] ; Result[7]   ; 8.197 ; 8.197 ; 8.197 ; 8.197 ;
-; operacao[1] ; Result[1]   ; 6.436 ; 6.436 ; 6.436 ; 6.436 ;
-; operacao[1] ; Result[2]   ; 7.486 ; 7.486 ; 7.486 ; 7.486 ;
-; operacao[1] ; Result[3]   ; 6.587 ; 6.587 ; 6.587 ; 6.587 ;
-; operacao[1] ; Result[4]   ; 7.119 ; 7.119 ; 7.119 ; 7.119 ;
-; operacao[1] ; Result[5]   ; 7.027 ; 7.027 ; 7.027 ; 7.027 ;
-; operacao[1] ; Result[6]   ; 7.124 ; 7.124 ; 7.124 ; 7.124 ;
-; operacao[1] ; Result[7]   ; 7.896 ; 7.896 ; 7.896 ; 7.896 ;
-; operacao[2] ; Result[2]   ; 7.370 ; 7.370 ; 7.370 ; 7.370 ;
-; operacao[2] ; Result[3]   ; 6.567 ; 6.567 ; 6.567 ; 6.567 ;
-; operacao[2] ; Result[4]   ; 7.099 ; 7.099 ; 7.099 ; 7.099 ;
-; operacao[2] ; Result[5]   ; 7.007 ; 7.007 ; 7.007 ; 7.007 ;
-; operacao[2] ; Result[6]   ; 7.104 ; 7.104 ; 7.104 ; 7.104 ;
-; operacao[2] ; Result[7]   ; 7.901 ; 7.901 ; 7.901 ; 7.901 ;
-; operacao[3] ; Result[3]   ; 6.184 ; 6.184 ; 6.184 ; 6.184 ;
-; operacao[3] ; Result[4]   ; 6.837 ; 6.837 ; 6.837 ; 6.837 ;
-; operacao[3] ; Result[5]   ; 6.745 ; 6.745 ; 6.745 ; 6.745 ;
-; operacao[3] ; Result[6]   ; 6.842 ; 6.842 ; 6.842 ; 6.842 ;
-; operacao[3] ; Result[7]   ; 7.512 ; 7.512 ; 7.512 ; 7.512 ;
-; operacao[4] ; Result[4]   ; 6.738 ; 6.738 ; 6.738 ; 6.738 ;
-; operacao[4] ; Result[5]   ; 6.820 ; 6.820 ; 6.820 ; 6.820 ;
-; operacao[4] ; Result[6]   ; 6.917 ; 6.917 ; 6.917 ; 6.917 ;
-; operacao[4] ; Result[7]   ; 7.590 ; 7.590 ; 7.590 ; 7.590 ;
-; operacao[5] ; Result[5]   ; 6.589 ; 6.589 ; 6.589 ; 6.589 ;
-; operacao[5] ; Result[6]   ; 6.785 ; 6.785 ; 6.785 ; 6.785 ;
-; operacao[5] ; Result[7]   ; 7.681 ; 7.681 ; 7.681 ; 7.681 ;
-; operacao[6] ; Result[6]   ; 6.848 ; 6.848 ; 6.848 ; 6.848 ;
-; operacao[6] ; Result[7]   ; 7.938 ; 7.938 ; 7.938 ; 7.938 ;
-; operacao[7] ; Result[7]   ; 6.529 ; 6.828 ; 6.828 ; 6.529 ;
-+-------------+-------------+-------+-------+-------+-------+
-
-
-+------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                          ;
-+------------------+--------+-------+----------+---------+---------------------+
-; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -0.777 ; 0.030 ; N/A      ; N/A     ; -1.222              ;
-;  operA[1]        ; -0.777 ; 0.030 ; N/A      ; N/A     ; -1.222              ;
-; Design-wide TNS  ; -0.777 ; 0.0   ; 0.0      ; 0.0     ; -1.222              ;
-;  operA[1]        ; -0.777 ; 0.000 ; N/A      ; N/A     ; -1.222              ;
-+------------------+--------+-------+----------+---------+---------------------+
-
-
-+--------------------------------------------------------------------------+
-; Setup Times                                                              ;
-+--------------+------------+-------+-------+------------+-----------------+
-; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+--------------+------------+-------+-------+------------+-----------------+
-; operA[*]     ; operA[1]   ; 7.148 ; 7.148 ; Rise       ; operA[1]        ;
-;  operA[0]    ; operA[1]   ; 7.148 ; 7.148 ; Rise       ; operA[1]        ;
-;  operA[1]    ; operA[1]   ; 1.277 ; 1.277 ; Rise       ; operA[1]        ;
-;  operA[2]    ; operA[1]   ; 5.964 ; 5.964 ; Rise       ; operA[1]        ;
-;  operA[3]    ; operA[1]   ; 5.250 ; 5.250 ; Rise       ; operA[1]        ;
-;  operA[4]    ; operA[1]   ; 2.002 ; 2.002 ; Rise       ; operA[1]        ;
-;  operA[5]    ; operA[1]   ; 1.877 ; 1.877 ; Rise       ; operA[1]        ;
-;  operA[6]    ; operA[1]   ; 6.201 ; 6.201 ; Rise       ; operA[1]        ;
-;  operA[7]    ; operA[1]   ; 6.800 ; 6.800 ; Rise       ; operA[1]        ;
-; operB[*]     ; operA[1]   ; 8.061 ; 8.061 ; Rise       ; operA[1]        ;
-;  operB[0]    ; operA[1]   ; 7.588 ; 7.588 ; Rise       ; operA[1]        ;
-;  operB[1]    ; operA[1]   ; 7.748 ; 7.748 ; Rise       ; operA[1]        ;
-;  operB[2]    ; operA[1]   ; 8.061 ; 8.061 ; Rise       ; operA[1]        ;
-;  operB[3]    ; operA[1]   ; 7.226 ; 7.226 ; Rise       ; operA[1]        ;
-;  operB[4]    ; operA[1]   ; 7.295 ; 7.295 ; Rise       ; operA[1]        ;
-;  operB[5]    ; operA[1]   ; 7.593 ; 7.593 ; Rise       ; operA[1]        ;
-;  operB[6]    ; operA[1]   ; 7.134 ; 7.134 ; Rise       ; operA[1]        ;
-;  operB[7]    ; operA[1]   ; 7.406 ; 7.406 ; Rise       ; operA[1]        ;
-; operacao[*]  ; operA[1]   ; 8.089 ; 8.089 ; Rise       ; operA[1]        ;
-;  operacao[0] ; operA[1]   ; 8.089 ; 8.089 ; Rise       ; operA[1]        ;
-;  operacao[1] ; operA[1]   ; 7.655 ; 7.655 ; Rise       ; operA[1]        ;
-;  operacao[2] ; operA[1]   ; 7.673 ; 7.673 ; Rise       ; operA[1]        ;
-;  operacao[3] ; operA[1]   ; 6.807 ; 6.807 ; Rise       ; operA[1]        ;
-;  operacao[4] ; operA[1]   ; 6.982 ; 6.982 ; Rise       ; operA[1]        ;
-;  operacao[5] ; operA[1]   ; 7.188 ; 7.188 ; Rise       ; operA[1]        ;
-;  operacao[6] ; operA[1]   ; 7.637 ; 7.637 ; Rise       ; operA[1]        ;
-;  operacao[7] ; operA[1]   ; 6.530 ; 6.530 ; Rise       ; operA[1]        ;
-+--------------+------------+-------+-------+------------+-----------------+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operA[*]     ; operA[1]   ; 5.937  ; 5.937  ; Rise       ; operA[1]        ;
+;  operA[0]    ; operA[1]   ; 5.405  ; 5.405  ; Rise       ; operA[1]        ;
+;  operA[1]    ; operA[1]   ; 0.716  ; 0.716  ; Rise       ; operA[1]        ;
+;  operA[2]    ; operA[1]   ; 0.902  ; 0.902  ; Rise       ; operA[1]        ;
+;  operA[3]    ; operA[1]   ; 5.431  ; 5.431  ; Rise       ; operA[1]        ;
+;  operA[4]    ; operA[1]   ; 1.153  ; 1.153  ; Rise       ; operA[1]        ;
+;  operA[5]    ; operA[1]   ; 1.452  ; 1.452  ; Rise       ; operA[1]        ;
+;  operA[6]    ; operA[1]   ; 5.937  ; 5.937  ; Rise       ; operA[1]        ;
+;  operA[7]    ; operA[1]   ; 5.493  ; 5.493  ; Rise       ; operA[1]        ;
+; operB[*]     ; operA[1]   ; 7.245  ; 7.245  ; Rise       ; operA[1]        ;
+;  operB[0]    ; operA[1]   ; 6.519  ; 6.519  ; Rise       ; operA[1]        ;
+;  operB[1]    ; operA[1]   ; 7.245  ; 7.245  ; Rise       ; operA[1]        ;
+;  operB[2]    ; operA[1]   ; 7.145  ; 7.145  ; Rise       ; operA[1]        ;
+;  operB[3]    ; operA[1]   ; 6.588  ; 6.588  ; Rise       ; operA[1]        ;
+;  operB[4]    ; operA[1]   ; 6.317  ; 6.317  ; Rise       ; operA[1]        ;
+;  operB[5]    ; operA[1]   ; 6.754  ; 6.754  ; Rise       ; operA[1]        ;
+;  operB[6]    ; operA[1]   ; 6.377  ; 6.377  ; Rise       ; operA[1]        ;
+;  operB[7]    ; operA[1]   ; 5.973  ; 5.973  ; Rise       ; operA[1]        ;
+; operacao[*]  ; operA[1]   ; 7.398  ; 7.398  ; Rise       ; operA[1]        ;
+;  operacao[0] ; operA[1]   ; 6.811  ; 6.811  ; Rise       ; operA[1]        ;
+;  operacao[1] ; operA[1]   ; 7.398  ; 7.398  ; Rise       ; operA[1]        ;
+;  operacao[2] ; operA[1]   ; 7.171  ; 7.171  ; Rise       ; operA[1]        ;
+;  operacao[3] ; operA[1]   ; 7.061  ; 7.061  ; Rise       ; operA[1]        ;
+;  operacao[4] ; operA[1]   ; 6.713  ; 6.713  ; Rise       ; operA[1]        ;
+;  operacao[5] ; operA[1]   ; 6.369  ; 6.369  ; Rise       ; operA[1]        ;
+;  operacao[6] ; operA[1]   ; 6.592  ; 6.592  ; Rise       ; operA[1]        ;
+;  operacao[7] ; operA[1]   ; 6.490  ; 6.490  ; Rise       ; operA[1]        ;
+; operA[*]     ; operA[2]   ; 5.961  ; 5.961  ; Rise       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; 5.429  ; 5.429  ; Rise       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 0.740  ; 0.740  ; Rise       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 0.926  ; 0.926  ; Rise       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; 5.455  ; 5.455  ; Rise       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; 1.177  ; 1.177  ; Rise       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; 1.476  ; 1.476  ; Rise       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; 5.961  ; 5.961  ; Rise       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; 5.517  ; 5.517  ; Rise       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; 7.269  ; 7.269  ; Rise       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; 6.543  ; 6.543  ; Rise       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; 7.269  ; 7.269  ; Rise       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; 7.169  ; 7.169  ; Rise       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; 6.612  ; 6.612  ; Rise       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; 6.341  ; 6.341  ; Rise       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; 6.778  ; 6.778  ; Rise       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; 6.401  ; 6.401  ; Rise       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; 5.997  ; 5.997  ; Rise       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; 7.422  ; 7.422  ; Rise       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; 6.835  ; 6.835  ; Rise       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; 7.422  ; 7.422  ; Rise       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; 7.195  ; 7.195  ; Rise       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; 7.085  ; 7.085  ; Rise       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; 6.737  ; 6.737  ; Rise       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; 6.393  ; 6.393  ; Rise       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; 6.616  ; 6.616  ; Rise       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; 6.514  ; 6.514  ; Rise       ; operA[2]        ;
+; Cin          ; operA[2]   ; 4.178  ; 4.178  ; Fall       ; operA[2]        ;
+; operA[*]     ; operA[2]   ; 6.084  ; 6.084  ; Fall       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; 6.084  ; 6.084  ; Fall       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 1.844  ; 1.844  ; Fall       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 1.633  ; 1.633  ; Fall       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; 6.006  ; 6.006  ; Fall       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; -0.154 ; -0.154 ; Fall       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; 0.145  ; 0.145  ; Fall       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; 4.630  ; 4.630  ; Fall       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; 4.186  ; 4.186  ; Fall       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; 8.223  ; 8.223  ; Fall       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; 7.502  ; 7.502  ; Fall       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; 7.501  ; 7.501  ; Fall       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; 8.223  ; 8.223  ; Fall       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; 8.084  ; 8.084  ; Fall       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; 7.549  ; 7.549  ; Fall       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; 7.683  ; 7.683  ; Fall       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; 7.098  ; 7.098  ; Fall       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; 6.668  ; 6.668  ; Fall       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; 8.683  ; 8.683  ; Fall       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; 7.551  ; 7.551  ; Fall       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; 8.683  ; 8.683  ; Fall       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; 7.833  ; 7.833  ; Fall       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; 7.944  ; 7.944  ; Fall       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; 7.715  ; 7.715  ; Fall       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; 7.177  ; 7.177  ; Fall       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; 7.099  ; 7.099  ; Fall       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; 6.711  ; 6.711  ; Fall       ; operA[2]        ;
++--------------+------------+--------+--------+------------+-----------------+
 
 
 +----------------------------------------------------------------------------+
@@ -1157,60 +1160,106 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; operA[*]     ; operA[1]   ; -0.030 ; -0.030 ; Rise       ; operA[1]        ;
-;  operA[0]    ; operA[1]   ; -2.951 ; -2.951 ; Rise       ; operA[1]        ;
-;  operA[1]    ; operA[1]   ; -0.030 ; -0.030 ; Rise       ; operA[1]        ;
-;  operA[2]    ; operA[1]   ; -2.809 ; -2.809 ; Rise       ; operA[1]        ;
-;  operA[3]    ; operA[1]   ; -2.383 ; -2.383 ; Rise       ; operA[1]        ;
-;  operA[4]    ; operA[1]   ; -0.470 ; -0.470 ; Rise       ; operA[1]        ;
-;  operA[5]    ; operA[1]   ; -0.399 ; -0.399 ; Rise       ; operA[1]        ;
-;  operA[6]    ; operA[1]   ; -3.086 ; -3.086 ; Rise       ; operA[1]        ;
-;  operA[7]    ; operA[1]   ; -3.403 ; -3.403 ; Rise       ; operA[1]        ;
-; operB[*]     ; operA[1]   ; -2.979 ; -2.979 ; Rise       ; operA[1]        ;
-;  operB[0]    ; operA[1]   ; -3.042 ; -3.042 ; Rise       ; operA[1]        ;
-;  operB[1]    ; operA[1]   ; -3.680 ; -3.680 ; Rise       ; operA[1]        ;
-;  operB[2]    ; operA[1]   ; -3.923 ; -3.923 ; Rise       ; operA[1]        ;
-;  operB[3]    ; operA[1]   ; -3.519 ; -3.519 ; Rise       ; operA[1]        ;
-;  operB[4]    ; operA[1]   ; -3.461 ; -3.461 ; Rise       ; operA[1]        ;
-;  operB[5]    ; operA[1]   ; -3.602 ; -3.602 ; Rise       ; operA[1]        ;
-;  operB[6]    ; operA[1]   ; -3.395 ; -3.395 ; Rise       ; operA[1]        ;
-;  operB[7]    ; operA[1]   ; -2.979 ; -2.979 ; Rise       ; operA[1]        ;
-; operacao[*]  ; operA[1]   ; -3.112 ; -3.112 ; Rise       ; operA[1]        ;
-;  operacao[0] ; operA[1]   ; -3.936 ; -3.936 ; Rise       ; operA[1]        ;
-;  operacao[1] ; operA[1]   ; -3.635 ; -3.635 ; Rise       ; operA[1]        ;
-;  operacao[2] ; operA[1]   ; -3.640 ; -3.640 ; Rise       ; operA[1]        ;
-;  operacao[3] ; operA[1]   ; -3.251 ; -3.251 ; Rise       ; operA[1]        ;
-;  operacao[4] ; operA[1]   ; -3.329 ; -3.329 ; Rise       ; operA[1]        ;
-;  operacao[5] ; operA[1]   ; -3.420 ; -3.420 ; Rise       ; operA[1]        ;
-;  operacao[6] ; operA[1]   ; -3.677 ; -3.677 ; Rise       ; operA[1]        ;
-;  operacao[7] ; operA[1]   ; -3.112 ; -3.112 ; Rise       ; operA[1]        ;
+; operA[*]     ; operA[1]   ; 0.332  ; 0.332  ; Rise       ; operA[1]        ;
+;  operA[0]    ; operA[1]   ; -2.388 ; -2.388 ; Rise       ; operA[1]        ;
+;  operA[1]    ; operA[1]   ; 0.332  ; 0.332  ; Rise       ; operA[1]        ;
+;  operA[2]    ; operA[1]   ; 0.176  ; 0.176  ; Rise       ; operA[1]        ;
+;  operA[3]    ; operA[1]   ; -2.275 ; -2.275 ; Rise       ; operA[1]        ;
+;  operA[4]    ; operA[1]   ; -0.072 ; -0.072 ; Rise       ; operA[1]        ;
+;  operA[5]    ; operA[1]   ; -0.232 ; -0.232 ; Rise       ; operA[1]        ;
+;  operA[6]    ; operA[1]   ; -2.957 ; -2.957 ; Rise       ; operA[1]        ;
+;  operA[7]    ; operA[1]   ; -2.645 ; -2.645 ; Rise       ; operA[1]        ;
+; operB[*]     ; operA[1]   ; -2.368 ; -2.368 ; Rise       ; operA[1]        ;
+;  operB[0]    ; operA[1]   ; -2.368 ; -2.368 ; Rise       ; operA[1]        ;
+;  operB[1]    ; operA[1]   ; -3.408 ; -3.408 ; Rise       ; operA[1]        ;
+;  operB[2]    ; operA[1]   ; -3.358 ; -3.358 ; Rise       ; operA[1]        ;
+;  operB[3]    ; operA[1]   ; -3.126 ; -3.126 ; Rise       ; operA[1]        ;
+;  operB[4]    ; operA[1]   ; -3.008 ; -3.008 ; Rise       ; operA[1]        ;
+;  operB[5]    ; operA[1]   ; -3.171 ; -3.171 ; Rise       ; operA[1]        ;
+;  operB[6]    ; operA[1]   ; -3.002 ; -3.002 ; Rise       ; operA[1]        ;
+;  operB[7]    ; operA[1]   ; -2.444 ; -2.444 ; Rise       ; operA[1]        ;
+; operacao[*]  ; operA[1]   ; -2.991 ; -2.991 ; Rise       ; operA[1]        ;
+;  operacao[0] ; operA[1]   ; -3.223 ; -3.223 ; Rise       ; operA[1]        ;
+;  operacao[1] ; operA[1]   ; -3.455 ; -3.455 ; Rise       ; operA[1]        ;
+;  operacao[2] ; operA[1]   ; -3.364 ; -3.364 ; Rise       ; operA[1]        ;
+;  operacao[3] ; operA[1]   ; -3.292 ; -3.292 ; Rise       ; operA[1]        ;
+;  operacao[4] ; operA[1]   ; -3.169 ; -3.169 ; Rise       ; operA[1]        ;
+;  operacao[5] ; operA[1]   ; -2.991 ; -2.991 ; Rise       ; operA[1]        ;
+;  operacao[6] ; operA[1]   ; -3.077 ; -3.077 ; Rise       ; operA[1]        ;
+;  operacao[7] ; operA[1]   ; -3.037 ; -3.037 ; Rise       ; operA[1]        ;
+; operA[*]     ; operA[2]   ; 0.308  ; 0.308  ; Rise       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; -2.394 ; -2.394 ; Rise       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 0.308  ; 0.308  ; Rise       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 0.152  ; 0.152  ; Rise       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; -2.281 ; -2.281 ; Rise       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; -0.078 ; -0.078 ; Rise       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; -0.238 ; -0.238 ; Rise       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; -2.963 ; -2.963 ; Rise       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; -2.651 ; -2.651 ; Rise       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; -2.374 ; -2.374 ; Rise       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; -2.374 ; -2.374 ; Rise       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; -3.414 ; -3.414 ; Rise       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; -3.364 ; -3.364 ; Rise       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; -3.132 ; -3.132 ; Rise       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; -3.014 ; -3.014 ; Rise       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; -3.177 ; -3.177 ; Rise       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; -3.008 ; -3.008 ; Rise       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; -2.450 ; -2.450 ; Rise       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; -2.997 ; -2.997 ; Rise       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; -3.229 ; -3.229 ; Rise       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; -3.461 ; -3.461 ; Rise       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; -3.370 ; -3.370 ; Rise       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; -3.298 ; -3.298 ; Rise       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; -3.175 ; -3.175 ; Rise       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; -2.997 ; -2.997 ; Rise       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; -3.083 ; -3.083 ; Rise       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; -3.043 ; -3.043 ; Rise       ; operA[2]        ;
+; Cin          ; operA[2]   ; -1.747 ; -1.747 ; Fall       ; operA[2]        ;
+; operA[*]     ; operA[2]   ; 2.068  ; 2.068  ; Fall       ; operA[2]        ;
+;  operA[0]    ; operA[2]   ; -1.653 ; -1.653 ; Fall       ; operA[2]        ;
+;  operA[1]    ; operA[2]   ; 0.310  ; 0.310  ; Fall       ; operA[2]        ;
+;  operA[2]    ; operA[2]   ; 0.515  ; 0.515  ; Fall       ; operA[2]        ;
+;  operA[3]    ; operA[2]   ; -1.165 ; -1.165 ; Fall       ; operA[2]        ;
+;  operA[4]    ; operA[2]   ; 2.068  ; 2.068  ; Fall       ; operA[2]        ;
+;  operA[5]    ; operA[2]   ; 1.769  ; 1.769  ; Fall       ; operA[2]        ;
+;  operA[6]    ; operA[2]   ; -1.690 ; -1.690 ; Fall       ; operA[2]        ;
+;  operA[7]    ; operA[2]   ; -1.378 ; -1.378 ; Fall       ; operA[2]        ;
+; operB[*]     ; operA[2]   ; -1.217 ; -1.217 ; Fall       ; operA[2]        ;
+;  operB[0]    ; operA[2]   ; -1.425 ; -1.425 ; Fall       ; operA[2]        ;
+;  operB[1]    ; operA[2]   ; -1.301 ; -1.301 ; Fall       ; operA[2]        ;
+;  operB[2]    ; operA[2]   ; -1.579 ; -1.579 ; Fall       ; operA[2]        ;
+;  operB[3]    ; operA[2]   ; -1.302 ; -1.302 ; Fall       ; operA[2]        ;
+;  operB[4]    ; operA[2]   ; -1.273 ; -1.273 ; Fall       ; operA[2]        ;
+;  operB[5]    ; operA[2]   ; -1.217 ; -1.217 ; Fall       ; operA[2]        ;
+;  operB[6]    ; operA[2]   ; -1.307 ; -1.307 ; Fall       ; operA[2]        ;
+;  operB[7]    ; operA[2]   ; -1.269 ; -1.269 ; Fall       ; operA[2]        ;
+; operacao[*]  ; operA[2]   ; -1.774 ; -1.774 ; Fall       ; operA[2]        ;
+;  operacao[0] ; operA[2]   ; -1.777 ; -1.777 ; Fall       ; operA[2]        ;
+;  operacao[1] ; operA[2]   ; -2.255 ; -2.255 ; Fall       ; operA[2]        ;
+;  operacao[2] ; operA[2]   ; -1.898 ; -1.898 ; Fall       ; operA[2]        ;
+;  operacao[3] ; operA[2]   ; -1.922 ; -1.922 ; Fall       ; operA[2]        ;
+;  operacao[4] ; operA[2]   ; -1.911 ; -1.911 ; Fall       ; operA[2]        ;
+;  operacao[5] ; operA[2]   ; -1.833 ; -1.833 ; Fall       ; operA[2]        ;
+;  operacao[6] ; operA[2]   ; -2.104 ; -2.104 ; Fall       ; operA[2]        ;
+;  operacao[7] ; operA[2]   ; -1.774 ; -1.774 ; Fall       ; operA[2]        ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
-+--------------------------------------------------------------------------+
-; Clock to Output Times                                                    ;
-+------------+------------+--------+--------+------------+-----------------+
-; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+------------+------------+--------+--------+------------+-----------------+
-; Result[*]  ; operA[1]   ; 14.892 ; 14.892 ; Rise       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 12.925 ; 12.925 ; Rise       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 13.706 ; 13.706 ; Rise       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 14.892 ; 14.892 ; Rise       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 12.504 ; 12.504 ; Rise       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 13.582 ; 13.582 ; Rise       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 14.093 ; 14.093 ; Rise       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 14.122 ; 14.122 ; Rise       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 13.955 ; 13.955 ; Rise       ; operA[1]        ;
-; Result[*]  ; operA[1]   ; 14.892 ; 14.892 ; Fall       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 12.925 ; 12.925 ; Fall       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 13.706 ; 13.706 ; Fall       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 14.892 ; 14.892 ; Fall       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 12.504 ; 12.504 ; Fall       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 13.582 ; 13.582 ; Fall       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 14.093 ; 14.093 ; Fall       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 14.122 ; 14.122 ; Fall       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 13.955 ; 13.955 ; Fall       ; operA[1]        ;
-+------------+------------+--------+--------+------------+-----------------+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; Result[*]  ; operA[2]   ; 9.149 ; 9.149 ; Fall       ; operA[2]        ;
+;  Result[0] ; operA[2]   ; 8.988 ; 8.988 ; Fall       ; operA[2]        ;
+;  Result[1] ; operA[2]   ; 9.109 ; 9.109 ; Fall       ; operA[2]        ;
+;  Result[2] ; operA[2]   ; 8.839 ; 8.839 ; Fall       ; operA[2]        ;
+;  Result[3] ; operA[2]   ; 8.647 ; 8.647 ; Fall       ; operA[2]        ;
+;  Result[4] ; operA[2]   ; 9.033 ; 9.033 ; Fall       ; operA[2]        ;
+;  Result[5] ; operA[2]   ; 8.867 ; 8.867 ; Fall       ; operA[2]        ;
+;  Result[6] ; operA[2]   ; 9.149 ; 9.149 ; Fall       ; operA[2]        ;
+;  Result[7] ; operA[2]   ; 8.897 ; 8.897 ; Fall       ; operA[2]        ;
++------------+------------+-------+-------+------------+-----------------+
 
 
 +------------------------------------------------------------------------+
@@ -1218,315 +1267,16 @@ No paths to report.
 +------------+------------+-------+-------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
-; Result[*]  ; operA[1]   ; 4.053 ; 4.053 ; Rise       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 4.912 ; 4.912 ; Rise       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 4.731 ; 4.731 ; Rise       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 4.403 ; 4.403 ; Rise       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 4.053 ; 4.053 ; Rise       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 4.171 ; 4.171 ; Rise       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 4.830 ; 4.830 ; Rise       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 4.053 ; 4.053 ; Rise       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 5.021 ; 5.021 ; Rise       ; operA[1]        ;
-; Result[*]  ; operA[1]   ; 4.053 ; 4.053 ; Fall       ; operA[1]        ;
-;  Result[0] ; operA[1]   ; 6.214 ; 6.214 ; Fall       ; operA[1]        ;
-;  Result[1] ; operA[1]   ; 4.731 ; 4.731 ; Fall       ; operA[1]        ;
-;  Result[2] ; operA[1]   ; 4.403 ; 4.403 ; Fall       ; operA[1]        ;
-;  Result[3] ; operA[1]   ; 4.053 ; 4.053 ; Fall       ; operA[1]        ;
-;  Result[4] ; operA[1]   ; 4.171 ; 4.171 ; Fall       ; operA[1]        ;
-;  Result[5] ; operA[1]   ; 4.830 ; 4.830 ; Fall       ; operA[1]        ;
-;  Result[6] ; operA[1]   ; 4.053 ; 4.053 ; Fall       ; operA[1]        ;
-;  Result[7] ; operA[1]   ; 6.693 ; 6.693 ; Fall       ; operA[1]        ;
+; Result[*]  ; operA[2]   ; 4.579 ; 4.579 ; Fall       ; operA[2]        ;
+;  Result[0] ; operA[2]   ; 4.722 ; 4.722 ; Fall       ; operA[2]        ;
+;  Result[1] ; operA[2]   ; 4.813 ; 4.813 ; Fall       ; operA[2]        ;
+;  Result[2] ; operA[2]   ; 4.665 ; 4.665 ; Fall       ; operA[2]        ;
+;  Result[3] ; operA[2]   ; 4.579 ; 4.579 ; Fall       ; operA[2]        ;
+;  Result[4] ; operA[2]   ; 4.748 ; 4.748 ; Fall       ; operA[2]        ;
+;  Result[5] ; operA[2]   ; 4.675 ; 4.675 ; Fall       ; operA[2]        ;
+;  Result[6] ; operA[2]   ; 4.817 ; 4.817 ; Fall       ; operA[2]        ;
+;  Result[7] ; operA[2]   ; 4.709 ; 4.709 ; Fall       ; operA[2]        ;
 +------------+------------+-------+-------+------------+-----------------+
-
-
-+---------------------------------------------------------------+
-; Progagation Delay                                             ;
-+-------------+-------------+--------+--------+--------+--------+
-; Input Port  ; Output Port ; RR     ; RF     ; FR     ; FF     ;
-+-------------+-------------+--------+--------+--------+--------+
-; Cin         ; Result[0]   ; 12.621 ;        ;        ; 12.621 ;
-; Cin         ; Result[7]   ; 13.255 ;        ;        ; 13.255 ;
-; operA[0]    ; Result[0]   ; 13.221 ; 13.221 ; 13.221 ; 13.221 ;
-; operA[0]    ; Result[1]   ; 14.642 ; 14.642 ; 14.642 ; 14.642 ;
-; operA[0]    ; Result[2]   ; 15.828 ; 15.828 ; 15.828 ; 15.828 ;
-; operA[0]    ; Result[3]   ; 13.440 ; 13.440 ; 13.440 ; 13.440 ;
-; operA[0]    ; Result[4]   ; 14.451 ; 14.451 ; 14.451 ; 14.451 ;
-; operA[0]    ; Result[5]   ; 15.029 ; 15.029 ; 15.029 ; 15.029 ;
-; operA[0]    ; Result[6]   ; 14.911 ; 14.911 ; 14.911 ; 14.911 ;
-; operA[0]    ; Result[7]   ; 14.392 ; 14.392 ; 14.392 ; 14.392 ;
-; operA[2]    ; Result[0]   ; 13.315 ; 13.315 ; 13.315 ; 13.315 ;
-; operA[2]    ; Result[1]   ; 14.362 ; 14.362 ; 14.362 ; 14.362 ;
-; operA[2]    ; Result[2]   ; 15.440 ; 15.440 ; 15.440 ; 15.440 ;
-; operA[2]    ; Result[3]   ; 13.052 ; 13.052 ; 13.052 ; 13.052 ;
-; operA[2]    ; Result[4]   ; 14.126 ; 14.126 ; 14.126 ; 14.126 ;
-; operA[2]    ; Result[5]   ; 14.758 ; 14.758 ; 14.758 ; 14.758 ;
-; operA[2]    ; Result[6]   ; 13.706 ; 13.706 ; 13.706 ; 13.706 ;
-; operA[2]    ; Result[7]   ; 13.464 ; 13.603 ; 13.603 ; 13.464 ;
-; operA[3]    ; Result[0]   ; 10.274 ; 10.274 ; 10.274 ; 10.274 ;
-; operA[3]    ; Result[1]   ; 10.377 ; 10.377 ; 10.377 ; 10.377 ;
-; operA[3]    ; Result[2]   ; 12.311 ; 12.311 ; 12.311 ; 12.311 ;
-; operA[3]    ; Result[3]   ; 10.386 ; 10.386 ; 10.386 ; 10.386 ;
-; operA[3]    ; Result[4]   ; 10.899 ; 10.899 ; 10.899 ; 10.899 ;
-; operA[3]    ; Result[5]   ; 11.393 ; 11.393 ; 11.393 ; 11.393 ;
-; operA[3]    ; Result[6]   ; 11.240 ; 11.240 ; 11.240 ; 11.240 ;
-; operA[3]    ; Result[7]   ; 11.466 ; 11.466 ; 11.466 ; 11.466 ;
-; operA[4]    ; Result[0]   ;        ; 8.218  ; 8.218  ;        ;
-; operA[4]    ; Result[1]   ;        ; 7.767  ; 7.767  ;        ;
-; operA[4]    ; Result[2]   ;        ; 9.667  ; 9.667  ;        ;
-; operA[4]    ; Result[3]   ;        ; 8.042  ; 8.042  ;        ;
-; operA[4]    ; Result[4]   ;        ; 8.277  ; 8.277  ;        ;
-; operA[4]    ; Result[5]   ;        ; 8.783  ; 8.783  ;        ;
-; operA[4]    ; Result[6]   ;        ; 8.617  ; 8.617  ;        ;
-; operA[4]    ; Result[7]   ;        ; 9.103  ; 9.103  ;        ;
-; operA[5]    ; Result[0]   ;        ; 8.093  ; 8.093  ;        ;
-; operA[5]    ; Result[1]   ;        ; 7.642  ; 7.642  ;        ;
-; operA[5]    ; Result[2]   ;        ; 9.542  ; 9.542  ;        ;
-; operA[5]    ; Result[3]   ;        ; 7.917  ; 7.917  ;        ;
-; operA[5]    ; Result[4]   ;        ; 8.152  ; 8.152  ;        ;
-; operA[5]    ; Result[5]   ;        ; 8.658  ; 8.658  ;        ;
-; operA[5]    ; Result[6]   ;        ; 8.492  ; 8.492  ;        ;
-; operA[5]    ; Result[7]   ;        ; 8.978  ; 8.978  ;        ;
-; operA[6]    ; Result[0]   ;        ; 12.417 ; 12.417 ;        ;
-; operA[6]    ; Result[1]   ;        ; 11.966 ; 11.966 ;        ;
-; operA[6]    ; Result[2]   ;        ; 13.866 ; 13.866 ;        ;
-; operA[6]    ; Result[3]   ;        ; 12.241 ; 12.241 ;        ;
-; operA[6]    ; Result[4]   ;        ; 12.476 ; 12.476 ;        ;
-; operA[6]    ; Result[5]   ;        ; 12.982 ; 12.982 ;        ;
-; operA[6]    ; Result[6]   ;        ; 12.816 ; 12.816 ;        ;
-; operA[6]    ; Result[7]   ;        ; 13.302 ; 13.302 ;        ;
-; operA[7]    ; Result[0]   ;        ; 13.016 ; 13.016 ;        ;
-; operA[7]    ; Result[1]   ;        ; 12.565 ; 12.565 ;        ;
-; operA[7]    ; Result[2]   ;        ; 14.465 ; 14.465 ;        ;
-; operA[7]    ; Result[3]   ;        ; 12.840 ; 12.840 ;        ;
-; operA[7]    ; Result[4]   ;        ; 13.075 ; 13.075 ;        ;
-; operA[7]    ; Result[5]   ;        ; 13.581 ; 13.581 ;        ;
-; operA[7]    ; Result[6]   ;        ; 13.415 ; 13.415 ;        ;
-; operA[7]    ; Result[7]   ;        ; 13.901 ; 13.901 ;        ;
-; operB[0]    ; Result[0]   ; 14.631 ; 14.631 ; 14.631 ; 14.631 ;
-; operB[0]    ; Result[1]   ; 13.973 ; 13.973 ; 13.973 ; 13.973 ;
-; operB[0]    ; Result[2]   ; 15.868 ; 15.868 ; 15.868 ; 15.868 ;
-; operB[0]    ; Result[3]   ; 13.497 ; 13.497 ; 13.497 ; 13.497 ;
-; operB[0]    ; Result[4]   ; 14.850 ; 14.850 ; 14.850 ; 14.850 ;
-; operB[0]    ; Result[5]   ; 15.486 ; 15.486 ; 15.486 ; 15.486 ;
-; operB[0]    ; Result[6]   ; 15.824 ; 15.824 ; 15.824 ; 15.824 ;
-; operB[0]    ; Result[7]   ; 16.841 ; 16.841 ; 16.841 ; 16.841 ;
-; operB[1]    ; Result[0]   ; 12.702 ; 12.702 ; 12.702 ; 12.702 ;
-; operB[1]    ; Result[1]   ; 13.748 ; 13.748 ; 13.748 ; 13.748 ;
-; operB[1]    ; Result[2]   ; 15.982 ; 15.982 ; 15.982 ; 15.982 ;
-; operB[1]    ; Result[3]   ; 13.611 ; 13.611 ; 13.611 ; 13.611 ;
-; operB[1]    ; Result[4]   ; 14.964 ; 14.964 ; 14.964 ; 14.964 ;
-; operB[1]    ; Result[5]   ; 15.600 ; 15.600 ; 15.600 ; 15.600 ;
-; operB[1]    ; Result[6]   ; 15.938 ; 15.938 ; 15.938 ; 15.938 ;
-; operB[1]    ; Result[7]   ; 16.529 ; 16.529 ; 16.529 ; 16.529 ;
-; operB[2]    ; Result[1]   ; 13.413 ; 13.413 ; 13.413 ; 13.413 ;
-; operB[2]    ; Result[2]   ; 16.645 ; 16.645 ; 16.645 ; 16.645 ;
-; operB[2]    ; Result[3]   ; 14.589 ; 14.589 ; 14.589 ; 14.589 ;
-; operB[2]    ; Result[4]   ; 15.942 ; 15.942 ; 15.942 ; 15.942 ;
-; operB[2]    ; Result[5]   ; 16.578 ; 16.578 ; 16.578 ; 16.578 ;
-; operB[2]    ; Result[6]   ; 16.916 ; 16.916 ; 16.916 ; 16.916 ;
-; operB[2]    ; Result[7]   ; 16.851 ; 16.851 ; 16.851 ; 16.851 ;
-; operB[3]    ; Result[2]   ; 12.682 ;        ;        ; 12.682 ;
-; operB[3]    ; Result[3]   ; 13.386 ; 13.386 ; 13.386 ; 13.386 ;
-; operB[3]    ; Result[4]   ; 15.079 ; 15.079 ; 15.079 ; 15.079 ;
-; operB[3]    ; Result[5]   ; 15.715 ; 15.715 ; 15.715 ; 15.715 ;
-; operB[3]    ; Result[6]   ; 16.053 ; 16.053 ; 16.053 ; 16.053 ;
-; operB[3]    ; Result[7]   ; 16.232 ; 16.232 ; 16.232 ; 16.232 ;
-; operB[4]    ; Result[3]   ; 11.595 ; 11.595 ; 11.595 ; 11.595 ;
-; operB[4]    ; Result[4]   ; 14.240 ; 14.240 ; 14.240 ; 14.240 ;
-; operB[4]    ; Result[5]   ; 15.151 ; 15.151 ; 15.151 ; 15.151 ;
-; operB[4]    ; Result[6]   ; 15.489 ; 15.489 ; 15.489 ; 15.489 ;
-; operB[4]    ; Result[7]   ; 16.265 ; 16.265 ; 16.265 ; 16.265 ;
-; operB[5]    ; Result[4]   ; 11.717 ;        ;        ; 11.717 ;
-; operB[5]    ; Result[5]   ; 14.794 ; 14.794 ; 14.794 ; 14.794 ;
-; operB[5]    ; Result[6]   ; 15.475 ; 15.475 ; 15.475 ; 15.475 ;
-; operB[5]    ; Result[7]   ; 16.057 ; 16.057 ; 16.057 ; 16.057 ;
-; operB[6]    ; Result[5]   ; 12.861 ; 12.861 ; 12.861 ; 12.861 ;
-; operB[6]    ; Result[6]   ; 14.957 ; 14.957 ; 14.957 ; 14.957 ;
-; operB[6]    ; Result[7]   ; 15.917 ; 15.917 ; 15.917 ; 15.917 ;
-; operB[7]    ; Result[6]   ; 11.697 ;        ;        ; 11.697 ;
-; operB[7]    ; Result[7]   ; 15.950 ; 15.950 ; 15.950 ; 15.950 ;
-; operacao[0] ; Result[0]   ; 14.555 ; 14.555 ; 14.555 ; 14.555 ;
-; operacao[0] ; Result[1]   ; 13.173 ; 13.173 ; 13.173 ; 13.173 ;
-; operacao[0] ; Result[2]   ; 15.092 ; 15.092 ; 15.092 ; 15.092 ;
-; operacao[0] ; Result[3]   ; 13.120 ; 13.120 ; 13.120 ; 13.120 ;
-; operacao[0] ; Result[4]   ; 14.709 ; 14.709 ; 14.709 ; 14.709 ;
-; operacao[0] ; Result[5]   ; 14.466 ; 14.466 ; 14.466 ; 14.466 ;
-; operacao[0] ; Result[6]   ; 15.318 ; 15.318 ; 15.318 ; 15.318 ;
-; operacao[0] ; Result[7]   ; 16.589 ; 16.589 ; 16.589 ; 16.589 ;
-; operacao[1] ; Result[1]   ; 13.435 ; 13.435 ; 13.435 ; 13.435 ;
-; operacao[1] ; Result[2]   ; 14.658 ; 14.658 ; 14.658 ; 14.658 ;
-; operacao[1] ; Result[3]   ; 12.686 ; 12.686 ; 12.686 ; 12.686 ;
-; operacao[1] ; Result[4]   ; 14.275 ; 14.275 ; 14.275 ; 14.275 ;
-; operacao[1] ; Result[5]   ; 14.032 ; 14.032 ; 14.032 ; 14.032 ;
-; operacao[1] ; Result[6]   ; 14.884 ; 14.884 ; 14.884 ; 14.884 ;
-; operacao[1] ; Result[7]   ; 16.150 ; 16.150 ; 16.150 ; 16.150 ;
-; operacao[2] ; Result[2]   ; 15.148 ; 15.148 ; 15.148 ; 15.148 ;
-; operacao[2] ; Result[3]   ; 12.704 ; 12.704 ; 12.704 ; 12.704 ;
-; operacao[2] ; Result[4]   ; 14.293 ; 14.293 ; 14.293 ; 14.293 ;
-; operacao[2] ; Result[5]   ; 14.050 ; 14.050 ; 14.050 ; 14.050 ;
-; operacao[2] ; Result[6]   ; 14.902 ; 14.902 ; 14.902 ; 14.902 ;
-; operacao[2] ; Result[7]   ; 16.115 ; 16.115 ; 16.115 ; 16.115 ;
-; operacao[3] ; Result[3]   ; 12.988 ; 12.988 ; 12.988 ; 12.988 ;
-; operacao[3] ; Result[4]   ; 13.427 ; 13.427 ; 13.427 ; 13.427 ;
-; operacao[3] ; Result[5]   ; 13.184 ; 13.184 ; 13.184 ; 13.184 ;
-; operacao[3] ; Result[6]   ; 14.036 ; 14.036 ; 14.036 ; 14.036 ;
-; operacao[3] ; Result[7]   ; 15.542 ; 15.542 ; 15.542 ; 15.542 ;
-; operacao[4] ; Result[4]   ; 13.933 ; 13.933 ; 13.933 ; 13.933 ;
-; operacao[4] ; Result[5]   ; 13.359 ; 13.359 ; 13.359 ; 13.359 ;
-; operacao[4] ; Result[6]   ; 14.211 ; 14.211 ; 14.211 ; 14.211 ;
-; operacao[4] ; Result[7]   ; 15.727 ; 15.727 ; 15.727 ; 15.727 ;
-; operacao[5] ; Result[5]   ; 13.981 ; 13.981 ; 13.981 ; 13.981 ;
-; operacao[5] ; Result[6]   ; 14.417 ; 14.417 ; 14.417 ; 14.417 ;
-; operacao[5] ; Result[7]   ; 15.423 ; 15.423 ; 15.423 ; 15.423 ;
-; operacao[6] ; Result[6]   ; 15.255 ; 15.255 ; 15.255 ; 15.255 ;
-; operacao[6] ; Result[7]   ; 16.007 ; 16.007 ; 16.007 ; 16.007 ;
-; operacao[7] ; Result[7]   ; 14.872 ; 14.872 ; 14.872 ; 14.872 ;
-+-------------+-------------+--------+--------+--------+--------+
-
-
-+-----------------------------------------------------------+
-; Minimum Progagation Delay                                 ;
-+-------------+-------------+-------+-------+-------+-------+
-; Input Port  ; Output Port ; RR    ; RF    ; FR    ; FF    ;
-+-------------+-------------+-------+-------+-------+-------+
-; Cin         ; Result[0]   ; 6.637 ;       ;       ; 6.637 ;
-; Cin         ; Result[7]   ; 6.889 ;       ;       ; 6.889 ;
-; operA[0]    ; Result[0]   ; 6.468 ; 6.468 ; 6.468 ; 6.468 ;
-; operA[0]    ; Result[1]   ; 6.712 ; 6.712 ; 6.712 ; 6.712 ;
-; operA[0]    ; Result[2]   ; 7.468 ; 7.468 ; 7.468 ; 7.468 ;
-; operA[0]    ; Result[3]   ; 6.440 ; 6.440 ; 6.440 ; 6.440 ;
-; operA[0]    ; Result[4]   ; 7.072 ; 7.072 ; 7.072 ; 7.072 ;
-; operA[0]    ; Result[5]   ; 7.190 ; 7.190 ; 7.190 ; 7.190 ;
-; operA[0]    ; Result[6]   ; 6.967 ; 6.967 ; 6.967 ; 6.967 ;
-; operA[0]    ; Result[7]   ; 6.938 ; 6.938 ; 6.938 ; 6.938 ;
-; operA[2]    ; Result[0]   ; 6.115 ; 6.115 ; 6.115 ; 6.115 ;
-; operA[2]    ; Result[1]   ; 6.571 ; 6.571 ; 6.571 ; 6.571 ;
-; operA[2]    ; Result[2]   ; 7.149 ; 7.149 ; 7.149 ; 7.149 ;
-; operA[2]    ; Result[3]   ; 6.500 ; 6.500 ; 6.500 ; 6.500 ;
-; operA[2]    ; Result[4]   ; 6.882 ; 6.882 ; 6.882 ; 6.882 ;
-; operA[2]    ; Result[5]   ; 6.837 ; 6.837 ; 6.837 ; 6.837 ;
-; operA[2]    ; Result[6]   ; 6.772 ; 6.772 ; 6.772 ; 6.772 ;
-; operA[2]    ; Result[7]   ; 6.541 ; 6.541 ; 6.541 ; 6.541 ;
-; operA[3]    ; Result[0]   ; 5.684 ; 5.684 ; 5.684 ; 5.684 ;
-; operA[3]    ; Result[1]   ; 5.742 ; 5.742 ; 5.742 ; 5.742 ;
-; operA[3]    ; Result[2]   ; 6.535 ; 6.535 ; 6.535 ; 6.535 ;
-; operA[3]    ; Result[3]   ; 5.748 ; 5.748 ; 5.748 ; 5.748 ;
-; operA[3]    ; Result[4]   ; 5.960 ; 5.960 ; 5.960 ; 5.960 ;
-; operA[3]    ; Result[5]   ; 6.130 ; 6.130 ; 6.130 ; 6.130 ;
-; operA[3]    ; Result[6]   ; 6.106 ; 6.106 ; 6.106 ; 6.106 ;
-; operA[3]    ; Result[7]   ; 6.168 ; 6.168 ; 6.168 ; 6.168 ;
-; operA[4]    ; Result[0]   ;       ; 4.129 ; 4.129 ;       ;
-; operA[4]    ; Result[1]   ;       ; 3.936 ; 3.936 ;       ;
-; operA[4]    ; Result[2]   ;       ; 4.729 ; 4.729 ;       ;
-; operA[4]    ; Result[3]   ;       ; 4.061 ; 4.061 ;       ;
-; operA[4]    ; Result[4]   ;       ; 4.143 ; 4.143 ;       ;
-; operA[4]    ; Result[5]   ;       ; 4.325 ; 4.325 ;       ;
-; operA[4]    ; Result[6]   ;       ; 4.299 ; 4.299 ;       ;
-; operA[4]    ; Result[7]   ;       ; 4.485 ; 4.485 ;       ;
-; operA[5]    ; Result[0]   ;       ; 4.058 ; 4.058 ;       ;
-; operA[5]    ; Result[1]   ;       ; 3.865 ; 3.865 ;       ;
-; operA[5]    ; Result[2]   ;       ; 4.658 ; 4.658 ;       ;
-; operA[5]    ; Result[3]   ;       ; 3.990 ; 3.990 ;       ;
-; operA[5]    ; Result[4]   ;       ; 4.072 ; 4.072 ;       ;
-; operA[5]    ; Result[5]   ;       ; 4.254 ; 4.254 ;       ;
-; operA[5]    ; Result[6]   ;       ; 4.228 ; 4.228 ;       ;
-; operA[5]    ; Result[7]   ;       ; 4.414 ; 4.414 ;       ;
-; operA[6]    ; Result[0]   ;       ; 6.745 ; 6.745 ;       ;
-; operA[6]    ; Result[1]   ;       ; 6.552 ; 6.552 ;       ;
-; operA[6]    ; Result[2]   ;       ; 7.345 ; 7.345 ;       ;
-; operA[6]    ; Result[3]   ;       ; 6.677 ; 6.677 ;       ;
-; operA[6]    ; Result[4]   ;       ; 6.759 ; 6.759 ;       ;
-; operA[6]    ; Result[5]   ;       ; 6.941 ; 6.941 ;       ;
-; operA[6]    ; Result[6]   ;       ; 6.915 ; 6.915 ;       ;
-; operA[6]    ; Result[7]   ;       ; 7.101 ; 7.101 ;       ;
-; operA[7]    ; Result[0]   ;       ; 7.062 ; 7.062 ;       ;
-; operA[7]    ; Result[1]   ;       ; 6.869 ; 6.869 ;       ;
-; operA[7]    ; Result[2]   ;       ; 7.662 ; 7.662 ;       ;
-; operA[7]    ; Result[3]   ;       ; 6.994 ; 6.994 ;       ;
-; operA[7]    ; Result[4]   ;       ; 7.076 ; 7.076 ;       ;
-; operA[7]    ; Result[5]   ;       ; 7.258 ; 7.258 ;       ;
-; operA[7]    ; Result[6]   ;       ; 7.232 ; 7.232 ;       ;
-; operA[7]    ; Result[7]   ;       ; 7.418 ; 7.418 ;       ;
-; operB[0]    ; Result[0]   ; 6.237 ; 6.447 ; 6.447 ; 6.237 ;
-; operB[0]    ; Result[1]   ; 5.750 ; 6.215 ; 6.215 ; 5.750 ;
-; operB[0]    ; Result[2]   ; 7.276 ; 7.276 ; 7.276 ; 7.276 ;
-; operB[0]    ; Result[3]   ; 6.261 ; 6.261 ; 6.261 ; 6.261 ;
-; operB[0]    ; Result[4]   ; 6.839 ; 6.839 ; 6.839 ; 6.839 ;
-; operB[0]    ; Result[5]   ; 6.848 ; 6.848 ; 6.848 ; 6.848 ;
-; operB[0]    ; Result[6]   ; 6.945 ; 6.945 ; 6.945 ; 6.945 ;
-; operB[0]    ; Result[7]   ; 7.317 ; 7.317 ; 7.317 ; 7.317 ;
-; operB[1]    ; Result[0]   ; 6.725 ; 6.725 ; 6.725 ; 6.725 ;
-; operB[1]    ; Result[1]   ; 6.190 ; 6.190 ; 6.190 ; 6.190 ;
-; operB[1]    ; Result[2]   ; 6.673 ; 7.128 ; 7.128 ; 6.673 ;
-; operB[1]    ; Result[3]   ; 6.335 ; 6.335 ; 6.335 ; 6.335 ;
-; operB[1]    ; Result[4]   ; 6.691 ; 6.691 ; 6.691 ; 6.691 ;
-; operB[1]    ; Result[5]   ; 6.952 ; 6.952 ; 6.952 ; 6.952 ;
-; operB[1]    ; Result[6]   ; 6.881 ; 6.881 ; 6.881 ; 6.881 ;
-; operB[1]    ; Result[7]   ; 7.365 ; 7.365 ; 7.365 ; 7.365 ;
-; operB[2]    ; Result[1]   ; 7.177 ; 7.177 ; 7.177 ; 7.177 ;
-; operB[2]    ; Result[2]   ; 7.263 ; 7.263 ; 7.263 ; 7.263 ;
-; operB[2]    ; Result[3]   ; 6.538 ; 6.798 ; 6.798 ; 6.538 ;
-; operB[2]    ; Result[4]   ; 6.931 ; 6.931 ; 6.931 ; 6.931 ;
-; operB[2]    ; Result[5]   ; 7.330 ; 7.330 ; 7.330 ; 7.330 ;
-; operB[2]    ; Result[6]   ; 7.121 ; 7.121 ; 7.121 ; 7.121 ;
-; operB[2]    ; Result[7]   ; 7.915 ; 7.915 ; 7.915 ; 7.915 ;
-; operB[3]    ; Result[2]   ; 6.754 ;       ;       ; 6.754 ;
-; operB[3]    ; Result[3]   ; 6.320 ; 6.320 ; 6.320 ; 6.320 ;
-; operB[3]    ; Result[4]   ; 6.270 ; 6.618 ; 6.618 ; 6.270 ;
-; operB[3]    ; Result[5]   ; 7.042 ; 7.042 ; 7.042 ; 7.042 ;
-; operB[3]    ; Result[6]   ; 6.808 ; 6.808 ; 6.808 ; 6.808 ;
-; operB[3]    ; Result[7]   ; 7.501 ; 7.501 ; 7.501 ; 7.501 ;
-; operB[4]    ; Result[3]   ; 6.245 ; 6.245 ; 6.245 ; 6.245 ;
-; operB[4]    ; Result[4]   ; 6.445 ; 6.445 ; 6.445 ; 6.445 ;
-; operB[4]    ; Result[5]   ; 6.393 ; 6.795 ; 6.795 ; 6.393 ;
-; operB[4]    ; Result[6]   ; 6.740 ; 6.740 ; 6.740 ; 6.740 ;
-; operB[4]    ; Result[7]   ; 7.154 ; 7.154 ; 7.154 ; 7.154 ;
-; operB[5]    ; Result[4]   ; 6.332 ;       ;       ; 6.332 ;
-; operB[5]    ; Result[5]   ; 6.566 ; 6.566 ; 6.566 ; 6.566 ;
-; operB[5]    ; Result[6]   ; 6.219 ; 6.684 ; 6.684 ; 6.219 ;
-; operB[5]    ; Result[7]   ; 7.149 ; 7.149 ; 7.149 ; 7.149 ;
-; operB[6]    ; Result[5]   ; 6.738 ; 6.738 ; 6.738 ; 6.738 ;
-; operB[6]    ; Result[6]   ; 6.491 ; 6.491 ; 6.491 ; 6.491 ;
-; operB[6]    ; Result[7]   ; 6.692 ; 7.039 ; 7.039 ; 6.692 ;
-; operB[7]    ; Result[6]   ; 6.279 ;       ;       ; 6.279 ;
-; operB[7]    ; Result[7]   ; 6.797 ; 6.797 ; 6.797 ; 6.797 ;
-; operacao[0] ; Result[0]   ; 6.757 ; 7.012 ; 7.012 ; 6.757 ;
-; operacao[0] ; Result[1]   ; 6.840 ; 6.840 ; 6.840 ; 6.840 ;
-; operacao[0] ; Result[2]   ; 7.787 ; 7.787 ; 7.787 ; 7.787 ;
-; operacao[0] ; Result[3]   ; 6.888 ; 6.888 ; 6.888 ; 6.888 ;
-; operacao[0] ; Result[4]   ; 7.420 ; 7.420 ; 7.420 ; 7.420 ;
-; operacao[0] ; Result[5]   ; 7.328 ; 7.328 ; 7.328 ; 7.328 ;
-; operacao[0] ; Result[6]   ; 7.425 ; 7.425 ; 7.425 ; 7.425 ;
-; operacao[0] ; Result[7]   ; 8.197 ; 8.197 ; 8.197 ; 8.197 ;
-; operacao[1] ; Result[1]   ; 6.436 ; 6.436 ; 6.436 ; 6.436 ;
-; operacao[1] ; Result[2]   ; 7.486 ; 7.486 ; 7.486 ; 7.486 ;
-; operacao[1] ; Result[3]   ; 6.587 ; 6.587 ; 6.587 ; 6.587 ;
-; operacao[1] ; Result[4]   ; 7.119 ; 7.119 ; 7.119 ; 7.119 ;
-; operacao[1] ; Result[5]   ; 7.027 ; 7.027 ; 7.027 ; 7.027 ;
-; operacao[1] ; Result[6]   ; 7.124 ; 7.124 ; 7.124 ; 7.124 ;
-; operacao[1] ; Result[7]   ; 7.896 ; 7.896 ; 7.896 ; 7.896 ;
-; operacao[2] ; Result[2]   ; 7.370 ; 7.370 ; 7.370 ; 7.370 ;
-; operacao[2] ; Result[3]   ; 6.567 ; 6.567 ; 6.567 ; 6.567 ;
-; operacao[2] ; Result[4]   ; 7.099 ; 7.099 ; 7.099 ; 7.099 ;
-; operacao[2] ; Result[5]   ; 7.007 ; 7.007 ; 7.007 ; 7.007 ;
-; operacao[2] ; Result[6]   ; 7.104 ; 7.104 ; 7.104 ; 7.104 ;
-; operacao[2] ; Result[7]   ; 7.901 ; 7.901 ; 7.901 ; 7.901 ;
-; operacao[3] ; Result[3]   ; 6.184 ; 6.184 ; 6.184 ; 6.184 ;
-; operacao[3] ; Result[4]   ; 6.837 ; 6.837 ; 6.837 ; 6.837 ;
-; operacao[3] ; Result[5]   ; 6.745 ; 6.745 ; 6.745 ; 6.745 ;
-; operacao[3] ; Result[6]   ; 6.842 ; 6.842 ; 6.842 ; 6.842 ;
-; operacao[3] ; Result[7]   ; 7.512 ; 7.512 ; 7.512 ; 7.512 ;
-; operacao[4] ; Result[4]   ; 6.738 ; 6.738 ; 6.738 ; 6.738 ;
-; operacao[4] ; Result[5]   ; 6.820 ; 6.820 ; 6.820 ; 6.820 ;
-; operacao[4] ; Result[6]   ; 6.917 ; 6.917 ; 6.917 ; 6.917 ;
-; operacao[4] ; Result[7]   ; 7.590 ; 7.590 ; 7.590 ; 7.590 ;
-; operacao[5] ; Result[5]   ; 6.589 ; 6.589 ; 6.589 ; 6.589 ;
-; operacao[5] ; Result[6]   ; 6.785 ; 6.785 ; 6.785 ; 6.785 ;
-; operacao[5] ; Result[7]   ; 7.681 ; 7.681 ; 7.681 ; 7.681 ;
-; operacao[6] ; Result[6]   ; 6.848 ; 6.848 ; 6.848 ; 6.848 ;
-; operacao[6] ; Result[7]   ; 7.938 ; 7.938 ; 7.938 ; 7.938 ;
-; operacao[7] ; Result[7]   ; 6.529 ; 6.828 ; 6.828 ; 6.529 ;
-+-------------+-------------+-------+-------+-------+-------+
 
 
 +-------------------------------------------------------------------+
@@ -1535,6 +1285,9 @@ No paths to report.
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
 ; operA[1]   ; operA[1] ; 2        ; 2        ; 0        ; 0        ;
+; operA[2]   ; operA[1] ; 2        ; 2        ; 0        ; 0        ;
+; operA[1]   ; operA[2] ; 2        ; 2        ; 60       ; 58       ;
+; operA[2]   ; operA[2] ; 2        ; 2        ; 56       ; 54       ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1545,6 +1298,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
 ; operA[1]   ; operA[1] ; 2        ; 2        ; 0        ; 0        ;
+; operA[2]   ; operA[1] ; 2        ; 2        ; 0        ; 0        ;
+; operA[1]   ; operA[2] ; 2        ; 2        ; 60       ; 58       ;
+; operA[2]   ; operA[2] ; 2        ; 2        ; 56       ; 54       ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1568,10 +1324,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 25    ; 25   ;
-; Unconstrained Input Port Paths  ; 168   ; 168  ;
+; Unconstrained Input Ports       ; 23    ; 23   ;
+; Unconstrained Input Port Paths  ; 200   ; 200  ;
 ; Unconstrained Output Ports      ; 8     ; 8    ;
-; Unconstrained Output Port Paths ; 147   ; 147  ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
 +---------------------------------+-------+------+
 
 
@@ -1581,7 +1337,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II TimeQuest Timing Analyzer
     Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Feb 07 18:16:57 2018
+    Info: Processing started: Sat Feb 17 22:43:59 2018
 Info: Command: quartus_sta Ula -c Ula
 Info: qsta_default_script.tcl version: #1
 Warning: Parallel compilation is not licensed and has been disabled
@@ -1589,28 +1345,41 @@ Info: Low junction temperature is 0 degrees C
 Info: High junction temperature is 85 degrees C
 Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "startUla|C|combout" is a latch
+    Warning: Node "startUla|Result[0]|combout" is a latch
+    Warning: Node "startUla|Result[1]|combout" is a latch
+    Warning: Node "startUla|Result[2]|combout" is a latch
+    Warning: Node "startUla|Result[3]|combout" is a latch
+    Warning: Node "startUla|Result[4]|combout" is a latch
+    Warning: Node "startUla|Result[5]|combout" is a latch
+    Warning: Node "startUla|Result[6]|combout" is a latch
+    Warning: Node "startUla|N|combout" is a latch
 Critical Warning: Synopsys Design Constraints File file not found: 'Ula.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info: Deriving Clocks
     Info: create_clock -period 1.000 -name operA[1] operA[1]
+    Info: create_clock -period 1.000 -name operA[2] operA[2]
 Info: The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info: Cell: startUla|Mux0~0  from: datad  to: combout
+    Info: Cell: startUla|Mux4~0  from: datac  to: combout
+    Info: Cell: startUla|Mux4~0  from: datad  to: combout
 Info: Analyzing Slow Model
 Critical Warning: Timing requirements not met
-Info: Worst-case setup slack is -0.777
+Info: Worst-case setup slack is -1.344
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
-    Info:    -0.777        -0.777 operA[1] 
-Info: Worst-case hold slack is 0.111
+    Info:    -1.344        -8.613 operA[2] 
+    Info:    -0.402        -0.402 operA[1] 
+Info: Worst-case hold slack is -0.400
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
-    Info:     0.111         0.000 operA[1] 
+    Info:    -0.400        -1.238 operA[2] 
+    Info:    -0.332        -0.332 operA[1] 
 Info: No Recovery paths to report
 Info: No Removal paths to report
 Info: Worst-case minimum pulse width slack is -1.222
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
     Info:    -1.222        -1.222 operA[1] 
+    Info:    -1.222        -1.222 operA[2] 
 Info: The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Info: Started post-fitting delay annotation
@@ -1630,29 +1399,33 @@ Warning: Found 13 output pins without output pin load capacitance assignment
     Info: Pin "V" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
 Info: Delay annotation completed successfully
 Info: The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info: Cell: startUla|Mux0~0  from: datad  to: combout
+    Info: Cell: startUla|Mux4~0  from: datac  to: combout
+    Info: Cell: startUla|Mux4~0  from: datad  to: combout
 Critical Warning: Timing requirements not met
-Info: Worst-case setup slack is -0.016
+Info: Worst-case setup slack is -0.053
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
-    Info:    -0.016        -0.016 operA[1] 
-Info: Worst-case hold slack is 0.030
+    Info:    -0.053        -0.053 operA[2] 
+    Info:     0.162         0.000 operA[1] 
+Info: Worst-case hold slack is -0.515
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
-    Info:     0.030         0.000 operA[1] 
+    Info:    -0.515        -3.087 operA[2] 
+    Info:    -0.154        -0.154 operA[1] 
 Info: No Recovery paths to report
 Info: No Removal paths to report
 Info: Worst-case minimum pulse width slack is -1.222
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
     Info:    -1.222        -1.222 operA[1] 
+    Info:    -1.222        -1.222 operA[2] 
 Info: The selected device family is not supported by the report_metastability command.
 Info: Design is not fully constrained for setup requirements
 Info: Design is not fully constrained for hold requirements
-Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 15 warnings
     Info: Peak virtual memory: 330 megabytes
-    Info: Processing ended: Wed Feb 07 18:17:06 2018
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Processing ended: Sat Feb 17 22:44:15 2018
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:06
 
 

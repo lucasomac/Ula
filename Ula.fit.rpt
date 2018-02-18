@@ -1,5 +1,5 @@
 Fitter report for Ula
-Wed Feb 07 18:16:54 2018
+Sat Feb 17 22:43:53 2018
 Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
@@ -25,17 +25,18 @@ Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
  17. Delay Chain Summary
  18. Pad To Core Delay Chain Fanout
  19. Control Signals
- 20. Non-Global High Fan-Out Signals
- 21. Interconnect Usage Summary
- 22. LAB Logic Elements
- 23. LAB Signals Sourced
- 24. LAB Signals Sourced Out
- 25. LAB Distinct Inputs
- 26. Fitter Device Options
- 27. Operating Settings and Conditions
- 28. Estimated Delay Added for Hold Timing Summary
- 29. Estimated Delay Added for Hold Timing Details
- 30. Fitter Messages
+ 20. Global & Other Fast Signals
+ 21. Non-Global High Fan-Out Signals
+ 22. Interconnect Usage Summary
+ 23. LAB Logic Elements
+ 24. LAB Signals Sourced
+ 25. LAB Signals Sourced Out
+ 26. LAB Distinct Inputs
+ 27. Fitter Device Options
+ 28. Operating Settings and Conditions
+ 29. Estimated Delay Added for Hold Timing Summary
+ 30. Estimated Delay Added for Hold Timing Details
+ 31. Fitter Messages
 
 
 
@@ -61,15 +62,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                     ;
 +------------------------------------+-----------------------------------------------+
-; Fitter Status                      ; Successful - Wed Feb 07 18:16:54 2018         ;
+; Fitter Status                      ; Successful - Sat Feb 17 22:43:53 2018         ;
 ; Quartus II Version                 ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Ula                                           ;
 ; Top-level Entity Name              ; ula                                           ;
 ; Family                             ; Cyclone II                                    ;
 ; Device                             ; EP2C35F672C6                                  ;
 ; Timing Models                      ; Final                                         ;
-; Total logic elements               ; 125 / 33,216 ( < 1 % )                        ;
-;     Total combinational functions  ; 125 / 33,216 ( < 1 % )                        ;
+; Total logic elements               ; 158 / 33,216 ( < 1 % )                        ;
+;     Total combinational functions  ; 158 / 33,216 ( < 1 % )                        ;
 ;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                            ;
 ; Total registers                    ; 0                                             ;
 ; Total pins                         ; 38 / 475 ( 8 % )                              ;
@@ -147,8 +148,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 167 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 167 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 201 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 201 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -171,7 +172,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 164     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 198     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -187,48 +188,48 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 125 / 33,216 ( < 1 % ) ;
-;     -- Combinational with no register       ; 125                    ;
+; Total logic elements                        ; 158 / 33,216 ( < 1 % ) ;
+;     -- Combinational with no register       ; 158                    ;
 ;     -- Register only                        ; 0                      ;
 ;     -- Combinational with a register        ; 0                      ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 64                     ;
-;     -- 3 input functions                    ; 27                     ;
-;     -- <=2 input functions                  ; 34                     ;
+;     -- 4 input functions                    ; 73                     ;
+;     -- 3 input functions                    ; 49                     ;
+;     -- <=2 input functions                  ; 36                     ;
 ;     -- Register only                        ; 0                      ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 89                     ;
-;     -- arithmetic mode                      ; 36                     ;
+;     -- normal mode                          ; 108                    ;
+;     -- arithmetic mode                      ; 50                     ;
 ;                                             ;                        ;
 ; Total registers*                            ; 0 / 34,593 ( 0 % )     ;
 ;     -- Dedicated logic registers            ; 0 / 33,216 ( 0 % )     ;
 ;     -- I/O registers                        ; 0 / 1,377 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 9 / 2,076 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 11 / 2,076 ( < 1 % )   ;
 ; User inserted logic elements                ; 0                      ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 38 / 475 ( 8 % )       ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
-; Global signals                              ; 0                      ;
+; Global signals                              ; 1                      ;
 ; M4Ks                                        ; 0 / 105 ( 0 % )        ;
 ; Total block memory bits                     ; 0 / 483,840 ( 0 % )    ;
 ; Total block memory implementation bits      ; 0 / 483,840 ( 0 % )    ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )         ;
 ; PLLs                                        ; 0 / 4 ( 0 % )          ;
-; Global clocks                               ; 0 / 16 ( 0 % )         ;
+; Global clocks                               ; 1 / 16 ( 6 % )         ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )          ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 2% / 1% / 3%           ;
-; Maximum fan-out node                        ; operA[0]               ;
+; Peak interconnect usage (total/H/V)         ; 3% / 3% / 3%           ;
+; Maximum fan-out node                        ; operA[1]               ;
 ; Maximum fan-out                             ; 30                     ;
-; Highest non-global fan-out signal           ; operA[0]               ;
+; Highest non-global fan-out signal           ; operA[1]               ;
 ; Highest non-global fan-out                  ; 30                     ;
-; Total fan-out                               ; 408                    ;
-; Average fan-out                             ; 2.46                   ;
+; Total fan-out                               ; 515                    ;
+; Average fan-out                             ; 2.58                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -241,32 +242,33 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 125 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
-;     -- Combinational with no register       ; 125                   ; 0                              ;
+; Total logic elements                        ; 158 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
+;     -- Combinational with no register       ; 158                   ; 0                              ;
 ;     -- Register only                        ; 0                     ; 0                              ;
 ;     -- Combinational with a register        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 64                    ; 0                              ;
-;     -- 3 input functions                    ; 27                    ; 0                              ;
-;     -- <=2 input functions                  ; 34                    ; 0                              ;
+;     -- 4 input functions                    ; 73                    ; 0                              ;
+;     -- 3 input functions                    ; 49                    ; 0                              ;
+;     -- <=2 input functions                  ; 36                    ; 0                              ;
 ;     -- Register only                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 89                    ; 0                              ;
-;     -- arithmetic mode                      ; 36                    ; 0                              ;
+;     -- normal mode                          ; 108                   ; 0                              ;
+;     -- arithmetic mode                      ; 50                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Total registers                             ; 0                     ; 0                              ;
 ;     -- Dedicated logic registers            ; 0 / 33216 ( 0 % )     ; 0 / 33216 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 9 / 2076 ( < 1 % )    ; 0 / 2076 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 11 / 2076 ( < 1 % )   ; 0 / 2076 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 38                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )        ; 0 / 70 ( 0 % )                 ;
 ; Total memory bits                           ; 0                     ; 0                              ;
 ; Total RAM block bits                        ; 0                     ; 0                              ;
+; Clock control block                         ; 1 / 20 ( 5 % )        ; 0 / 20 ( 0 % )                 ;
 ;                                             ;                       ;                                ;
 ; Connections                                 ;                       ;                                ;
 ;     -- Input Connections                    ; 0                     ; 0                              ;
@@ -275,7 +277,7 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 408                   ; 0                              ;
+;     -- Total Connections                    ; 515                   ; 0                              ;
 ;     -- Registered Connections               ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
@@ -308,31 +310,31 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 +-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; Cin         ; G16   ; 4        ; 44           ; 36           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operA[0]    ; F21   ; 5        ; 65           ; 34           ; 1           ; 30                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operA[1]    ; E15   ; 4        ; 40           ; 36           ; 1           ; 28                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operA[2]    ; F17   ; 4        ; 48           ; 36           ; 2           ; 16                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operA[3]    ; B15   ; 4        ; 37           ; 36           ; 2           ; 11                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operA[4]    ; C13   ; 3        ; 31           ; 36           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operA[5]    ; D13   ; 3        ; 31           ; 36           ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operA[6]    ; AB15  ; 7        ; 40           ; 0            ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operA[7]    ; AE16  ; 7        ; 40           ; 0            ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operB[0]    ; H16   ; 4        ; 42           ; 36           ; 2           ; 11                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operB[1]    ; F15   ; 4        ; 44           ; 36           ; 2           ; 9                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operB[2]    ; W16   ; 7        ; 42           ; 0            ; 0           ; 9                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operB[3]    ; C25   ; 5        ; 65           ; 32           ; 2           ; 9                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operB[4]    ; F16   ; 4        ; 44           ; 36           ; 1           ; 9                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operB[5]    ; H15   ; 4        ; 42           ; 36           ; 3           ; 9                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operB[6]    ; B17   ; 4        ; 42           ; 36           ; 0           ; 10                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operB[7]    ; C15   ; 4        ; 37           ; 36           ; 3           ; 11                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operacao[0] ; C2    ; 2        ; 0            ; 33           ; 1           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operacao[1] ; C17   ; 4        ; 46           ; 36           ; 1           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operacao[2] ; D17   ; 4        ; 46           ; 36           ; 0           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operacao[3] ; D15   ; 4        ; 40           ; 36           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operacao[4] ; G15   ; 4        ; 44           ; 36           ; 3           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operacao[5] ; A17   ; 4        ; 42           ; 36           ; 1           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operacao[6] ; A19   ; 4        ; 53           ; 36           ; 3           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operacao[7] ; D16   ; 4        ; 40           ; 36           ; 0           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Cin         ; C12   ; 3        ; 29           ; 36           ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operA[0]    ; E15   ; 4        ; 40           ; 36           ; 1           ; 28                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operA[1]    ; B16   ; 4        ; 37           ; 36           ; 1           ; 30                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operA[2]    ; B15   ; 4        ; 37           ; 36           ; 2           ; 24                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operA[3]    ; B11   ; 3        ; 29           ; 36           ; 2           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operA[4]    ; C13   ; 3        ; 31           ; 36           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operA[5]    ; D13   ; 3        ; 31           ; 36           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operA[6]    ; AC14  ; 7        ; 35           ; 0            ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operA[7]    ; G12   ; 3        ; 27           ; 36           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operB[0]    ; G14   ; 4        ; 35           ; 36           ; 2           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operB[1]    ; F13   ; 4        ; 35           ; 36           ; 1           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operB[2]    ; B17   ; 4        ; 42           ; 36           ; 0           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operB[3]    ; D15   ; 4        ; 40           ; 36           ; 2           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operB[4]    ; C16   ; 4        ; 37           ; 36           ; 0           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operB[5]    ; D16   ; 4        ; 40           ; 36           ; 0           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operB[6]    ; G13   ; 4        ; 35           ; 36           ; 0           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operB[7]    ; C15   ; 4        ; 37           ; 36           ; 3           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operacao[0] ; A14   ; 4        ; 33           ; 36           ; 1           ; 7                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operacao[1] ; F16   ; 4        ; 44           ; 36           ; 1           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operacao[2] ; A17   ; 4        ; 42           ; 36           ; 1           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operacao[3] ; G16   ; 4        ; 44           ; 36           ; 0           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operacao[4] ; C11   ; 3        ; 29           ; 36           ; 3           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operacao[5] ; F14   ; 4        ; 35           ; 36           ; 3           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operacao[6] ; D14   ; 4        ; 33           ; 36           ; 0           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; operacao[7] ; B14   ; 4        ; 33           ; 36           ; 2           ; 7                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 +-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -341,19 +343,19 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 +-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; B         ; AC16  ; 7        ; 42           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; C         ; AE18  ; 7        ; 46           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; N         ; Y16   ; 7        ; 46           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Result[0] ; A18   ; 4        ; 46           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Result[1] ; B16   ; 4        ; 37           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Result[2] ; J5    ; 2        ; 0            ; 31           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Result[3] ; C16   ; 4        ; 37           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Result[4] ; B24   ; 5        ; 65           ; 32           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Result[5] ; J21   ; 5        ; 65           ; 30           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Result[6] ; J8    ; 2        ; 0            ; 31           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Result[7] ; E24   ; 5        ; 65           ; 33           ; 4           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; V         ; V7    ; 1        ; 0            ; 6            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; Z         ; A23   ; 4        ; 61           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; B         ; A18   ; 4        ; 46           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; C         ; L20   ; 5        ; 65           ; 24           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; N         ; AB20  ; 7        ; 55           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Result[0] ; B12   ; 3        ; 29           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Result[1] ; J10   ; 3        ; 27           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Result[2] ; H15   ; 4        ; 42           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Result[3] ; H16   ; 4        ; 42           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Result[4] ; F15   ; 4        ; 44           ; 36           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Result[5] ; G15   ; 4        ; 44           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Result[6] ; F12   ; 3        ; 27           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Result[7] ; J11   ; 3        ; 27           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; V         ; D17   ; 4        ; 46           ; 36           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; Z         ; AC6   ; 8        ; 1            ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 +-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
@@ -362,14 +364,14 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 1 / 64 ( 2 % )   ; 3.3V          ; --           ;
-; 2        ; 5 / 59 ( 8 % )   ; 3.3V          ; --           ;
-; 3        ; 2 / 56 ( 4 % )   ; 3.3V          ; --           ;
-; 4        ; 21 / 58 ( 36 % ) ; 3.3V          ; --           ;
-; 5        ; 5 / 65 ( 8 % )   ; 3.3V          ; --           ;
+; 1        ; 0 / 64 ( 0 % )   ; 3.3V          ; --           ;
+; 2        ; 2 / 59 ( 3 % )   ; 3.3V          ; --           ;
+; 3        ; 10 / 56 ( 18 % ) ; 3.3V          ; --           ;
+; 4        ; 24 / 58 ( 41 % ) ; 3.3V          ; --           ;
+; 5        ; 1 / 65 ( 2 % )   ; 3.3V          ; --           ;
 ; 6        ; 1 / 59 ( 2 % )   ; 3.3V          ; --           ;
-; 7        ; 6 / 58 ( 10 % )  ; 3.3V          ; --           ;
-; 8        ; 0 / 56 ( 0 % )   ; 3.3V          ; --           ;
+; 7        ; 2 / 58 ( 3 % )   ; 3.3V          ; --           ;
+; 8        ; 1 / 56 ( 2 % )   ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
 
@@ -390,16 +392,16 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; A11      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; A12      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A13      ; 430        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; A14      ; 427        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A14      ; 427        ; 4        ; operacao[0]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A15      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A16      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; A17      ; 412        ; 4        ; operacao[5]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; A18      ; 406        ; 4        ; Result[0]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; A19      ; 394        ; 4        ; operacao[6]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A17      ; 412        ; 4        ; operacao[2]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A18      ; 406        ; 4        ; B                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A19      ; 394        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A20      ; 390        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A21      ; 382        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A22      ; 379        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A23      ; 378        ; 4        ; Z                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A23      ; 378        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A24      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; A25      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AA1      ; 107        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -442,12 +444,12 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; AB12     ; 171        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB13     ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB14     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; AB15     ; 198        ; 7        ; operA[6]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AB15     ; 198        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB16     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AB17     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB18     ; 215        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB19     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; AB20     ; 225        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AB20     ; 225        ; 7        ; N                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AB21     ; 242        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB22     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB23     ; 258        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -459,7 +461,7 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; AC3      ; 128        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AC4      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AC5      ; 133        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AC6      ; 134        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AC6      ; 134        ; 8        ; Z                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AC7      ; 143        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC8      ; 148        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC9      ; 163        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -467,9 +469,9 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; AC11     ; 168        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC12     ; 172        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC13     ; 185        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; AC14     ; 191        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AC14     ; 191        ; 7        ; operA[6]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AC15     ; 199        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AC16     ; 202        ; 7        ; B                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AC16     ; 202        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC17     ; 207        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC18     ; 216        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC19     ; 222        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -521,9 +523,9 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; AE13     ; 183        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE14     ; 188        ; 7        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AE15     ; 189        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AE16     ; 200        ; 7        ; operA[7]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE16     ; 200        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE17     ; 206        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AE18     ; 212        ; 7        ; C                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE18     ; 212        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE19     ; 214        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE20     ; 224        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE21     ; 228        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -566,24 +568,24 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; B8       ; 458        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B9       ; 452        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B10      ; 448        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B11      ; 435        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B12      ; 433        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B11      ; 435        ; 3        ; operA[3]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B12      ; 433        ; 3        ; Result[0]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B13      ; 429        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; B14      ; 428        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B15      ; 420        ; 4        ; operA[3]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B16      ; 419        ; 4        ; Result[1]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B17      ; 411        ; 4        ; operB[6]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B14      ; 428        ; 4        ; operacao[7]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B15      ; 420        ; 4        ; operA[2]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B16      ; 419        ; 4        ; operA[1]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B17      ; 411        ; 4        ; operB[2]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B18      ; 405        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B19      ; 393        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B20      ; 389        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B21      ; 381        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B22      ; 380        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B23      ; 377        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B24      ; 363        ; 5        ; Result[4]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; B24      ; 363        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; B25      ; 362        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; B26      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C1       ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; C2       ; 6          ; 2        ; operacao[0]                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; C2       ; 6          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; C3       ; 7          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; C4       ; 478        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C5       ; 486        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -592,13 +594,13 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; C8       ; 463        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C9       ; 459        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C10      ; 450        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C11      ; 436        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C12      ; 434        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C11      ; 436        ; 3        ; operacao[4]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C12      ; 434        ; 3        ; Cin                                      ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C13      ; 431        ; 3        ; operA[4]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C15      ; 421        ; 4        ; operB[7]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; C16      ; 418        ; 4        ; Result[3]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; C17      ; 404        ; 4        ; operacao[1]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C16      ; 418        ; 4        ; operB[4]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C17      ; 404        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C18      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C19      ; 391        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C20      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -606,7 +608,7 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; C22      ; 374        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C23      ; 373        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C24      ; 360        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; C25      ; 361        ; 5        ; operB[3]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; C25      ; 361        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; C26      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; D1       ; 13         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D2       ; 12         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -621,10 +623,10 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; D11      ; 445        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D12      ; 443        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D13      ; 432        ; 3        ; operA[5]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; D14      ; 426        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D15      ; 417        ; 4        ; operacao[3]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; D16      ; 415        ; 4        ; operacao[7]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; D17      ; 403        ; 4        ; operacao[2]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D14      ; 426        ; 4        ; operacao[6]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D15      ; 417        ; 4        ; operB[3]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D16      ; 415        ; 4        ; operB[5]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D17      ; 403        ; 4        ; V                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D18      ; 396        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D19      ; 392        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D20      ; 387        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -648,7 +650,7 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; E12      ; 444        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E13      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E14      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; E15      ; 416        ; 4        ; operA[1]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; E15      ; 416        ; 4        ; operA[0]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E16      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; E17      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E18      ; 395        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -657,7 +659,7 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; E21      ;            ;          ; GND_PLL2                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; E22      ; 370        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E23      ; 365        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; E24      ; 364        ; 5        ; Result[7]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E24      ; 364        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E25      ; 355        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E26      ; 356        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F1       ; 29         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -671,16 +673,16 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; F9       ; 470        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F10      ; 462        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F11      ; 454        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F12      ; 440        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F13      ; 423        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F14      ; 425        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F15      ; 409        ; 4        ; operB[1]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F16      ; 408        ; 4        ; operB[4]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F17      ; 401        ; 4        ; operA[2]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F12      ; 440        ; 3        ; Result[6]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F13      ; 423        ; 4        ; operB[1]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F14      ; 425        ; 4        ; operacao[5]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F15      ; 409        ; 4        ; Result[4]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F16      ; 408        ; 4        ; operacao[1]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F17      ; 401        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F18      ; 398        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F19      ;            ;          ; GNDA_PLL2                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F20      ; 372        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F21      ; 371        ; 5        ; operA[0]                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F21      ; 371        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F22      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; F23      ; 353        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F24      ; 354        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -697,11 +699,11 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; G9       ; 471        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G10      ; 461        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G11      ; 446        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G12      ; 439        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G13      ; 422        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G14      ; 424        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; G15      ; 410        ; 4        ; operacao[4]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; G16      ; 407        ; 4        ; Cin                                      ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G12      ; 439        ; 3        ; operA[7]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G13      ; 422        ; 4        ; operB[6]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G14      ; 424        ; 4        ; operB[0]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G15      ; 410        ; 4        ; Result[5]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G16      ; 407        ; 4        ; operacao[3]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; G17      ; 402        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G18      ; 397        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G19      ;            ;          ; VCCA_PLL2                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -726,8 +728,8 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; H12      ; 455        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; H15      ; 414        ; 4        ; operB[5]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; H16      ; 413        ; 4        ; operB[0]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H15      ; 414        ; 4        ; Result[2]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H16      ; 413        ; 4        ; Result[3]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; H17      ; 400        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H18      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; H19      ; 335        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -742,13 +744,13 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; J2       ; 38         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J3       ; 34         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J4       ; 35         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J5       ; 15         ; 2        ; Result[2]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J5       ; 15         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J6       ; 25         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J7       ; 17         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J8       ; 16         ; 2        ; Result[6]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J8       ; 16         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J9       ; 475        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; J10      ; 438        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; J11      ; 437        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; J10      ; 438        ; 3        ; Result[1]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; J11      ; 437        ; 3        ; Result[7]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; J12      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; J13      ; 442        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J14      ; 441        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -758,7 +760,7 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; J18      ; 383        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J19      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; J20      ; 351        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J21      ; 352        ; 5        ; Result[5]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J21      ; 352        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J22      ; 357        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J23      ; 339        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J24      ; 338        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -809,7 +811,7 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; L17      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; L18      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; L19      ; 322        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; L20      ; 328        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L20      ; 328        ; 5        ; C                                        ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L21      ; 329        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; L22      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; L23      ; 325        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -978,7 +980,7 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; V4       ; 94         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V5       ; 104        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V6       ; 105        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; V7       ; 112        ; 1        ; V                                        ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V7       ; 112        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V8       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; V9       ; 142        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; V10      ; 141        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -1013,7 +1015,7 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; W13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; W14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; W15      ; 203        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; W16      ; 204        ; 7        ; operB[2]                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; W16      ; 204        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W17      ; 217        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W18      ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; W19      ; 234        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -1039,7 +1041,7 @@ The pin-out file can be found in E:/Projetos/Ula/Ula.pin.
 ; Y13      ; 193        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y14      ; 195        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y15      ; 196        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; Y16      ; 210        ; 7        ; N                                        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; Y16      ; 210        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y17      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y18      ; 229        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y19      ;            ;          ; GNDA_PLL4                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1096,8 +1098,8 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name      ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------+--------------+
-; |ula                       ; 125 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 38   ; 0            ; 125 (0)      ; 0 (0)             ; 0 (0)            ; |ula                     ;              ;
-;    |ula_struct:startUla|   ; 125 (125)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 125 (125)    ; 0 (0)             ; 0 (0)            ; |ula|ula_struct:startUla ;              ;
+; |ula                       ; 158 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 38   ; 0            ; 158 (0)      ; 0 (0)             ; 0 (0)            ; |ula                     ;              ;
+;    |ula_struct:startUla|   ; 158 (158)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 158 (158)    ; 0 (0)             ; 0 (0)            ; |ula|ula_struct:startUla ;              ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1125,463 +1127,548 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; operA[6]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; operA[7]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; operB[0]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operacao[0] ; Input    ; (6) 4075 ps   ; (6) 4075 ps   ; --                    ; --  ;
-; operA[1]    ; Input    ; (0) 287 ps    ; (6) 4114 ps   ; --                    ; --  ;
-; Cin         ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operA[2]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operA[0]    ; Input    ; (6) 4075 ps   ; (6) 4075 ps   ; --                    ; --  ;
-; operB[1]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operA[3]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operB[2]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operacao[1] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operB[3]    ; Input    ; (6) 4075 ps   ; (6) 4075 ps   ; --                    ; --  ;
-; operacao[2] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operB[4]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operacao[3] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operB[5]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operacao[4] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operB[6]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operacao[5] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operacao[0] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; operB[7]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
-; operacao[6] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 ; operacao[7] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operB[6]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operacao[6] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operB[5]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operacao[5] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operB[4]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operacao[4] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operB[3]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operacao[3] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operB[2]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operacao[2] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operB[1]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operacao[1] ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operA[0]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operA[2]    ; Input    ; (0) 287 ps    ; (1) 1051 ps   ; --                    ; --  ;
+; operA[1]    ; Input    ; (1) 1051 ps   ; (0) 287 ps    ; --                    ; --  ;
+; Cin         ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
+; operA[3]    ; Input    ; (6) 4114 ps   ; (6) 4114 ps   ; --                    ; --  ;
 +-------------+----------+---------------+---------------+-----------------------+-----+
 
 
-+-------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                    ;
-+-------------------------------------+-------------------+---------+
-; Source Pin / Fanout                 ; Pad To Core Index ; Setting ;
-+-------------------------------------+-------------------+---------+
-; operA[4]                            ;                   ;         ;
-; operA[5]                            ;                   ;         ;
-; operA[6]                            ;                   ;         ;
-;      - ula_struct:startUla|Mux1~0   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux0~1   ; 1                 ; 6       ;
-; operA[7]                            ;                   ;         ;
-;      - ula_struct:startUla|Mux1~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux0~1   ; 0                 ; 6       ;
-; operB[0]                            ;                   ;         ;
-;      - ula_struct:startUla|Add3~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add1~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add2~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add4~1   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~1  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~5  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~8  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux9~1   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux1~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux1~3   ; 0                 ; 6       ;
-; operacao[0]                         ;                   ;         ;
-;      - ula_struct:startUla|Add1~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~5  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~8  ; 0                 ; 6       ;
-; operA[1]                            ;                   ;         ;
-;      - ula_struct:startUla|Mux10~1  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux10~2  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux10~3  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux10~6  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux10~7  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~0   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~1   ; 0                 ; 0       ;
-;      - ula_struct:startUla|Mux5~2   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~3   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~4   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~7   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~8   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux4~2   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux4~3   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux3~2   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux3~3   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux3~5   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux3~6   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux1~4   ; 0                 ; 0       ;
-;      - ula_struct:startUla|Mux0~0   ; 0                 ; 0       ;
-;      - ula_struct:startUla|Mux6~5   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux6~6   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux7~5   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux7~6   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux8~5   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux8~6   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux9~5   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux9~6   ; 1                 ; 6       ;
-; Cin                                 ;                   ;         ;
-;      - ula_struct:startUla|Mux10~0  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux3~0   ; 0                 ; 6       ;
-; operA[2]                            ;                   ;         ;
-;      - ula_struct:startUla|Mux10~0  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~2  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~3  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~7  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~9  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux5~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux5~1   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux5~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux5~3   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux5~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux3~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux3~3   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux3~6   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux3~7   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux1~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux0~0   ; 0                 ; 6       ;
-; operA[0]                            ;                   ;         ;
-;      - ula_struct:startUla|Mux10~2  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux10~3  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux10~5  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux10~6  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux10~8  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~0   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~3   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~4   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~7   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~8   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux4~2   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux4~3   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux3~0   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux3~1   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux3~2   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux3~3   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux10~11 ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux3~5   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux10~12 ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux1~1   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux1~2   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux1~3   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux6~5   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux6~6   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux7~5   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux7~6   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux8~5   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux8~6   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux9~5   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux9~6   ; 1                 ; 6       ;
-; operB[1]                            ;                   ;         ;
-;      - ula_struct:startUla|Add1~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add2~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add3~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add4~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~2  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Result~0 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux8~1   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux9~5   ; 0                 ; 6       ;
-; operA[3]                            ;                   ;         ;
-;      - ula_struct:startUla|Mux10~10 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux9~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux8~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux7~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux6~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux5~11  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux4~6   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux3~8   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux1~1   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux1~5   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux0~0   ; 0                 ; 6       ;
-; operB[2]                            ;                   ;         ;
-;      - ula_struct:startUla|Add1~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add2~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add3~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add4~4   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux9~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Result~1 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux7~1   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux8~5   ; 0                 ; 6       ;
-; operacao[1]                         ;                   ;         ;
-;      - ula_struct:startUla|Add1~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Result~0 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux9~5   ; 0                 ; 6       ;
-; operB[3]                            ;                   ;         ;
-;      - ula_struct:startUla|Add1~6   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add2~6   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~6   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add3~6   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add4~6   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux8~1   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Result~2 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux6~1   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux7~5   ; 0                 ; 6       ;
-; operacao[2]                         ;                   ;         ;
-;      - ula_struct:startUla|Add1~4   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Add0~4   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Result~1 ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux8~5   ; 1                 ; 6       ;
-; operB[4]                            ;                   ;         ;
-;      - ula_struct:startUla|Add1~8   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add2~8   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~8   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add3~8   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add4~8   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux7~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Result~3 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux5~6   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux6~5   ; 0                 ; 6       ;
-; operacao[3]                         ;                   ;         ;
-;      - ula_struct:startUla|Add1~6   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~6   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Result~2 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux7~5   ; 0                 ; 6       ;
-; operB[5]                            ;                   ;         ;
-;      - ula_struct:startUla|Add1~10  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Add2~10  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Add0~10  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Add3~10  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Add4~10  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux6~1   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Result~4 ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux5~7   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux4~1   ; 1                 ; 6       ;
-; operacao[4]                         ;                   ;         ;
-;      - ula_struct:startUla|Add1~8   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Add0~8   ; 1                 ; 6       ;
-;      - ula_struct:startUla|Result~3 ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux6~5   ; 1                 ; 6       ;
-; operB[6]                            ;                   ;         ;
-;      - ula_struct:startUla|Add1~12  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add2~12  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~12  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add3~12  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add4~12  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux5~5   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Result~5 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux4~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux3~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux3~3   ; 0                 ; 6       ;
-; operacao[5]                         ;                   ;         ;
-;      - ula_struct:startUla|Add1~10  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~10  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Result~4 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux5~7   ; 0                 ; 6       ;
-; operB[7]                            ;                   ;         ;
-;      - ula_struct:startUla|Add3~14  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add1~14  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add2~14  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~14  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add4~14  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux4~1   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux3~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~11 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~12 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux1~2   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux1~3   ; 0                 ; 6       ;
-; operacao[6]                         ;                   ;         ;
-;      - ula_struct:startUla|Add1~12  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Add0~12  ; 1                 ; 6       ;
-;      - ula_struct:startUla|Result~5 ; 1                 ; 6       ;
-;      - ula_struct:startUla|Mux4~2   ; 1                 ; 6       ;
-; operacao[7]                         ;                   ;         ;
-;      - ula_struct:startUla|Add1~14  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Add0~14  ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux3~0   ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~11 ; 0                 ; 6       ;
-;      - ula_struct:startUla|Mux10~12 ; 0                 ; 6       ;
-+-------------------------------------+-------------------+---------+
++-----------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                        ;
++-----------------------------------------+-------------------+---------+
+; Source Pin / Fanout                     ; Pad To Core Index ; Setting ;
++-----------------------------------------+-------------------+---------+
+; operA[4]                                ;                   ;         ;
+; operA[5]                                ;                   ;         ;
+; operA[6]                                ;                   ;         ;
+;      - ula_struct:startUla|Mux3~0       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux14~0      ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux4~1       ; 1                 ; 6       ;
+; operA[7]                                ;                   ;         ;
+;      - ula_struct:startUla|Mux3~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux14~0      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux4~1       ; 0                 ; 6       ;
+; operB[0]                                ;                   ;         ;
+;      - ula_struct:startUla|Add3~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add1~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add2~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add4~1       ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~1  ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~1  ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~2       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~7       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~10      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux2~5       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux5~3       ; 0                 ; 6       ;
+; operacao[0]                             ;                   ;         ;
+;      - ula_struct:startUla|Add1~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~1  ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~1  ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~2       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~7       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~10      ; 0                 ; 6       ;
+; operB[7]                                ;                   ;         ;
+;      - ula_struct:startUla|LessThan1~14 ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~14 ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add3~14      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add1~14      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add2~14      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~14      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add4~14      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux12~7      ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux13~0      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~13      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~14      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux5~3       ; 0                 ; 6       ;
+; operacao[7]                             ;                   ;         ;
+;      - ula_struct:startUla|LessThan1~14 ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~14 ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add1~14      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~14      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux13~0      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~13      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~14      ; 0                 ; 6       ;
+; operB[6]                                ;                   ;         ;
+;      - ula_struct:startUla|Add4~12      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add1~12      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add2~12      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~12      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add3~12      ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~13 ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~13 ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~10     ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux12~0      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux12~1      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux12~2      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux13~3      ; 0                 ; 6       ;
+; operacao[6]                             ;                   ;         ;
+;      - ula_struct:startUla|Add1~12      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~12      ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~13 ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~13 ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux12~0      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux12~2      ; 0                 ; 6       ;
+; operB[5]                                ;                   ;         ;
+;      - ula_struct:startUla|Add4~10      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add1~10      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add2~10      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~10      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add3~10      ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~11 ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~11 ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux10~5      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~5      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~6      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux12~6      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~12     ; 0                 ; 6       ;
+; operacao[5]                             ;                   ;         ;
+;      - ula_struct:startUla|Add1~10      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~10      ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~11 ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~11 ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~5      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~12     ; 0                 ; 6       ;
+; operB[4]                                ;                   ;         ;
+;      - ula_struct:startUla|Add4~8       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Add1~8       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Add2~8       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Add0~8       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Add3~8       ; 1                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~9  ; 1                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~9  ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux0~5       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux10~0      ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux10~1      ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux11~10     ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux10~7      ; 1                 ; 6       ;
+; operacao[4]                             ;                   ;         ;
+;      - ula_struct:startUla|Add1~8       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~8       ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~9  ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~9  ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux10~0      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux10~7      ; 0                 ; 6       ;
+; operB[3]                                ;                   ;         ;
+;      - ula_struct:startUla|Add4~6       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Add1~6       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Add2~6       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Add0~6       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Add3~6       ; 1                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~7  ; 1                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~7  ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux1~5       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux0~0       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux0~1       ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux10~4      ; 1                 ; 6       ;
+;      - ula_struct:startUla|Mux0~7       ; 1                 ; 6       ;
+; operacao[3]                             ;                   ;         ;
+;      - ula_struct:startUla|Add1~6       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~6       ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~7  ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~7  ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux0~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux0~7       ; 0                 ; 6       ;
+; operB[2]                                ;                   ;         ;
+;      - ula_struct:startUla|Add4~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add1~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add2~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add3~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~5  ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~5  ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux2~5       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux1~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux1~1       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux0~5       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux1~7       ; 0                 ; 6       ;
+; operacao[2]                             ;                   ;         ;
+;      - ula_struct:startUla|Add1~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~5  ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~5  ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux1~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux1~7       ; 0                 ; 6       ;
+; operB[1]                                ;                   ;         ;
+;      - ula_struct:startUla|Add4~2       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add1~2       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add2~2       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~2       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add3~2       ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~3  ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~3  ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~5       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux2~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux2~1       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux1~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux2~7       ; 0                 ; 6       ;
+; operacao[1]                             ;                   ;         ;
+;      - ula_struct:startUla|Add1~2       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Add0~2       ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan1~3  ; 0                 ; 6       ;
+;      - ula_struct:startUla|LessThan2~3  ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux2~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux2~7       ; 0                 ; 6       ;
+; operA[0]                                ;                   ;         ;
+;      - ula_struct:startUla|Mux3~1       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~3       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~7       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~8       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~10      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~0      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~1      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~3      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~4      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux12~2      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux12~3      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux13~2      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~13      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux13~5      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux3~14      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux5~3       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux5~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~12     ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~13     ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux10~7      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux10~8      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux0~7       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux0~8       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux1~7       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux1~8       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux2~7       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux2~8       ; 0                 ; 6       ;
+; operA[2]                                ;                   ;         ;
+;      - ula_struct:startUla|Mux3~2       ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux3~4       ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux3~9       ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux3~11      ; 1                 ; 1       ;
+;      - ula_struct:startUla|Mux14~0      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux11~0      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux2~0       ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux11~1      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux11~2      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux11~3      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux11~4      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux1~0       ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux0~0       ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux10~0      ; 1                 ; 1       ;
+;      - ula_struct:startUla|Mux11~5      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux12~0      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux13~0      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux13~1      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux13~2      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux13~6      ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux13~7      ; 1                 ; 1       ;
+;      - ula_struct:startUla|Mux5~3       ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux5~4       ; 0                 ; 0       ;
+;      - ula_struct:startUla|Mux4~0       ; 0                 ; 0       ;
+; operA[1]                                ;                   ;         ;
+;      - ula_struct:startUla|Mux3~4       ; 0                 ; 1       ;
+;      - ula_struct:startUla|Mux3~5       ; 0                 ; 1       ;
+;      - ula_struct:startUla|Mux3~6       ; 0                 ; 1       ;
+;      - ula_struct:startUla|Mux3~8       ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux3~9       ; 0                 ; 1       ;
+;      - ula_struct:startUla|Mux5~2       ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux11~1      ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux11~2      ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux11~3      ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux11~4      ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux12~2      ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux12~3      ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux13~2      ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux13~3      ; 0                 ; 1       ;
+;      - ula_struct:startUla|Mux13~4      ; 0                 ; 1       ;
+;      - ula_struct:startUla|Mux13~5      ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux13~6      ; 0                 ; 1       ;
+;      - ula_struct:startUla|Mux5~4       ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux4~0       ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux5~6       ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux11~12     ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux11~13     ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux10~7      ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux10~8      ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux0~7       ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux0~8       ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux1~7       ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux1~8       ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux2~7       ; 1                 ; 0       ;
+;      - ula_struct:startUla|Mux2~8       ; 1                 ; 0       ;
+; Cin                                     ;                   ;         ;
+;      - ula_struct:startUla|Mux3~3       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux13~1      ; 0                 ; 6       ;
+; operA[3]                                ;                   ;         ;
+;      - ula_struct:startUla|Mux3~12      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux14~1      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux5~2       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux11~1      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux13~8      ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux5~4       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux4~0       ; 0                 ; 6       ;
+;      - ula_struct:startUla|Mux5~6       ; 0                 ; 6       ;
++-----------------------------------------+-------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                         ;
-+----------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                       ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; ula_struct:startUla|Mux0~1 ; LCCOMB_X40_Y35_N14 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
-+----------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                          ;
++-----------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                        ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; ula_struct:startUla|Mux14~1 ; LCCOMB_X36_Y33_N20 ; 8       ; Latch enable ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; ula_struct:startUla|Mux4~1  ; LCCOMB_X36_Y33_N8  ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
++-----------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+----------------------------------------+
-; Non-Global High Fan-Out Signals        ;
-+------------------------------+---------+
-; Name                         ; Fan-Out ;
-+------------------------------+---------+
-; operA[0]                     ; 30      ;
-; operA[1]                     ; 28      ;
-; operA[2]                     ; 16      ;
-; operB[7]                     ; 11      ;
-; operA[3]                     ; 11      ;
-; operB[0]                     ; 11      ;
-; operB[6]                     ; 10      ;
-; ula_struct:startUla|Mux5~1   ; 10      ;
-; operB[5]                     ; 9       ;
-; operB[4]                     ; 9       ;
-; operB[3]                     ; 9       ;
-; operB[2]                     ; 9       ;
-; operB[1]                     ; 9       ;
-; ula_struct:startUla|Mux5~0   ; 9       ;
-; ula_struct:startUla|Mux1~0   ; 9       ;
-; ula_struct:startUla|Mux5~4   ; 6       ;
-; ula_struct:startUla|Mux5~3   ; 6       ;
-; ula_struct:startUla|Mux5~2   ; 6       ;
-; operacao[7]                  ; 5       ;
-; operacao[6]                  ; 4       ;
-; operacao[5]                  ; 4       ;
-; operacao[4]                  ; 4       ;
-; operacao[3]                  ; 4       ;
-; operacao[2]                  ; 4       ;
-; operacao[1]                  ; 4       ;
-; operacao[0]                  ; 4       ;
-; ula_struct:startUla|C        ; 3       ;
-; Cin                          ; 2       ;
-; operA[7]                     ; 2       ;
-; operA[6]                     ; 2       ;
-; operA[5]                     ; 2       ;
-; operA[4]                     ; 2       ;
-; ula_struct:startUla|Add0~0   ; 2       ;
-; ula_struct:startUla|Mux9~6   ; 1       ;
-; ula_struct:startUla|Mux9~5   ; 1       ;
-; ula_struct:startUla|Mux8~6   ; 1       ;
-; ula_struct:startUla|Mux8~5   ; 1       ;
-; ula_struct:startUla|Mux7~6   ; 1       ;
-; ula_struct:startUla|Mux7~5   ; 1       ;
-; ula_struct:startUla|Mux6~6   ; 1       ;
-; ula_struct:startUla|Mux6~5   ; 1       ;
-; ula_struct:startUla|Mux0~1   ; 1       ;
-; ula_struct:startUla|Mux0~0   ; 1       ;
-; ula_struct:startUla|Mux1~5   ; 1       ;
-; ula_struct:startUla|Mux1~4   ; 1       ;
-; ula_struct:startUla|Mux1~3   ; 1       ;
-; ula_struct:startUla|Mux1~2   ; 1       ;
-; ula_struct:startUla|Mux1~1   ; 1       ;
-; ula_struct:startUla|Mux3~8   ; 1       ;
-; ula_struct:startUla|Mux3~7   ; 1       ;
-; ula_struct:startUla|Mux10~12 ; 1       ;
-; ula_struct:startUla|Mux3~6   ; 1       ;
-; ula_struct:startUla|Mux3~5   ; 1       ;
-; ula_struct:startUla|Mux10~11 ; 1       ;
-; ula_struct:startUla|Mux3~4   ; 1       ;
-; ula_struct:startUla|Mux3~3   ; 1       ;
-; ula_struct:startUla|Mux3~2   ; 1       ;
-; ula_struct:startUla|Mux3~1   ; 1       ;
-; ula_struct:startUla|Mux3~0   ; 1       ;
-; ula_struct:startUla|Mux4~6   ; 1       ;
-; ula_struct:startUla|Mux4~5   ; 1       ;
-; ula_struct:startUla|Mux4~4   ; 1       ;
-; ula_struct:startUla|Mux4~3   ; 1       ;
-; ula_struct:startUla|Mux4~2   ; 1       ;
-; ula_struct:startUla|Mux4~1   ; 1       ;
-; ula_struct:startUla|Mux4~0   ; 1       ;
-; ula_struct:startUla|Result~5 ; 1       ;
-; ula_struct:startUla|Mux5~11  ; 1       ;
-; ula_struct:startUla|Mux5~10  ; 1       ;
-; ula_struct:startUla|Mux5~9   ; 1       ;
-; ula_struct:startUla|Mux5~8   ; 1       ;
-; ula_struct:startUla|Mux5~7   ; 1       ;
-; ula_struct:startUla|Mux5~6   ; 1       ;
-; ula_struct:startUla|Mux5~5   ; 1       ;
-; ula_struct:startUla|Result~4 ; 1       ;
-; ula_struct:startUla|Mux6~4   ; 1       ;
-; ula_struct:startUla|Mux6~3   ; 1       ;
-; ula_struct:startUla|Mux6~2   ; 1       ;
-; ula_struct:startUla|Mux6~1   ; 1       ;
-; ula_struct:startUla|Mux6~0   ; 1       ;
-; ula_struct:startUla|Result~3 ; 1       ;
-; ula_struct:startUla|Mux7~4   ; 1       ;
-; ula_struct:startUla|Mux7~3   ; 1       ;
-; ula_struct:startUla|Mux7~2   ; 1       ;
-; ula_struct:startUla|Mux7~1   ; 1       ;
-; ula_struct:startUla|Mux7~0   ; 1       ;
-; ula_struct:startUla|Result~2 ; 1       ;
-; ula_struct:startUla|Mux8~4   ; 1       ;
-; ula_struct:startUla|Mux8~3   ; 1       ;
-; ula_struct:startUla|Mux8~2   ; 1       ;
-; ula_struct:startUla|Mux8~1   ; 1       ;
-; ula_struct:startUla|Mux8~0   ; 1       ;
-; ula_struct:startUla|Result~1 ; 1       ;
-; ula_struct:startUla|Mux9~4   ; 1       ;
-; ula_struct:startUla|Mux9~3   ; 1       ;
-; ula_struct:startUla|Mux9~2   ; 1       ;
-; ula_struct:startUla|Mux9~1   ; 1       ;
-; ula_struct:startUla|Mux9~0   ; 1       ;
-; ula_struct:startUla|Result~0 ; 1       ;
-; ula_struct:startUla|Mux10~10 ; 1       ;
-; ula_struct:startUla|Mux10~9  ; 1       ;
-; ula_struct:startUla|Mux10~8  ; 1       ;
-; ula_struct:startUla|Mux10~7  ; 1       ;
-; ula_struct:startUla|Mux10~6  ; 1       ;
-; ula_struct:startUla|Mux10~5  ; 1       ;
-; ula_struct:startUla|Mux10~4  ; 1       ;
-; ula_struct:startUla|Mux10~3  ; 1       ;
-; ula_struct:startUla|Mux10~2  ; 1       ;
-; ula_struct:startUla|Mux10~1  ; 1       ;
-; ula_struct:startUla|Mux10~0  ; 1       ;
-; ula_struct:startUla|Add0~16  ; 1       ;
-; ula_struct:startUla|Add1~14  ; 1       ;
-; ula_struct:startUla|Add2~14  ; 1       ;
-; ula_struct:startUla|Add0~15  ; 1       ;
-; ula_struct:startUla|Add0~14  ; 1       ;
-; ula_struct:startUla|Add3~14  ; 1       ;
-; ula_struct:startUla|Add4~14  ; 1       ;
-; ula_struct:startUla|Add3~13  ; 1       ;
-; ula_struct:startUla|Add3~12  ; 1       ;
-; ula_struct:startUla|Add0~13  ; 1       ;
-; ula_struct:startUla|Add0~12  ; 1       ;
-; ula_struct:startUla|Add2~13  ; 1       ;
-; ula_struct:startUla|Add2~12  ; 1       ;
-; ula_struct:startUla|Add1~13  ; 1       ;
-; ula_struct:startUla|Add1~12  ; 1       ;
-; ula_struct:startUla|Add4~13  ; 1       ;
-; ula_struct:startUla|Add4~12  ; 1       ;
-; ula_struct:startUla|Add3~11  ; 1       ;
-; ula_struct:startUla|Add3~10  ; 1       ;
-; ula_struct:startUla|Add0~11  ; 1       ;
-; ula_struct:startUla|Add0~10  ; 1       ;
-; ula_struct:startUla|Add2~11  ; 1       ;
-; ula_struct:startUla|Add2~10  ; 1       ;
-; ula_struct:startUla|Add1~11  ; 1       ;
-; ula_struct:startUla|Add1~10  ; 1       ;
-; ula_struct:startUla|Add4~11  ; 1       ;
-; ula_struct:startUla|Add4~10  ; 1       ;
-; ula_struct:startUla|Add3~9   ; 1       ;
-; ula_struct:startUla|Add3~8   ; 1       ;
-; ula_struct:startUla|Add0~9   ; 1       ;
-; ula_struct:startUla|Add0~8   ; 1       ;
-; ula_struct:startUla|Add2~9   ; 1       ;
-; ula_struct:startUla|Add2~8   ; 1       ;
-; ula_struct:startUla|Add1~9   ; 1       ;
-; ula_struct:startUla|Add1~8   ; 1       ;
-; ula_struct:startUla|Add4~9   ; 1       ;
-; ula_struct:startUla|Add4~8   ; 1       ;
-; ula_struct:startUla|Add3~7   ; 1       ;
-; ula_struct:startUla|Add3~6   ; 1       ;
-; ula_struct:startUla|Add0~7   ; 1       ;
-; ula_struct:startUla|Add0~6   ; 1       ;
-; ula_struct:startUla|Add2~7   ; 1       ;
-; ula_struct:startUla|Add2~6   ; 1       ;
-; ula_struct:startUla|Add1~7   ; 1       ;
-; ula_struct:startUla|Add1~6   ; 1       ;
-; ula_struct:startUla|Add4~7   ; 1       ;
-; ula_struct:startUla|Add4~6   ; 1       ;
-; ula_struct:startUla|Add3~5   ; 1       ;
-; ula_struct:startUla|Add3~4   ; 1       ;
-; ula_struct:startUla|Add0~5   ; 1       ;
-; ula_struct:startUla|Add0~4   ; 1       ;
-; ula_struct:startUla|Add2~5   ; 1       ;
-; ula_struct:startUla|Add2~4   ; 1       ;
-; ula_struct:startUla|Add1~5   ; 1       ;
-; ula_struct:startUla|Add1~4   ; 1       ;
-; ula_struct:startUla|Add4~5   ; 1       ;
-; ula_struct:startUla|Add4~4   ; 1       ;
-; ula_struct:startUla|Add3~3   ; 1       ;
-; ula_struct:startUla|Add3~2   ; 1       ;
-; ula_struct:startUla|Add0~3   ; 1       ;
-; ula_struct:startUla|Add0~2   ; 1       ;
-; ula_struct:startUla|Add2~3   ; 1       ;
-; ula_struct:startUla|Add2~2   ; 1       ;
-; ula_struct:startUla|Add1~3   ; 1       ;
-; ula_struct:startUla|Add1~2   ; 1       ;
-; ula_struct:startUla|Add4~3   ; 1       ;
-; ula_struct:startUla|Add4~2   ; 1       ;
-; ula_struct:startUla|Add4~1   ; 1       ;
-; ula_struct:startUla|Add1~1   ; 1       ;
-; ula_struct:startUla|Add1~0   ; 1       ;
-; ula_struct:startUla|Add2~1   ; 1       ;
-; ula_struct:startUla|Add2~0   ; 1       ;
-; ula_struct:startUla|Add3~1   ; 1       ;
-; ula_struct:startUla|Add3~0   ; 1       ;
-; ula_struct:startUla|Add0~1   ; 1       ;
-+------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                      ;
++-----------------------------+--------------------+---------+----------------------+------------------+---------------------------+
+; Name                        ; Location           ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------+--------------------+---------+----------------------+------------------+---------------------------+
+; ula_struct:startUla|Mux14~1 ; LCCOMB_X36_Y33_N20 ; 8       ; Global Clock         ; GCLK10           ; --                        ;
++-----------------------------+--------------------+---------+----------------------+------------------+---------------------------+
+
+
++--------------------------------------------+
+; Non-Global High Fan-Out Signals            ;
++----------------------------------+---------+
+; Name                             ; Fan-Out ;
++----------------------------------+---------+
+; operA[1]                         ; 30      ;
+; operA[0]                         ; 28      ;
+; operA[2]                         ; 24      ;
+; operB[1]                         ; 12      ;
+; operB[2]                         ; 12      ;
+; operB[3]                         ; 12      ;
+; operB[4]                         ; 12      ;
+; operB[5]                         ; 12      ;
+; operB[6]                         ; 12      ;
+; operB[7]                         ; 12      ;
+; operB[0]                         ; 12      ;
+; ula_struct:startUla|Mux11~0      ; 12      ;
+; ula_struct:startUla|Mux11~1      ; 9       ;
+; ula_struct:startUla|Mux5~2       ; 9       ;
+; ula_struct:startUla|Mux3~0       ; 9       ;
+; operA[3]                         ; 8       ;
+; operacao[7]                      ; 7       ;
+; operacao[0]                      ; 7       ;
+; operacao[1]                      ; 6       ;
+; operacao[2]                      ; 6       ;
+; operacao[3]                      ; 6       ;
+; operacao[4]                      ; 6       ;
+; operacao[5]                      ; 6       ;
+; operacao[6]                      ; 6       ;
+; ula_struct:startUla|Mux11~4      ; 6       ;
+; ula_struct:startUla|Mux11~3      ; 6       ;
+; ula_struct:startUla|Mux11~2      ; 6       ;
+; operA[7]                         ; 3       ;
+; operA[6]                         ; 3       ;
+; operA[5]                         ; 3       ;
+; operA[4]                         ; 3       ;
+; ula_struct:startUla|C            ; 3       ;
+; Cin                              ; 2       ;
+; ula_struct:startUla|N            ; 2       ;
+; ula_struct:startUla|Result[6]    ; 2       ;
+; ula_struct:startUla|Result[5]    ; 2       ;
+; ula_struct:startUla|Result[4]    ; 2       ;
+; ula_struct:startUla|Result[3]    ; 2       ;
+; ula_struct:startUla|Result[2]    ; 2       ;
+; ula_struct:startUla|Result[1]    ; 2       ;
+; ula_struct:startUla|Result[0]    ; 2       ;
+; ula_struct:startUla|Mux3~1       ; 2       ;
+; ula_struct:startUla|LessThan1~14 ; 2       ;
+; ula_struct:startUla|LessThan2~14 ; 2       ;
+; ula_struct:startUla|Add0~0       ; 2       ;
+; ula_struct:startUla|Mux2~8       ; 1       ;
+; ula_struct:startUla|Mux2~7       ; 1       ;
+; ula_struct:startUla|Mux1~8       ; 1       ;
+; ula_struct:startUla|Mux1~7       ; 1       ;
+; ula_struct:startUla|Mux0~8       ; 1       ;
+; ula_struct:startUla|Mux0~7       ; 1       ;
+; ula_struct:startUla|Mux10~8      ; 1       ;
+; ula_struct:startUla|Mux10~7      ; 1       ;
+; ula_struct:startUla|Mux11~13     ; 1       ;
+; ula_struct:startUla|Mux11~12     ; 1       ;
+; ula_struct:startUla|Mux5~6       ; 1       ;
+; ula_struct:startUla|Mux4~1       ; 1       ;
+; ula_struct:startUla|Mux4~0       ; 1       ;
+; ula_struct:startUla|Mux5~5       ; 1       ;
+; ula_struct:startUla|Mux5~4       ; 1       ;
+; ula_struct:startUla|Mux5~3       ; 1       ;
+; ula_struct:startUla|Mux13~8      ; 1       ;
+; ula_struct:startUla|Mux13~7      ; 1       ;
+; ula_struct:startUla|Mux3~14      ; 1       ;
+; ula_struct:startUla|Mux13~6      ; 1       ;
+; ula_struct:startUla|Mux13~5      ; 1       ;
+; ula_struct:startUla|Mux3~13      ; 1       ;
+; ula_struct:startUla|Mux13~4      ; 1       ;
+; ula_struct:startUla|Mux13~3      ; 1       ;
+; ula_struct:startUla|Mux13~2      ; 1       ;
+; ula_struct:startUla|Mux13~1      ; 1       ;
+; ula_struct:startUla|Mux13~0      ; 1       ;
+; ula_struct:startUla|Mux12~8      ; 1       ;
+; ula_struct:startUla|Mux12~7      ; 1       ;
+; ula_struct:startUla|Mux12~6      ; 1       ;
+; ula_struct:startUla|Mux12~5      ; 1       ;
+; ula_struct:startUla|Mux12~4      ; 1       ;
+; ula_struct:startUla|Mux12~3      ; 1       ;
+; ula_struct:startUla|Mux12~2      ; 1       ;
+; ula_struct:startUla|Mux12~1      ; 1       ;
+; ula_struct:startUla|Mux12~0      ; 1       ;
+; ula_struct:startUla|Mux11~11     ; 1       ;
+; ula_struct:startUla|Mux11~10     ; 1       ;
+; ula_struct:startUla|Mux11~9      ; 1       ;
+; ula_struct:startUla|Mux11~8      ; 1       ;
+; ula_struct:startUla|Mux11~7      ; 1       ;
+; ula_struct:startUla|Mux11~6      ; 1       ;
+; ula_struct:startUla|Mux11~5      ; 1       ;
+; ula_struct:startUla|Mux10~6      ; 1       ;
+; ula_struct:startUla|Mux10~5      ; 1       ;
+; ula_struct:startUla|Mux10~4      ; 1       ;
+; ula_struct:startUla|Mux10~3      ; 1       ;
+; ula_struct:startUla|Mux10~2      ; 1       ;
+; ula_struct:startUla|Mux10~1      ; 1       ;
+; ula_struct:startUla|Mux10~0      ; 1       ;
+; ula_struct:startUla|Mux0~6       ; 1       ;
+; ula_struct:startUla|Mux0~5       ; 1       ;
+; ula_struct:startUla|Mux0~4       ; 1       ;
+; ula_struct:startUla|Mux0~3       ; 1       ;
+; ula_struct:startUla|Mux0~2       ; 1       ;
+; ula_struct:startUla|Mux0~1       ; 1       ;
+; ula_struct:startUla|Mux0~0       ; 1       ;
+; ula_struct:startUla|Mux1~6       ; 1       ;
+; ula_struct:startUla|Mux1~5       ; 1       ;
+; ula_struct:startUla|Mux1~4       ; 1       ;
+; ula_struct:startUla|Mux1~3       ; 1       ;
+; ula_struct:startUla|Mux1~2       ; 1       ;
+; ula_struct:startUla|Mux1~1       ; 1       ;
+; ula_struct:startUla|Mux1~0       ; 1       ;
+; ula_struct:startUla|Mux2~6       ; 1       ;
+; ula_struct:startUla|Mux2~5       ; 1       ;
+; ula_struct:startUla|Mux2~4       ; 1       ;
+; ula_struct:startUla|Mux2~3       ; 1       ;
+; ula_struct:startUla|Mux2~2       ; 1       ;
+; ula_struct:startUla|Mux2~1       ; 1       ;
+; ula_struct:startUla|Mux2~0       ; 1       ;
+; ula_struct:startUla|Mux14~0      ; 1       ;
+; ula_struct:startUla|Mux3~12      ; 1       ;
+; ula_struct:startUla|Mux3~11      ; 1       ;
+; ula_struct:startUla|Mux3~10      ; 1       ;
+; ula_struct:startUla|Mux3~9       ; 1       ;
+; ula_struct:startUla|Mux3~8       ; 1       ;
+; ula_struct:startUla|Mux3~7       ; 1       ;
+; ula_struct:startUla|Mux3~6       ; 1       ;
+; ula_struct:startUla|Mux3~5       ; 1       ;
+; ula_struct:startUla|Mux3~4       ; 1       ;
+; ula_struct:startUla|Mux3~3       ; 1       ;
+; ula_struct:startUla|Mux3~2       ; 1       ;
+; ula_struct:startUla|Add0~16      ; 1       ;
+; ula_struct:startUla|Add1~14      ; 1       ;
+; ula_struct:startUla|Add2~14      ; 1       ;
+; ula_struct:startUla|Add0~15      ; 1       ;
+; ula_struct:startUla|Add0~14      ; 1       ;
+; ula_struct:startUla|Add3~14      ; 1       ;
+; ula_struct:startUla|Add4~14      ; 1       ;
+; ula_struct:startUla|Add3~13      ; 1       ;
+; ula_struct:startUla|Add3~12      ; 1       ;
+; ula_struct:startUla|Add0~13      ; 1       ;
+; ula_struct:startUla|Add0~12      ; 1       ;
+; ula_struct:startUla|Add2~13      ; 1       ;
+; ula_struct:startUla|Add2~12      ; 1       ;
+; ula_struct:startUla|Add1~13      ; 1       ;
+; ula_struct:startUla|Add1~12      ; 1       ;
+; ula_struct:startUla|Add4~13      ; 1       ;
+; ula_struct:startUla|Add4~12      ; 1       ;
+; ula_struct:startUla|Add3~11      ; 1       ;
+; ula_struct:startUla|Add3~10      ; 1       ;
+; ula_struct:startUla|Add0~11      ; 1       ;
+; ula_struct:startUla|Add0~10      ; 1       ;
+; ula_struct:startUla|Add2~11      ; 1       ;
+; ula_struct:startUla|Add2~10      ; 1       ;
+; ula_struct:startUla|Add1~11      ; 1       ;
+; ula_struct:startUla|Add1~10      ; 1       ;
+; ula_struct:startUla|Add4~11      ; 1       ;
+; ula_struct:startUla|Add4~10      ; 1       ;
+; ula_struct:startUla|Add3~9       ; 1       ;
+; ula_struct:startUla|Add3~8       ; 1       ;
+; ula_struct:startUla|Add0~9       ; 1       ;
+; ula_struct:startUla|Add0~8       ; 1       ;
+; ula_struct:startUla|Add2~9       ; 1       ;
+; ula_struct:startUla|Add2~8       ; 1       ;
+; ula_struct:startUla|Add1~9       ; 1       ;
+; ula_struct:startUla|Add1~8       ; 1       ;
+; ula_struct:startUla|Add4~9       ; 1       ;
+; ula_struct:startUla|Add4~8       ; 1       ;
+; ula_struct:startUla|Add3~7       ; 1       ;
+; ula_struct:startUla|Add3~6       ; 1       ;
+; ula_struct:startUla|Add0~7       ; 1       ;
+; ula_struct:startUla|Add0~6       ; 1       ;
+; ula_struct:startUla|Add2~7       ; 1       ;
+; ula_struct:startUla|Add2~6       ; 1       ;
+; ula_struct:startUla|Add1~7       ; 1       ;
+; ula_struct:startUla|Add1~6       ; 1       ;
+; ula_struct:startUla|Add4~7       ; 1       ;
+; ula_struct:startUla|Add4~6       ; 1       ;
+; ula_struct:startUla|Add3~5       ; 1       ;
+; ula_struct:startUla|Add3~4       ; 1       ;
+; ula_struct:startUla|Add0~5       ; 1       ;
+; ula_struct:startUla|Add0~4       ; 1       ;
+; ula_struct:startUla|Add2~5       ; 1       ;
+; ula_struct:startUla|Add2~4       ; 1       ;
+; ula_struct:startUla|Add1~5       ; 1       ;
+; ula_struct:startUla|Add1~4       ; 1       ;
+; ula_struct:startUla|Add4~5       ; 1       ;
+; ula_struct:startUla|Add4~4       ; 1       ;
+; ula_struct:startUla|Add3~3       ; 1       ;
+; ula_struct:startUla|Add3~2       ; 1       ;
+; ula_struct:startUla|Add0~3       ; 1       ;
+; ula_struct:startUla|Add0~2       ; 1       ;
+; ula_struct:startUla|Add2~3       ; 1       ;
+; ula_struct:startUla|Add2~2       ; 1       ;
+; ula_struct:startUla|Add1~3       ; 1       ;
+; ula_struct:startUla|Add1~2       ; 1       ;
+; ula_struct:startUla|Add4~3       ; 1       ;
+; ula_struct:startUla|Add4~2       ; 1       ;
+; ula_struct:startUla|Add4~1       ; 1       ;
+; ula_struct:startUla|Add1~1       ; 1       ;
+; ula_struct:startUla|Add1~0       ; 1       ;
+; ula_struct:startUla|Add2~1       ; 1       ;
+; ula_struct:startUla|Add2~0       ; 1       ;
+; ula_struct:startUla|Add3~1       ; 1       ;
+; ula_struct:startUla|Add3~0       ; 1       ;
+; ula_struct:startUla|LessThan1~13 ; 1       ;
+; ula_struct:startUla|LessThan1~11 ; 1       ;
+; ula_struct:startUla|LessThan1~9  ; 1       ;
+; ula_struct:startUla|LessThan1~7  ; 1       ;
+; ula_struct:startUla|LessThan1~5  ; 1       ;
+; ula_struct:startUla|LessThan1~3  ; 1       ;
+; ula_struct:startUla|LessThan1~1  ; 1       ;
+; ula_struct:startUla|LessThan2~13 ; 1       ;
+; ula_struct:startUla|LessThan2~11 ; 1       ;
+; ula_struct:startUla|LessThan2~9  ; 1       ;
+; ula_struct:startUla|LessThan2~7  ; 1       ;
+; ula_struct:startUla|LessThan2~5  ; 1       ;
+; ula_struct:startUla|LessThan2~3  ; 1       ;
+; ula_struct:startUla|LessThan2~1  ; 1       ;
+; ula_struct:startUla|Add0~1       ; 1       ;
++----------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -1589,126 +1676,122 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+------------------------+
 ; Interconnect Resource Type ; Usage                  ;
 +----------------------------+------------------------+
-; Block interconnects        ; 186 / 94,460 ( < 1 % ) ;
+; Block interconnects        ; 275 / 94,460 ( < 1 % ) ;
 ; C16 interconnects          ; 9 / 3,315 ( < 1 % )    ;
-; C4 interconnects           ; 123 / 60,840 ( < 1 % ) ;
-; Direct links               ; 15 / 94,460 ( < 1 % )  ;
-; Global clocks              ; 0 / 16 ( 0 % )         ;
-; Local interconnects        ; 47 / 33,216 ( < 1 % )  ;
-; R24 interconnects          ; 8 / 3,091 ( < 1 % )    ;
-; R4 interconnects           ; 100 / 81,294 ( < 1 % ) ;
+; C4 interconnects           ; 158 / 60,840 ( < 1 % ) ;
+; Direct links               ; 14 / 94,460 ( < 1 % )  ;
+; Global clocks              ; 1 / 16 ( 6 % )         ;
+; Local interconnects        ; 83 / 33,216 ( < 1 % )  ;
+; R24 interconnects          ; 0 / 3,091 ( 0 % )      ;
+; R4 interconnects           ; 186 / 81,294 ( < 1 % ) ;
 +----------------------------+------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Logic Elements                                                        ;
-+---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 13.89) ; Number of LABs  (Total = 9) ;
-+---------------------------------------------+-----------------------------+
-; 1                                           ; 1                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 0                           ;
-; 4                                           ; 0                           ;
-; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
-; 7                                           ; 0                           ;
-; 8                                           ; 0                           ;
-; 9                                           ; 0                           ;
-; 10                                          ; 0                           ;
-; 11                                          ; 0                           ;
-; 12                                          ; 0                           ;
-; 13                                          ; 0                           ;
-; 14                                          ; 2                           ;
-; 15                                          ; 0                           ;
-; 16                                          ; 6                           ;
-+---------------------------------------------+-----------------------------+
-
-
 +----------------------------------------------------------------------------+
-; LAB Signals Sourced                                                        ;
-+----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 13.78) ; Number of LABs  (Total = 9) ;
-+----------------------------------------------+-----------------------------+
-; 0                                            ; 0                           ;
-; 1                                            ; 1                           ;
-; 2                                            ; 0                           ;
-; 3                                            ; 0                           ;
-; 4                                            ; 0                           ;
-; 5                                            ; 0                           ;
-; 6                                            ; 0                           ;
-; 7                                            ; 0                           ;
-; 8                                            ; 0                           ;
-; 9                                            ; 0                           ;
-; 10                                           ; 0                           ;
-; 11                                           ; 0                           ;
-; 12                                           ; 0                           ;
-; 13                                           ; 0                           ;
-; 14                                           ; 2                           ;
-; 15                                           ; 1                           ;
-; 16                                           ; 5                           ;
-+----------------------------------------------+-----------------------------+
+; LAB Logic Elements                                                         ;
++---------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 14.36) ; Number of LABs  (Total = 11) ;
++---------------------------------------------+------------------------------+
+; 1                                           ; 0                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 1                            ;
+; 14                                          ; 0                            ;
+; 15                                          ; 0                            ;
+; 16                                          ; 8                            ;
++---------------------------------------------+------------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                       ;
-+-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 8.89) ; Number of LABs  (Total = 9) ;
-+-------------------------------------------------+-----------------------------+
-; 0                                               ; 0                           ;
-; 1                                               ; 1                           ;
-; 2                                               ; 0                           ;
-; 3                                               ; 0                           ;
-; 4                                               ; 0                           ;
-; 5                                               ; 0                           ;
-; 6                                               ; 1                           ;
-; 7                                               ; 1                           ;
-; 8                                               ; 1                           ;
-; 9                                               ; 1                           ;
-; 10                                              ; 0                           ;
-; 11                                              ; 2                           ;
-; 12                                              ; 0                           ;
-; 13                                              ; 1                           ;
-; 14                                              ; 1                           ;
-+-------------------------------------------------+-----------------------------+
++-----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 13.00) ; Number of LABs  (Total = 11) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 0                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 2                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 0                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 7                            ;
++----------------------------------------------+------------------------------+
 
 
-+----------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                        ;
-+----------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 18.56) ; Number of LABs  (Total = 9) ;
-+----------------------------------------------+-----------------------------+
-; 0                                            ; 0                           ;
-; 1                                            ; 0                           ;
-; 2                                            ; 0                           ;
-; 3                                            ; 0                           ;
-; 4                                            ; 1                           ;
-; 5                                            ; 0                           ;
-; 6                                            ; 0                           ;
-; 7                                            ; 0                           ;
-; 8                                            ; 0                           ;
-; 9                                            ; 0                           ;
-; 10                                           ; 0                           ;
-; 11                                           ; 0                           ;
-; 12                                           ; 0                           ;
-; 13                                           ; 0                           ;
-; 14                                           ; 0                           ;
-; 15                                           ; 1                           ;
-; 16                                           ; 0                           ;
-; 17                                           ; 1                           ;
-; 18                                           ; 0                           ;
-; 19                                           ; 1                           ;
-; 20                                           ; 2                           ;
-; 21                                           ; 2                           ;
-; 22                                           ; 0                           ;
-; 23                                           ; 0                           ;
-; 24                                           ; 0                           ;
-; 25                                           ; 0                           ;
-; 26                                           ; 0                           ;
-; 27                                           ; 0                           ;
-; 28                                           ; 0                           ;
-; 29                                           ; 0                           ;
-; 30                                           ; 1                           ;
-+----------------------------------------------+-----------------------------+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++-------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 6.18) ; Number of LABs  (Total = 11) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 0                            ;
+; 1                                               ; 0                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 1                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 1                            ;
+; 6                                               ; 0                            ;
+; 7                                               ; 1                            ;
+; 8                                               ; 3                            ;
+; 9                                               ; 1                            ;
+; 10                                              ; 0                            ;
+; 11                                              ; 0                            ;
+; 12                                              ; 1                            ;
++-------------------------------------------------+------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 19.82) ; Number of LABs  (Total = 11) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 0                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 0                            ;
+; 18                                           ; 0                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 1                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 2                            ;
++----------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -1745,19 +1828,118 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
+; I/O             ; operA[2]             ; 24.6              ;
++-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
 
 
-+-------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details               ;
-+-----------------+-----------------------+-------------------+
-; Source Register ; Destination Register  ; Delay Added in ns ;
-+-----------------+-----------------------+-------------------+
-; operB[0]        ; ula_struct:startUla|C ; 0.125             ;
-; operA[0]        ; ula_struct:startUla|C ; 0.125             ;
-; operB[7]        ; ula_struct:startUla|C ; 0.125             ;
-+-----------------+-----------------------+-------------------+
++---------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                       ;
++-----------------+-------------------------------+-------------------+
+; Source Register ; Destination Register          ; Delay Added in ns ;
++-----------------+-------------------------------+-------------------+
+; operA[2]        ; ula_struct:startUla|Result[0] ; 1.690             ;
+; operA[2]        ; ula_struct:startUla|N         ; 1.664             ;
+; operA[1]        ; ula_struct:startUla|Result[0] ; 1.614             ;
+; operA[1]        ; ula_struct:startUla|N         ; 1.580             ;
+; operA[1]        ; ula_struct:startUla|Result[5] ; 1.570             ;
+; operA[1]        ; ula_struct:startUla|Result[3] ; 1.555             ;
+; operA[2]        ; ula_struct:startUla|Result[4] ; 1.331             ;
+; operA[3]        ; ula_struct:startUla|Result[5] ; 1.302             ;
+; operA[3]        ; ula_struct:startUla|Result[3] ; 1.287             ;
+; operA[1]        ; ula_struct:startUla|Result[4] ; 1.177             ;
+; operA[1]        ; ula_struct:startUla|Result[2] ; 1.167             ;
+; operA[1]        ; ula_struct:startUla|Result[1] ; 1.056             ;
+; operA[2]        ; ula_struct:startUla|Result[2] ; 1.007             ;
+; operB[7]        ; ula_struct:startUla|Result[4] ; 1.002             ;
+; operacao[7]     ; ula_struct:startUla|Result[4] ; 1.002             ;
+; operB[6]        ; ula_struct:startUla|Result[4] ; 1.002             ;
+; operacao[6]     ; ula_struct:startUla|Result[4] ; 1.002             ;
+; operacao[5]     ; ula_struct:startUla|Result[4] ; 1.002             ;
+; operB[7]        ; ula_struct:startUla|Result[2] ; 1.001             ;
+; operacao[7]     ; ula_struct:startUla|Result[2] ; 1.001             ;
+; operB[6]        ; ula_struct:startUla|Result[2] ; 1.001             ;
+; operacao[6]     ; ula_struct:startUla|Result[2] ; 1.001             ;
+; operB[5]        ; ula_struct:startUla|Result[2] ; 1.001             ;
+; operacao[5]     ; ula_struct:startUla|Result[2] ; 1.001             ;
+; operB[4]        ; ula_struct:startUla|Result[2] ; 1.001             ;
+; operacao[4]     ; ula_struct:startUla|Result[2] ; 1.001             ;
+; operacao[3]     ; ula_struct:startUla|Result[2] ; 1.001             ;
+; operA[1]        ; ula_struct:startUla|Result[6] ; 0.976             ;
+; operA[2]        ; ula_struct:startUla|Result[5] ; 0.967             ;
+; operB[7]        ; ula_struct:startUla|Result[3] ; 0.949             ;
+; operacao[7]     ; ula_struct:startUla|Result[3] ; 0.949             ;
+; operB[6]        ; ula_struct:startUla|Result[3] ; 0.949             ;
+; operacao[6]     ; ula_struct:startUla|Result[3] ; 0.949             ;
+; operB[5]        ; ula_struct:startUla|Result[3] ; 0.949             ;
+; operacao[5]     ; ula_struct:startUla|Result[3] ; 0.949             ;
+; operacao[4]     ; ula_struct:startUla|Result[3] ; 0.949             ;
+; operacao[0]     ; ula_struct:startUla|N         ; 0.946             ;
+; operA[2]        ; ula_struct:startUla|Result[3] ; 0.939             ;
+; operA[3]        ; ula_struct:startUla|Result[4] ; 0.909             ;
+; operA[3]        ; ula_struct:startUla|Result[2] ; 0.899             ;
+; operA[3]        ; ula_struct:startUla|Result[1] ; 0.788             ;
+; operB[7]        ; ula_struct:startUla|Result[5] ; 0.744             ;
+; operacao[7]     ; ula_struct:startUla|Result[5] ; 0.744             ;
+; operacao[6]     ; ula_struct:startUla|Result[5] ; 0.744             ;
+; operA[3]        ; ula_struct:startUla|Result[6] ; 0.708             ;
+; operacao[1]     ; ula_struct:startUla|N         ; 0.708             ;
+; operacao[6]     ; ula_struct:startUla|N         ; 0.708             ;
+; operacao[5]     ; ula_struct:startUla|N         ; 0.708             ;
+; operacao[4]     ; ula_struct:startUla|N         ; 0.708             ;
+; operacao[3]     ; ula_struct:startUla|N         ; 0.708             ;
+; operacao[2]     ; ula_struct:startUla|N         ; 0.708             ;
+; operacao[1]     ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operB[7]        ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operacao[7]     ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operB[6]        ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operacao[6]     ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operB[5]        ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operacao[5]     ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operB[4]        ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operacao[4]     ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operB[3]        ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operacao[3]     ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operB[2]        ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operacao[2]     ; ula_struct:startUla|Result[0] ; 0.627             ;
+; operA[2]        ; ula_struct:startUla|Result[6] ; 0.463             ;
+; operacao[7]     ; ula_struct:startUla|Result[6] ; 0.449             ;
+; operA[0]        ; ula_struct:startUla|Result[5] ; 0.439             ;
+; operacao[5]     ; ula_struct:startUla|Result[5] ; 0.439             ;
+; operA[0]        ; ula_struct:startUla|Result[3] ; 0.430             ;
+; operB[5]        ; ula_struct:startUla|Result[5] ; 0.413             ;
+; operB[3]        ; ula_struct:startUla|Result[5] ; 0.413             ;
+; operB[2]        ; ula_struct:startUla|Result[5] ; 0.413             ;
+; operB[1]        ; ula_struct:startUla|Result[5] ; 0.413             ;
+; operB[3]        ; ula_struct:startUla|Result[3] ; 0.395             ;
+; operB[2]        ; ula_struct:startUla|Result[3] ; 0.395             ;
+; operB[1]        ; ula_struct:startUla|Result[3] ; 0.395             ;
+; operA[0]        ; ula_struct:startUla|N         ; 0.386             ;
+; operB[7]        ; ula_struct:startUla|N         ; 0.386             ;
+; operacao[7]     ; ula_struct:startUla|N         ; 0.386             ;
+; operB[5]        ; ula_struct:startUla|N         ; 0.386             ;
+; operB[4]        ; ula_struct:startUla|N         ; 0.386             ;
+; operB[3]        ; ula_struct:startUla|N         ; 0.386             ;
+; operB[2]        ; ula_struct:startUla|N         ; 0.386             ;
+; operB[1]        ; ula_struct:startUla|N         ; 0.386             ;
+; operacao[1]     ; ula_struct:startUla|Result[5] ; 0.360             ;
+; operacao[4]     ; ula_struct:startUla|Result[5] ; 0.360             ;
+; operacao[3]     ; ula_struct:startUla|Result[5] ; 0.360             ;
+; operacao[2]     ; ula_struct:startUla|Result[5] ; 0.360             ;
+; operA[0]        ; ula_struct:startUla|Result[4] ; 0.348             ;
+; operA[1]        ; ula_struct:startUla|C         ; 0.341             ;
+; operB[0]        ; ula_struct:startUla|Result[3] ; 0.337             ;
+; operacao[1]     ; ula_struct:startUla|Result[3] ; 0.325             ;
+; operacao[3]     ; ula_struct:startUla|Result[3] ; 0.325             ;
+; operacao[2]     ; ula_struct:startUla|Result[3] ; 0.325             ;
+; operacao[0]     ; ula_struct:startUla|Result[5] ; 0.280             ;
+; operacao[0]     ; ula_struct:startUla|Result[3] ; 0.277             ;
+; operA[0]        ; ula_struct:startUla|Result[0] ; 0.277             ;
+; operB[0]        ; ula_struct:startUla|Result[0] ; 0.277             ;
+; operacao[0]     ; ula_struct:startUla|Result[0] ; 0.277             ;
+; operB[0]        ; ula_struct:startUla|Result[5] ; 0.270             ;
++-----------------+-------------------------------+-------------------+
 
 
 +-----------------+
@@ -1766,7 +1948,7 @@ This will disable optimization of problematic paths and expose them for further 
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Feb 07 18:16:40 2018
+    Info: Processing started: Sat Feb 17 22:43:28 2018
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off Ula -c Ula
 Warning: Parallel compilation is not licensed and has been disabled
 Info: Selected device EP2C35F672C6 for design "Ula"
@@ -1801,33 +1983,44 @@ Critical Warning: No exact pin location assignment(s) for 38 pins of 38 total pi
     Info: Pin operA[7] not assigned to an exact location on the device
     Info: Pin operB[0] not assigned to an exact location on the device
     Info: Pin operacao[0] not assigned to an exact location on the device
+    Info: Pin operB[7] not assigned to an exact location on the device
+    Info: Pin operacao[7] not assigned to an exact location on the device
+    Info: Pin operB[6] not assigned to an exact location on the device
+    Info: Pin operacao[6] not assigned to an exact location on the device
+    Info: Pin operB[5] not assigned to an exact location on the device
+    Info: Pin operacao[5] not assigned to an exact location on the device
+    Info: Pin operB[4] not assigned to an exact location on the device
+    Info: Pin operacao[4] not assigned to an exact location on the device
+    Info: Pin operB[3] not assigned to an exact location on the device
+    Info: Pin operacao[3] not assigned to an exact location on the device
+    Info: Pin operB[2] not assigned to an exact location on the device
+    Info: Pin operacao[2] not assigned to an exact location on the device
+    Info: Pin operB[1] not assigned to an exact location on the device
+    Info: Pin operacao[1] not assigned to an exact location on the device
+    Info: Pin operA[0] not assigned to an exact location on the device
+    Info: Pin operA[2] not assigned to an exact location on the device
     Info: Pin operA[1] not assigned to an exact location on the device
     Info: Pin Cin not assigned to an exact location on the device
-    Info: Pin operA[2] not assigned to an exact location on the device
-    Info: Pin operA[0] not assigned to an exact location on the device
-    Info: Pin operB[1] not assigned to an exact location on the device
     Info: Pin operA[3] not assigned to an exact location on the device
-    Info: Pin operB[2] not assigned to an exact location on the device
-    Info: Pin operacao[1] not assigned to an exact location on the device
-    Info: Pin operB[3] not assigned to an exact location on the device
-    Info: Pin operacao[2] not assigned to an exact location on the device
-    Info: Pin operB[4] not assigned to an exact location on the device
-    Info: Pin operacao[3] not assigned to an exact location on the device
-    Info: Pin operB[5] not assigned to an exact location on the device
-    Info: Pin operacao[4] not assigned to an exact location on the device
-    Info: Pin operB[6] not assigned to an exact location on the device
-    Info: Pin operacao[5] not assigned to an exact location on the device
-    Info: Pin operB[7] not assigned to an exact location on the device
-    Info: Pin operacao[6] not assigned to an exact location on the device
-    Info: Pin operacao[7] not assigned to an exact location on the device
 Info: Timing-driven compilation is using the TimeQuest Timing Analyzer
 Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "startUla|C|combout" is a latch
+    Warning: Node "startUla|Result[0]|combout" is a latch
+    Warning: Node "startUla|Result[1]|combout" is a latch
+    Warning: Node "startUla|Result[2]|combout" is a latch
+    Warning: Node "startUla|Result[3]|combout" is a latch
+    Warning: Node "startUla|Result[4]|combout" is a latch
+    Warning: Node "startUla|Result[5]|combout" is a latch
+    Warning: Node "startUla|Result[6]|combout" is a latch
+    Warning: Node "startUla|N|combout" is a latch
 Critical Warning: Synopsys Design Constraints File file not found: 'Ula.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info: No user constrained base clocks found in the design
 Info: The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info: Cell: startUla|Mux0~0  from: dataa  to: combout
+    Info: Cell: startUla|Mux4~0  from: dataa  to: combout
+    Info: Cell: startUla|Mux4~0  from: datab  to: combout
 Info: Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
+Info: Automatically promoted node ula_struct:startUla|Mux14~1 
+    Info: Automatically promoted destinations to use location or clock signal Global Clock
 Info: Starting register packing
 Extra Info: Performing register packing on registers with non-logic cell location assignments
 Extra Info: Completed register packing on registers with non-logic cell location assignments
@@ -1850,7 +2043,7 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  58 pins available
         Info: I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
         Info: I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  56 pins available
-Info: Fitter preparation operations ending: elapsed time is 00:00:01
+Info: Fitter preparation operations ending: elapsed time is 00:00:03
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
@@ -1858,8 +2051,8 @@ Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:01
 Info: Fitter routing operations beginning
 Info: Router estimated average interconnect usage is 0% of the available device resources
-    Info: Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X33_Y24 to location X43_Y36
-Info: Fitter routing operations ending: elapsed time is 00:00:00
+    Info: Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X33_Y24 to location X43_Y36
+Info: Fitter routing operations ending: elapsed time is 00:00:01
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
     Info: Optimizations that may affect the design's timing were skipped
@@ -1880,10 +2073,10 @@ Warning: Found 13 output pins without output pin load capacitance assignment
     Info: Pin "V" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
 Info: Delay annotation completed successfully
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info: Quartus II Fitter was successful. 0 errors, 8 warnings
+Info: Quartus II Fitter was successful. 0 errors, 16 warnings
     Info: Peak virtual memory: 443 megabytes
-    Info: Processing ended: Wed Feb 07 18:16:55 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Processing ended: Sat Feb 17 22:43:55 2018
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:14
 
 

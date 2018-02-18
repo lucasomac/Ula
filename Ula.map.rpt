@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Ula
-Sat Feb 17 22:29:33 2018
+Sat Feb 17 22:43:24 2018
 Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,15 @@ Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "ula_struct:startUla"
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +44,20 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Feb 17 22:29:33 2018             ;
+; Analysis & Synthesis Status        ; Successful - Sat Feb 17 22:43:24 2018         ;
 ; Quartus II Version                 ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Ula                                           ;
-; Top-level Entity Name              ; Ula                                           ;
+; Top-level Entity Name              ; ula                                           ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; N/A until Partition Merge                     ;
-;     Total combinational functions  ; N/A until Partition Merge                     ;
-;     Dedicated logic registers      ; N/A until Partition Merge                     ;
-; Total registers                    ; N/A until Partition Merge                     ;
-; Total pins                         ; N/A until Partition Merge                     ;
-; Total virtual pins                 ; N/A until Partition Merge                     ;
-; Total memory bits                  ; N/A until Partition Merge                     ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                     ;
-; Total PLLs                         ; N/A until Partition Merge                     ;
+; Total logic elements               ; 158                                           ;
+;     Total combinational functions  ; 158                                           ;
+;     Dedicated logic registers      ; 0                                             ;
+; Total registers                    ; 0                                             ;
+; Total pins                         ; 38                                            ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total PLLs                         ; 0                                             ;
 +------------------------------------+-----------------------------------------------+
 
 
@@ -146,13 +154,129 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                 ;
++----------------------------------+-----------------+-----------------+---------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path    ;
++----------------------------------+-----------------+-----------------+---------------------------------+
+; Ula.vhd                          ; yes             ; User VHDL File  ; E:/Projetos/Ula/Ula.vhd         ;
+; ula_package.vhd                  ; yes             ; User VHDL File  ; E:/Projetos/Ula/ula_package.vhd ;
+; ula_struct.vhd                   ; yes             ; User VHDL File  ; E:/Projetos/Ula/ula_struct.vhd  ;
++----------------------------------+-----------------+-----------------+---------------------------------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 158      ;
+;                                             ;          ;
+; Total combinational functions               ; 158      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 73       ;
+;     -- 3 input functions                    ; 49       ;
+;     -- <=2 input functions                  ; 36       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 108      ;
+;     -- arithmetic mode                      ; 50       ;
+;                                             ;          ;
+; Total registers                             ; 0        ;
+;     -- Dedicated logic registers            ; 0        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 38       ;
+; Maximum fan-out node                        ; operA[1] ;
+; Maximum fan-out                             ; 30       ;
+; Total fan-out                               ; 514      ;
+; Average fan-out                             ; 2.62     ;
++---------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+; |ula                       ; 158 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |ula                     ;              ;
+;    |ula_struct:startUla|   ; 158 (158)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|ula_struct:startUla ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++----------------------------------------------------+---------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal       ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------+------------------------+
+; ula_struct:startUla|Result[0]                      ; ula_struct:startUla|Mux14 ; yes                    ;
+; ula_struct:startUla|Result[1]                      ; ula_struct:startUla|Mux14 ; yes                    ;
+; ula_struct:startUla|Result[2]                      ; ula_struct:startUla|Mux14 ; yes                    ;
+; ula_struct:startUla|Result[3]                      ; ula_struct:startUla|Mux14 ; yes                    ;
+; ula_struct:startUla|Result[4]                      ; ula_struct:startUla|Mux14 ; yes                    ;
+; ula_struct:startUla|Result[5]                      ; ula_struct:startUla|Mux14 ; yes                    ;
+; ula_struct:startUla|Result[6]                      ; ula_struct:startUla|Mux14 ; yes                    ;
+; ula_struct:startUla|N                              ; ula_struct:startUla|Mux14 ; yes                    ;
+; ula_struct:startUla|C                              ; ula_struct:startUla|Mux4  ; yes                    ;
+; Number of user-specified and inferred latches = 9  ;                           ;                        ;
++----------------------------------------------------+---------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                     ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------------------+----------------------------+
+; 136:1              ; 6 bits    ; 540 LEs       ; 54 LEs               ; 486 LEs                ; |ula|ula_struct:startUla|Mux11 ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula_struct:startUla"                                                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; n    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; z    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; c    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; b    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; v    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Feb 17 22:29:20 2018
+    Info: Processing started: Sat Feb 17 22:43:17 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Ula -c Ula
 Warning: Parallel compilation is not licensed and has been disabled
 Info: Found 2 design units, including 1 entities, in source file mult4bits.vhd
@@ -163,22 +287,66 @@ Info: Found 2 design units, including 1 entities, in source file ula.vhd
     Info: Found entity 1: ula
 Info: Found 1 design units, including 0 entities, in source file ula_package.vhd
     Info: Found design unit 1: ula_package
-Error (10500): VHDL syntax error at ula_struct.vhd(113) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a sequential statement File: E:/Projetos/Ula/ula_struct.vhd Line: 113
-Error (10500): VHDL syntax error at ula_struct.vhd(123) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a sequential statement File: E:/Projetos/Ula/ula_struct.vhd Line: 123
-Error (10500): VHDL syntax error at ula_struct.vhd(127) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a sequential statement File: E:/Projetos/Ula/ula_struct.vhd Line: 127
-Error (10500): VHDL syntax error at ula_struct.vhd(137) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a sequential statement File: E:/Projetos/Ula/ula_struct.vhd Line: 137
-Error (10500): VHDL syntax error at ula_struct.vhd(147) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a sequential statement File: E:/Projetos/Ula/ula_struct.vhd Line: 147
-Error (10500): VHDL syntax error at ula_struct.vhd(151) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a sequential statement File: E:/Projetos/Ula/ula_struct.vhd Line: 151
-Error (10500): VHDL syntax error at ula_struct.vhd(155) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a sequential statement File: E:/Projetos/Ula/ula_struct.vhd Line: 155
-Error (10500): VHDL syntax error at ula_struct.vhd(159) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a sequential statement File: E:/Projetos/Ula/ula_struct.vhd Line: 159
-Error (10500): VHDL syntax error at ula_struct.vhd(163) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a sequential statement File: E:/Projetos/Ula/ula_struct.vhd Line: 163
-Error (10500): VHDL syntax error at ula_struct.vhd(170) near text "case";  expecting "if" File: E:/Projetos/Ula/ula_struct.vhd Line: 170
-Error (10500): VHDL syntax error at ula_struct.vhd(176) near text "process";  expecting "if" File: E:/Projetos/Ula/ula_struct.vhd Line: 176
-Info: Found 0 design units, including 0 entities, in source file ula_struct.vhd
-Error: Quartus II Analysis & Synthesis was unsuccessful. 11 errors, 1 warning
-    Error: Peak virtual memory: 346 megabytes
-    Error: Processing ended: Sat Feb 17 22:29:35 2018
-    Error: Elapsed time: 00:00:15
-    Error: Total CPU time (on all processors): 00:00:04
+Info: Found 2 design units, including 1 entities, in source file ula_struct.vhd
+    Info: Found design unit 1: ula_struct-ula_arch
+    Info: Found entity 1: ula_struct
+Info: Elaborating entity "Ula" for the top level hierarchy
+Warning (10034): Output port "N" at Ula.vhd(14) has no driver
+Warning (10034): Output port "Z" at Ula.vhd(14) has no driver
+Warning (10034): Output port "C" at Ula.vhd(14) has no driver
+Warning (10034): Output port "B" at Ula.vhd(14) has no driver
+Warning (10034): Output port "V" at Ula.vhd(14) has no driver
+Info: Elaborating entity "ula_struct" for hierarchy "ula_struct:startUla"
+Warning (10492): VHDL Process Statement warning at ula_struct.vhd(138): signal "C" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula_struct.vhd(148): signal "C" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ula_struct.vhd(44): inferring latch(es) for signal or variable "Result", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ula_struct.vhd(44): inferring latch(es) for signal or variable "C", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ula_struct.vhd(44): inferring latch(es) for signal or variable "V", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ula_struct.vhd(44): inferring latch(es) for signal or variable "B", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "B" at ula_struct.vhd(44)
+Info (10041): Inferred latch for "V" at ula_struct.vhd(44)
+Info (10041): Inferred latch for "C" at ula_struct.vhd(44)
+Info (10041): Inferred latch for "Result[0]" at ula_struct.vhd(44)
+Info (10041): Inferred latch for "Result[1]" at ula_struct.vhd(44)
+Info (10041): Inferred latch for "Result[2]" at ula_struct.vhd(44)
+Info (10041): Inferred latch for "Result[3]" at ula_struct.vhd(44)
+Info (10041): Inferred latch for "Result[4]" at ula_struct.vhd(44)
+Info (10041): Inferred latch for "Result[5]" at ula_struct.vhd(44)
+Info (10041): Inferred latch for "Result[6]" at ula_struct.vhd(44)
+Info (10041): Inferred latch for "Result[7]" at ula_struct.vhd(44)
+Warning: Latch ula_struct:startUla|Result[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal operA[4]
+Warning: Latch ula_struct:startUla|Result[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal operA[4]
+Warning: Latch ula_struct:startUla|Result[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal operA[4]
+Warning: Latch ula_struct:startUla|Result[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal operA[4]
+Warning: Latch ula_struct:startUla|Result[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal operA[4]
+Warning: Latch ula_struct:startUla|Result[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal operA[4]
+Warning: Latch ula_struct:startUla|Result[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal operA[4]
+Warning: Latch ula_struct:startUla|N has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal operA[4]
+Warning: Latch ula_struct:startUla|C has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal operA[4]
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "N" is stuck at GND
+    Warning (13410): Pin "Z" is stuck at GND
+    Warning (13410): Pin "C" is stuck at GND
+    Warning (13410): Pin "B" is stuck at GND
+    Warning (13410): Pin "V" is stuck at GND
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 196 device resources after synthesis - the final resource count might be different
+    Info: Implemented 25 input pins
+    Info: Implemented 13 output pins
+    Info: Implemented 158 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 351 megabytes
+    Info: Processing ended: Sat Feb 17 22:43:24 2018
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:05
 
 

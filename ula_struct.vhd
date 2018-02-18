@@ -110,6 +110,7 @@ BEGIN
 			if(operA > operB) then 
 				result <= operA;
 				else result <= operB;
+			end if;
 		when DLD =>
 			C <= operA(0);
 			result(0) <= operA(1);
@@ -124,6 +125,7 @@ BEGIN
 			if(operA < operB) then 
 				result <= operA;
 				else result <= operB;
+			end if;
 		when RLE =>
 			C <= operA(7);
 			result(7) <= operA(6);
@@ -148,18 +150,22 @@ BEGIN
 			if(operA = operB) then 
 				Z <= '1';
 				else Z <= '0';
+			end if;
 		when NEQUAL =>
 			if(operA /= operB) then 
 				B <= '1';
 				else B <= '0';
+			end if;
 		when BIGGER =>
 			if(operA > operB) then 
 				B <= '1';
 				else B <= '0';
+			end if;
 		when SMALLER =>
 			if(operA < operB) then 
 				Z <= '1';
 				else Z <= '0';
+			end if;
 		when others =>
 			result <= "00000000";
 			Z <= '0';
